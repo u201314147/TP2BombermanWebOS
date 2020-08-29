@@ -73,7 +73,7 @@
                 
                 var ipCurrent = ipMin, numInParallel = 0, servers = [];
                 var ipHigh = ipMax;
-                var baseIp = "192.168.0.1"//this.getUserIp(); // "192.168.0.1"
+                var baseIp = "192.168.0.1"//"192.168.0.1"//"10.242.32.1"//this.getUserIp(); // "192.168.0.1"
                 var port = this.port.toString();
                 var toSplit = baseIp;
                 var ipBase = toSplit.split(".", 3);
@@ -109,11 +109,21 @@
                             if (addServersInProgress != null &&
                                 addServersInProgress != undefined &&
                                 typeof addServersInProgress === "function")
-                                addServersInProgress(socket.url);
+                            {
+                            socket.send("GETSERVERNAME")
+
+                            //addServersInProgress(socket.url);
+                            }
                             --numInParallel;
                             next();
                         }
                     };
+
+                       socket.onmessage = function (evt) { 
+                          var received_msg = evt.data;
+                          addServersInProgress(socket.url, received_msg);
+                          //alert("Se obtuvo nombre del servidor");
+                       };
                     socket.onerror = function (err) {
                         if (socket) {
                             clearTimeout(timer);

@@ -4,11 +4,12 @@ function entablishConnection(e) {
     $(location).attr("href", "./Game/menu.html?url=" + e)
 }
 
-function availableServersToDiv(e) {
-    if (e && e.includes(":") && e.includes(".")) {
+function availableServersToDiv(e, name) {
+    if (e && e.includes(":") && e.includes(".") && name.includes("+")) {
+        var nombre = name.split('+')[1];
         listAvailableServers.push(e);
         var t = e.split(":")[1].split("."),
-            n = '<button class="btn-server" type="button" id="' + (e + 2) + '" class="buttonPr" onclick="entablishConnection(\'' + e + "');\" >" + ("Sala " + t[t.length - 1]) + "</button><br>";
+            n = '<button class="btn-server" type="button" id="' + (e + 2) + '" class="buttonPr" onclick="entablishConnection(\'' + e + "');\" >" + ("Sala " + nombre) + "</button><br>";
         document.getElementById("availableServers").innerHTML += n
     }
 }
@@ -36,13 +37,13 @@ function findServers() {
 
 Synapse.findServers(15, 5000, availableServersToDiv, onFinishSearch, onFinishSearch,0,255, -1)
 
-for (var i = 1; i < 255; i++) {
+/*for (var i = 1; i < 255; i++) {
  
  Synapse.findServers(15, 5000, availableServersToDiv, onFinishSearch, onFinishSearch,0,15, i)
 }
 
 enableLoading(); 
-
+*/
 }
 
 function renderLitleStars() {
