@@ -13,14 +13,24 @@ function availableServersToDiv(e, name) {
         document.getElementById("availableServers").innerHTML += n
     }
 }
-
+var findIpBtimer = 0;
+var findIpB = 0;
 function onFinishSearch() {
-    document.getElementById("box-loading").style.opacity = "0"
+    document.getElementById("box-loading").style.opacity = "0";
+    findIpBtimer = findIpBtimer +1;
+    if(findIpBtimer> 255)
+    {
+        findIpBtimer = findIpBtimer=0;
+        findIpB= findIpB+1;
+    
+    findServers()
+
+    }
 }
 
 function enableLoading() {
     var e = document.getElementById("btn-reload");
-    e.className += e.className.replace(" disabled", ""), e.disabled = !1;
+    e.className += e.className.replace("disabled", ""), e.disabled = !1;
     var t = document.getElementById("btn-refresh");
     t.className += " disabled", t.disabled = !0, document.getElementById("box-loading").style.opacity = "1"
 }
@@ -32,18 +42,11 @@ var Synapse = new window.Synapse(8080);
 
 function findServers() {
 
-
+if(findIpB==0)
     enableLoading(); 
 
-Synapse.findServers(15, 5000, availableServersToDiv, onFinishSearch, onFinishSearch,0,255, -1)
+ Synapse.findServers(255, 5000, availableServersToDiv, onFinishSearch, onFinishSearch,0,255, findIpB)
 
-/*for (var i = 1; i < 255; i++) {
- 
- Synapse.findServers(15, 5000, availableServersToDiv, onFinishSearch, onFinishSearch,0,15, i)
-}
-
-enableLoading(); 
-*/
 }
 
 function renderLitleStars() {
