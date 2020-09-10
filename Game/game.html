@@ -590,6 +590,7 @@ this.vida.setTexture('jugadorNegro');
 if(this.personajeP1==9)
 this.vida.setTexture('jugadorMorado');
 
+
 if(this.gamemode!=0)
        this.kill = this.physics.add.sprite(92, 336+96, 'kills');
 
@@ -1006,6 +1007,9 @@ this.myShip = this.physics.add.sprite(420, 130, 'jugadorNegro');
 if(this.personajeP1==9)
 this.myShip = this.physics.add.sprite(420, 130, 'jugadorMorado');
 
+
+
+
 this.myShip2 = this.physics.add.sprite(5000, 130, 'ship2');
 this.myShip3 = this.physics.add.sprite(5000, 130, 'ship3');
 this.myShip4 = this.physics.add.sprite(5000, 130, 'ship4');
@@ -1015,15 +1019,75 @@ this.myShip4 = this.physics.add.sprite(5000, 130, 'ship4');
 if(this.jugadoresTotal >=2)
 {
    this.myShip2 = this.physics.add.sprite(1820, 130, 'ship2');
+
+
+
+if(this.personajeP2==1)
+this.myShip2.setTexture('jugadorAzul');
+if(this.personajeP2==2)
+this.myShip2.setTexture('jugadorCeleste');
+if(this.personajeP2==3)
+this.myShip2.setTexture('jugadorNaranja');
+if(this.personajeP2==4)
+this.myShip2.setTexture('jugadorAmarillo');
+if(this.personajeP2==5)
+this.myShip2.setTexture('jugadorRojo');
+if(this.personajeP2==6)
+this.myShip2.setTexture('jugadorGris');
+if(this.personajeP2==7)
+this.myShip2.setTexture('jugadorVerde');
+if(this.personajeP2==8)
+this.myShip2.setTexture('jugadorNegro');
+if(this.personajeP2==9)
+this.myShip2.setTexture('jugadorMorado');
 }
 
 if(this.jugadoresTotal >=3)
 {
       this.myShip3 = this.physics.add.sprite(420, 885, 'ship3');
+      if(this.personajeP3==1)
+this.myShip3.setTexture('jugadorAzul');
+if(this.personajeP3==2)
+this.myShip3.setTexture('jugadorCeleste');
+if(this.personajeP3==3)
+this.myShip3.setTexture('jugadorNaranja');
+if(this.personajeP3==4)
+this.myShip3.setTexture('jugadorAmarillo');
+if(this.personajeP3==5)
+this.myShip3.setTexture('jugadorRojo');
+if(this.personajeP3==6)
+this.myShip3.setTexture('jugadorGris');
+if(this.personajeP3==7)
+this.myShip3.setTexture('jugadorVerde');
+if(this.personajeP3==8)
+this.myShip3.setTexture('jugadorNegro');
+if(this.personajeP3==9)
+this.myShip3.setTexture('jugadorMorado');
+
+
 }
 if(this.jugadoresTotal >=4)
 {
          this.myShip4 = this.physics.add.sprite(1820, 885, 'ship4');
+
+if(this.personajeP4==1)
+this.myShip4.setTexture('jugadorAzul');
+if(this.personajeP4==2)
+this.myShip4.setTexture('jugadorCeleste');
+if(this.personajeP4==3)
+this.myShip4.setTexture('jugadorNaranja');
+if(this.personajeP4==4)
+this.myShip4.setTexture('jugadorAmarillo');
+if(this.personajeP4==5)
+this.myShip4.setTexture('jugadorRojo');
+if(this.personajeP4==6)
+this.myShip4.setTexture('jugadorGris');
+if(this.personajeP4==7)
+this.myShip4.setTexture('jugadorVerde');
+if(this.personajeP4==8)
+this.myShip4.setTexture('jugadorNegro');
+if(this.personajeP4==9)
+this.myShip4.setTexture('jugadorMorado');
 }
 
 
@@ -8519,12 +8583,21 @@ class SceneB extends Phaser.Scene {
     {
 
 this.load.image('selectorRect1', 'https://i.ibb.co/tKmGdqY/selector-Rect1.png');
+this.load.image('selectorRect2', 'https://i.ibb.co/98x1jx5/selector-Rect2.png');
+this.load.image('selectorRect3', 'https://i.ibb.co/WfGJs8t/selector-Rect3.png');
+this.load.image('selectorRect4', 'https://i.ibb.co/QjDxyxN/selector-Rect4.png');
+
                  this.load.image('fondo', 'https://i.ibb.co/5FW9jBX/menu-Opciones.png');
                  this.load.image('fondo2', 'https://i.ibb.co/mrpgNSH/menu-Opciones-Normal.png')
                  this.load.image('fondo2mapa2', 'https://i.ibb.co/cNm3JKN/menu-Opciones-Normal2.png')
                  this.load.image('fondo2mapa3', 'https://i.ibb.co/wQY7mW4/menu-Opciones-Normal3.png')
                   this.load.image('seleccion', 'https://i.ibb.co/RvhgWwR/seleccioncuad.png');
-                    this.load.image('seleccionpersonajes', 'https://i.ibb.co/7p09ZRh/seleccionpersonajes.png');
+                  this.load.image('seleccion1P', 'https://i.ibb.co/tQYRBw6/seleccioncuad1.png');
+                  this.load.image('seleccion2P', 'https://i.ibb.co/9nvQfzZ/seleccioncuad2.png');
+                  this.load.image('seleccion3P', 'https://i.ibb.co/RvhgWwR/seleccioncuad.png');
+                  this.load.image('seleccion4P', 'https://i.ibb.co/DbqMNcN/seleccioncuad4.png');
+                  
+                    this.load.image('seleccionpersonajes', 'https://i.ibb.co/ZKZXpyR/seleccionpersonajes.png');
                this.load.image('seleccion2', 'https://i.ibb.co/WFCsJx3/seleccioncuad2.png');
                  this.load.image('noready', 'https://i.ibb.co/1bcqr5j/sprite-No-Listo.png');
                   this.load.image('ready', 'https://i.ibb.co/rMq8fcJ/sprite-Listo.png');
@@ -8592,6 +8665,10 @@ this.designer = 1;
         this.menufondo = this.physics.add.sprite(1920/2, 1080/2, 'fondo2');
        
         this.seleccionInt =0; // Multijugador
+        this.seleccionInt2= 13; //Jugador2
+  this.seleccionInt3= 17; //Jugador3
+    this.seleccionInt4= 19; //Jugador4
+
 
 this.pantalla=1;
 
@@ -8617,19 +8694,38 @@ this.modoopcionesSprite = this.physics.add.sprite(413 +413/4, 336, 'seleccion2')
 
 
 this.personajeSelectSpriteP1 = this.physics.add.sprite(450 +413/4, 750, 'selectorRect1');
+this.personajeSelectSpriteP2 = this.physics.add.sprite(450 +413/4, 750, 'selectorRect2');
+this.personajeSelectSpriteP3 = this.physics.add.sprite(450 +413/4, 750, 'selectorRect3');
+this.personajeSelectSpriteP4 = this.physics.add.sprite(450 +413/4, 750, 'selectorRect4');
 
 
 
   this.personajeSelectSpriteP1.visible = false;
+  this.personajeSelectSpriteP2.visible = false;
+  this.personajeSelectSpriteP3.visible = false;
+  this.personajeSelectSpriteP4.visible = false;
+
  this.personajeSelectSpriteP1.setDepth(1);
+  this.personajeSelectSpriteP2.setDepth(1);
+    this.personajeSelectSpriteP3.setDepth(1);
+        this.personajeSelectSpriteP4.setDepth(1);
 this.dificultadsprite = this.physics.add.sprite(950 +213/4, 540, 'dificultad');
 this.seleccionadoSprite = this.physics.add.sprite(413 +413/4, 336, 'seleccion');
 
 
    this.menufondopersonajes = this.physics.add.sprite(1920/2, 1080/2, 'seleccionpersonajes');
       this.menufondopersonajes.visible = false;
- this.seleccionadoSprite2 = this.physics.add.sprite(413 +413/4, 336, 'seleccion');
+ this.seleccionadoSprite2 = this.physics.add.sprite(413 +413/4, 336, 'seleccion1P');
   this.seleccionadoSprite2.visible = false;
+
+ this.seleccionadoSprite2P2 = this.physics.add.sprite(413 +413/4, 336, 'seleccion2P');
+this.seleccionadoSprite2P3 = this.physics.add.sprite(413 +413/4, 336, 'seleccion3P');
+ this.seleccionadoSprite2P4 = this.physics.add.sprite(413 +413/4, 336, 'seleccion4P'); 
+  this.seleccionadoSprite2P2.visible = false;
+this.seleccionadoSprite2P3.visible = false;
+this.seleccionadoSprite2P4.visible = false;
+
+
 
 this.readySprite1 = this.physics.add.sprite(730 +413/4, 530, 'noready');
 this.readySprite2 = this.physics.add.sprite(1420 +413/4, 530, 'noready');
@@ -8668,6 +8764,27 @@ this.input.keyboard.on('keydown_UP', moverMenuAbajo, this);
     this.input.keyboard.on('keydown_LEFT', moverMenuIzq, this);
    this.input.keyboard.on('keydown_RIGHT', moverMenuDer, this);
     this.input.keyboard.on('keydown_X', seleccionarOpcion, this);
+//JUG2
+this.input.keyboard.on('keydown_W', moverMenuAbajo2, this);
+  this.input.keyboard.on('keydown_S', moverMenuArriba2, this);
+    this.input.keyboard.on('keydown_A', moverMenuIzq2, this);
+   this.input.keyboard.on('keydown_D', moverMenuDer2, this);
+    this.input.keyboard.on('keydown_E', seleccionarOpcion2, this);
+//JUG3
+this.input.keyboard.on('keydown_T', moverMenuAbajo3, this);
+  this.input.keyboard.on('keydown_G', moverMenuArriba3, this);
+    this.input.keyboard.on('keydown_F', moverMenuIzq3, this);
+   this.input.keyboard.on('keydown_H', moverMenuDer3, this);
+    this.input.keyboard.on('keydown_Y', seleccionarOpcion3, this);
+//JUG4
+this.input.keyboard.on('keydown_I', moverMenuAbajo4, this);
+  this.input.keyboard.on('keydown_K', moverMenuArriba4, this);
+    this.input.keyboard.on('keydown_J', moverMenuIzq4, this);
+   this.input.keyboard.on('keydown_L', moverMenuDer4, this);
+    this.input.keyboard.on('keydown_O', seleccionarOpcion4, this);
+
+
+
 
 // scale the box
     const scaleBox = scale => {
@@ -8792,6 +8909,8 @@ function moverMenuArriba()
         }
 }
 
+
+
 function moverMenuAbajo()
 {
 
@@ -8868,6 +8987,7 @@ return;
         }
         
 }
+
 function moverMenuIzq()
 {
 
@@ -8966,6 +9086,7 @@ if(this.seleccionarDif == 1)
             this.seleccionInt = 18;
      }
 }
+
 function moverMenuDer()
 {
 
@@ -9058,6 +9179,548 @@ if(this.seleccionarDif == 1)
      }
        
 }
+
+//JUGADOR2
+function moverMenuArriba2()
+{
+
+ if(this.pantalla ==2)
+    {
+
+           if(this.seleccionInt2 ==13)
+            this.seleccionInt2 = 16;
+            else if(this.seleccionInt2 ==16)
+            this.seleccionInt2 = 19;
+
+
+          else if(this.seleccionInt2 ==12)
+            this.seleccionInt2 = 15;
+            else if(this.seleccionInt2 ==15)
+            this.seleccionInt2 = 18;
+
+
+          else if(this.seleccionInt2 ==11)
+            this.seleccionInt2 = 14;
+            else if(this.seleccionInt2 ==14)
+            this.seleccionInt2 = 17;
+
+
+        }
+
+}
+
+
+function moverMenuAbajo2()
+{
+   if(this.pantalla ==2)
+    {
+
+        if(this.seleccionInt2 ==19)
+            this.seleccionInt2 = 16;
+            else if(this.seleccionInt2 ==16)
+            this.seleccionInt2 = 13;
+
+
+          else if(this.seleccionInt2 ==18)
+            this.seleccionInt2 = 15;
+            else if(this.seleccionInt2 ==15)
+            this.seleccionInt2 = 12;
+
+
+          else if(this.seleccionInt2 ==17)
+            this.seleccionInt2 = 14;
+            else if(this.seleccionInt2 ==14)
+            this.seleccionInt2 = 11;
+
+}
+  }
+function moverMenuIzq2()
+{
+   if(this.pantalla ==2)
+    {
+
+           if(this.seleccionInt2 ==13)
+            this.seleccionInt2 = 12;
+           else if(this.seleccionInt2 ==12)
+            this.seleccionInt2 = 11;
+
+           else if(this.seleccionInt2 ==14)
+            this.seleccionInt2 = 13;
+           else if(this.seleccionInt2 ==15)
+            this.seleccionInt2 = 14;
+           else if(this.seleccionInt2 ==16)
+            this.seleccionInt2 = 15;
+
+
+           else if(this.seleccionInt2 ==17)
+            this.seleccionInt2 = 16;
+           else if(this.seleccionInt2 ==18)
+            this.seleccionInt2 = 17;
+           else if(this.seleccionInt2 ==19)
+            this.seleccionInt2 = 18;
+}
+  }
+
+function moverMenuDer2()
+{
+   if(this.pantalla ==2)
+    {
+
+           if(this.seleccionInt2 ==12)
+            this.seleccionInt2 = 13;
+           else if(this.seleccionInt2 ==11)
+            this.seleccionInt2 = 12;
+
+
+           else if(this.seleccionInt2 ==14)
+            this.seleccionInt2 = 15;
+           else if(this.seleccionInt2 ==15)
+            this.seleccionInt2 = 16;
+  
+
+           else if(this.seleccionInt2 ==17)
+            this.seleccionInt2 = 18;
+           else if(this.seleccionInt2 ==18)
+            this.seleccionInt2 = 19;
+   }
+
+  }
+  function seleccionarOpcion2()
+  {
+ if(this.pantalla ==2)
+    {
+
+     this.sound.play('select');
+
+     if(this.seleccionInt2==11)
+        {
+           
+             this.personajeSeleccionadoP2 = 1;
+           
+        
+        }
+         if(this.seleccionInt2==12)
+        {
+           
+             this.personajeSeleccionadoP2 = 2;
+           
+        
+        }
+         if(this.seleccionInt2==13)
+        {
+           
+             this.personajeSeleccionadoP2= 3;
+           
+        
+        }
+         if(this.seleccionInt2==14)
+        {
+           
+             this.personajeSeleccionadoP2 = 4;
+           
+        
+        }
+         if(this.seleccionInt2==15)
+        {
+           
+             this.personajeSeleccionadoP2 = 5;
+           
+        
+        }
+         if(this.seleccionInt2==16)
+        {
+           
+             this.personajeSeleccionadoP2 = 6;
+           
+        
+        }
+
+          if(this.seleccionInt2==17)
+        {
+           
+             this.personajeSeleccionadoP2 = 7;
+           
+        
+        }
+          if(this.seleccionInt2==18)
+        {
+           
+             this.personajeSeleccionadoP2 = 8;
+           
+        
+        }
+          if(this.seleccionInt2==19)
+        {
+           
+             this.personajeSeleccionadoP2 = 9;
+           
+        
+        }
+      }
+  }
+
+//JUGADOR 3
+
+function moverMenuArriba3()
+{
+
+ if(this.pantalla ==2)
+    {
+
+           if(this.seleccionInt3 ==13)
+            this.seleccionInt3 = 16;
+            else if(this.seleccionInt3 ==16)
+            this.seleccionInt3 = 19;
+
+
+          else if(this.seleccionInt3 ==12)
+            this.seleccionInt3 = 15;
+            else if(this.seleccionInt3 ==15)
+            this.seleccionInt3 = 18;
+
+
+          else if(this.seleccionInt3 ==11)
+            this.seleccionInt3 = 14;
+            else if(this.seleccionInt3 ==14)
+            this.seleccionInt3 = 17;
+
+
+        }
+
+}
+
+
+function moverMenuAbajo3()
+{
+   if(this.pantalla ==2)
+    {
+
+        if(this.seleccionInt3 ==19)
+            this.seleccionInt3 = 16;
+            else if(this.seleccionInt3 ==16)
+            this.seleccionInt3 = 13;
+
+
+          else if(this.seleccionInt3 ==18)
+            this.seleccionInt3 = 15;
+            else if(this.seleccionInt3 ==15)
+            this.seleccionInt3 = 12;
+
+
+          else if(this.seleccionInt3 ==17)
+            this.seleccionInt3 = 14;
+            else if(this.seleccionInt3 ==14)
+            this.seleccionInt3 = 11;
+
+}
+  }
+function moverMenuIzq3()
+{
+   if(this.pantalla ==2)
+    {
+
+           if(this.seleccionInt3 ==13)
+            this.seleccionInt3 = 12;
+           else if(this.seleccionInt3 ==12)
+            this.seleccionInt3 = 11;
+
+           else if(this.seleccionInt3 ==14)
+            this.seleccionInt3 = 13;
+           else if(this.seleccionInt3 ==15)
+            this.seleccionInt3 = 14;
+           else if(this.seleccionInt3 ==16)
+            this.seleccionInt3 = 15;
+
+
+           else if(this.seleccionInt3 ==17)
+            this.seleccionInt3 = 16;
+           else if(this.seleccionInt3 ==18)
+            this.seleccionInt3 = 17;
+           else if(this.seleccionInt3 ==19)
+            this.seleccionInt3 = 18;
+}
+  }
+
+function moverMenuDer3()
+{
+   if(this.pantalla ==2)
+    {
+
+           if(this.seleccionInt3 ==12)
+            this.seleccionInt3 = 13;
+           else if(this.seleccionInt3 ==11)
+            this.seleccionInt3 = 12;
+
+
+           else if(this.seleccionInt3 ==14)
+            this.seleccionInt3 = 15;
+           else if(this.seleccionInt3 ==15)
+            this.seleccionInt3 = 16;
+  
+
+           else if(this.seleccionInt3 ==17)
+            this.seleccionInt3 = 18;
+           else if(this.seleccionInt3 ==18)
+            this.seleccionInt3 = 19;
+   
+}
+  }
+  function seleccionarOpcion3()
+  {
+     if(this.pantalla ==2)
+    {
+
+     this.sound.play('select');
+
+     if(this.seleccionInt3==11)
+        {
+           
+             this.personajeSeleccionadoP3 = 1;
+           
+        
+        }
+         if(this.seleccionInt3==12)
+        {
+           
+             this.personajeSeleccionadoP3 = 2;
+           
+        
+        }
+         if(this.seleccionInt3==13)
+        {
+           
+             this.personajeSeleccionadoP3= 3;
+           
+        
+        }
+         if(this.seleccionInt3==14)
+        {
+           
+             this.personajeSeleccionadoP3 = 4;
+           
+        
+        }
+         if(this.seleccionInt3==15)
+        {
+           
+             this.personajeSeleccionadoP3 = 5;
+           
+        
+        }
+         if(this.seleccionInt3==16)
+        {
+           
+             this.personajeSeleccionadoP3 = 6;
+           
+        
+        }
+
+          if(this.seleccionInt3==17)
+        {
+           
+             this.personajeSeleccionadoP3 = 7;
+           
+        
+        }
+          if(this.seleccionInt3==18)
+        {
+           
+             this.personajeSeleccionadoP3 = 8;
+           
+        
+        }
+          if(this.seleccionInt3==19)
+        {
+           
+             this.personajeSeleccionadoP3 = 9;
+           
+        
+        }
+      }
+  }
+
+
+//JUGADOR 4
+
+function moverMenuArriba4()
+{
+
+ if(this.pantalla ==2)
+    {
+
+           if(this.seleccionInt4 ==13)
+            this.seleccionInt4 = 16;
+            else if(this.seleccionInt4 ==16)
+            this.seleccionInt4 = 19;
+
+
+          else if(this.seleccionInt4 ==12)
+            this.seleccionInt4 = 15;
+            else if(this.seleccionInt4 ==15)
+            this.seleccionInt4 = 18;
+
+
+          else if(this.seleccionInt4 ==11)
+            this.seleccionInt4 = 14;
+            else if(this.seleccionInt4 ==14)
+            this.seleccionInt4 = 17;
+
+
+        }
+
+}
+
+
+function moverMenuAbajo4()
+{
+   if(this.pantalla ==2)
+    {
+
+        if(this.seleccionInt4 ==19)
+            this.seleccionInt4 = 16;
+            else if(this.seleccionInt4 ==16)
+            this.seleccionInt4 = 13;
+
+
+          else if(this.seleccionInt4 ==18)
+            this.seleccionInt4 = 15;
+            else if(this.seleccionInt4 ==15)
+            this.seleccionInt4 = 12;
+
+
+          else if(this.seleccionInt4 ==17)
+            this.seleccionInt4 = 14;
+            else if(this.seleccionInt4 ==14)
+            this.seleccionInt4 = 11;
+}
+
+  }
+function moverMenuIzq4()
+{
+   if(this.pantalla ==2)
+    {
+
+           if(this.seleccionInt4 ==13)
+            this.seleccionInt4 = 12;
+           else if(this.seleccionInt4 ==12)
+            this.seleccionInt4 = 11;
+
+           else if(this.seleccionInt4 ==14)
+            this.seleccionInt4 = 13;
+           else if(this.seleccionInt4 ==15)
+            this.seleccionInt4 = 14;
+           else if(this.seleccionInt4 ==16)
+            this.seleccionInt4 = 15;
+
+
+           else if(this.seleccionInt4 ==17)
+            this.seleccionInt4 = 16;
+           else if(this.seleccionInt4 ==18)
+            this.seleccionInt4 = 17;
+           else if(this.seleccionInt4 ==19)
+            this.seleccionInt4 = 18;
+
+}
+
+  }
+
+function moverMenuDer4()
+{
+   if(this.pantalla ==2)
+    {
+
+           if(this.seleccionInt4 ==12)
+            this.seleccionInt4 = 13;
+           else if(this.seleccionInt4 ==11)
+            this.seleccionInt4 = 12;
+
+
+           else if(this.seleccionInt4 ==14)
+            this.seleccionInt4 = 15;
+           else if(this.seleccionInt4 ==15)
+            this.seleccionInt4 = 16;
+  
+
+           else if(this.seleccionInt4 ==17)
+            this.seleccionInt4 = 18;
+           else if(this.seleccionInt4 ==18)
+            this.seleccionInt4 = 19;
+   
+}
+  }
+  function seleccionarOpcion4()
+  {
+     if(this.pantalla ==2)
+    {
+
+    this.sound.play('select');
+
+     if(this.seleccionInt4==11)
+        {
+           
+             this.personajeSeleccionadoP4 = 1;
+           
+        
+        }
+         if(this.seleccionInt4==12)
+        {
+           
+             this.personajeSeleccionadoP4 = 2;
+           
+        
+        }
+         if(this.seleccionInt4==13)
+        {
+           
+             this.personajeSeleccionadoP4= 3;
+           
+        
+        }
+         if(this.seleccionInt4==14)
+        {
+           
+             this.personajeSeleccionadoP4 = 4;
+           
+        
+        }
+         if(this.seleccionInt4==15)
+        {
+           
+             this.personajeSeleccionadoP4 = 5;
+           
+        
+        }
+         if(this.seleccionInt4==16)
+        {
+           
+             this.personajeSeleccionadoP4 = 6;
+           
+        
+        }
+
+          if(this.seleccionInt4==17)
+        {
+           
+             this.personajeSeleccionadoP4 = 7;
+           
+        
+        }
+          if(this.seleccionInt4==18)
+        {
+           
+             this.personajeSeleccionadoP4 = 8;
+           
+        
+        }
+          if(this.seleccionInt4==19)
+        {
+           
+             this.personajeSeleccionadoP4 = 9;
+           
+        
+        }
+      }
+  }
 function seleccionarOpcion()
 {
   this.popupsprite.visible = false;
@@ -9291,8 +9954,14 @@ if(this.seleccionInt ==24)
                element.style.display = 'block'
             this.menufondopersonajes.visible = true;
              this.seleccionadoSprite2.visible = true;
+            this.seleccionadoSprite2P2.visible = true;
+            this.seleccionadoSprite2P3.visible = true;
+            this.seleccionadoSprite2P4.visible = true;
 
              this.personajeSelectSpriteP1.visible = true;
+            this.personajeSelectSpriteP2.visible = true;
+            this.personajeSelectSpriteP3.visible = true;
+            this.personajeSelectSpriteP4.visible = true;
 
 this.readySprite1.visible = true;
 this.readySprite2.visible = true;
@@ -9321,7 +9990,14 @@ this.nombreJ4text.visible = false;
 
             this.menufondopersonajes.visible = false;
              this.seleccionadoSprite2.visible = false;
+             this.seleccionadoSprite2P2.visible = false;
+            this.seleccionadoSprite2P3.visible = false;
+            this.seleccionadoSprite2P4.visible = false;
+
               this.personajeSelectSpriteP1.visible = false;
+    this.personajeSelectSpriteP2.visible = false;
+    this.personajeSelectSpriteP3.visible = false;
+    this.personajeSelectSpriteP4.visible = false;
 
               this.readySprite1.visible = false;
 this.readySprite2.visible = false;
@@ -9445,9 +10121,9 @@ this.ready4 = 1;
 this.readySprite4.setTexture('ready');
 }
 this.input.keyboard.on('keydown_ENTER', estadoListo1, this);
-this.input.keyboard.on('keydown_R', estadoListo2, this);
-this.input.keyboard.on('keydown_U', estadoListo3, this);
-this.input.keyboard.on('keydown_P', estadoListo4, this);
+this.input.keyboard.on('keydown_Q', estadoListo2, this);
+this.input.keyboard.on('keydown_R', estadoListo3, this);
+this.input.keyboard.on('keydown_U', estadoListo4, this);
     }
 
 
@@ -9503,7 +10179,519 @@ if(this.seleccionarDif == 0)
  this.dificultadsprite.visible = false;
 
  switch (cursor) {
+        case "X4":
+          if(this.pantalla ==2)
+    {
 
+    this.sound.play('select');
+
+     if(this.seleccionInt4==11)
+        {
+           
+             this.personajeSeleccionadoP4 = 1;
+           
+        
+        }
+         if(this.seleccionInt4==12)
+        {
+           
+             this.personajeSeleccionadoP4 = 2;
+           
+        
+        }
+         if(this.seleccionInt4==13)
+        {
+           
+             this.personajeSeleccionadoP4= 3;
+           
+        
+        }
+         if(this.seleccionInt4==14)
+        {
+           
+             this.personajeSeleccionadoP4 = 4;
+           
+        
+        }
+         if(this.seleccionInt4==15)
+        {
+           
+             this.personajeSeleccionadoP4 = 5;
+           
+        
+        }
+         if(this.seleccionInt4==16)
+        {
+           
+             this.personajeSeleccionadoP4 = 6;
+           
+        
+        }
+
+          if(this.seleccionInt4==17)
+        {
+           
+             this.personajeSeleccionadoP4 = 7;
+           
+        
+        }
+          if(this.seleccionInt4==18)
+        {
+           
+             this.personajeSeleccionadoP4 = 8;
+           
+        
+        }
+          if(this.seleccionInt4==19)
+        {
+           
+             this.personajeSeleccionadoP4 = 9;
+           
+        
+        }
+      }
+        break;
+     case "DOWN4":
+
+ if(this.pantalla ==2)
+    {
+
+           if(this.seleccionInt4 ==13)
+            this.seleccionInt4 = 16;
+            else if(this.seleccionInt4 ==16)
+            this.seleccionInt4 = 19;
+
+
+          else if(this.seleccionInt4 ==12)
+            this.seleccionInt4 = 15;
+            else if(this.seleccionInt4 ==15)
+            this.seleccionInt4 = 18;
+
+
+          else if(this.seleccionInt4 ==11)
+            this.seleccionInt4 = 14;
+            else if(this.seleccionInt4 ==14)
+            this.seleccionInt4 = 17;
+
+
+        }
+    break;
+    case "UP4":
+
+   if(this.pantalla ==2)
+    {
+
+        if(this.seleccionInt4 ==19)
+            this.seleccionInt4 = 16;
+            else if(this.seleccionInt4 ==16)
+            this.seleccionInt4 = 13;
+
+
+          else if(this.seleccionInt4 ==18)
+            this.seleccionInt4 = 15;
+            else if(this.seleccionInt4 ==15)
+            this.seleccionInt4 = 12;
+
+
+          else if(this.seleccionInt4 ==17)
+            this.seleccionInt4 = 14;
+            else if(this.seleccionInt4 ==14)
+            this.seleccionInt4 = 11;
+}
+
+        break;
+    case "RIGHT4":
+
+   if(this.pantalla ==2)
+    {
+
+           if(this.seleccionInt4 ==12)
+            this.seleccionInt4 = 13;
+           else if(this.seleccionInt4 ==11)
+            this.seleccionInt4 = 12;
+
+
+           else if(this.seleccionInt4 ==14)
+            this.seleccionInt4 = 15;
+           else if(this.seleccionInt4 ==15)
+            this.seleccionInt4 = 16;
+  
+
+           else if(this.seleccionInt4 ==17)
+            this.seleccionInt4 = 18;
+           else if(this.seleccionInt4 ==18)
+            this.seleccionInt4 = 19;
+   
+}
+        break;
+    case "LEFT4":
+
+   if(this.pantalla ==2)
+    {
+
+           if(this.seleccionInt4 ==13)
+            this.seleccionInt4 = 12;
+           else if(this.seleccionInt4 ==12)
+            this.seleccionInt4 = 11;
+
+           else if(this.seleccionInt4 ==14)
+            this.seleccionInt4 = 13;
+           else if(this.seleccionInt4 ==15)
+            this.seleccionInt4 = 14;
+           else if(this.seleccionInt4 ==16)
+            this.seleccionInt4 = 15;
+
+
+           else if(this.seleccionInt4 ==17)
+            this.seleccionInt4 = 16;
+           else if(this.seleccionInt4 ==18)
+            this.seleccionInt4 = 17;
+           else if(this.seleccionInt4 ==19)
+            this.seleccionInt4 = 18;
+
+}
+
+        break;
+         case "X3":
+           if(this.pantalla ==2)
+    {
+
+     this.sound.play('select');
+
+     if(this.seleccionInt3==11)
+        {
+           
+             this.personajeSeleccionadoP3 = 1;
+           
+        
+        }
+         if(this.seleccionInt3==12)
+        {
+           
+             this.personajeSeleccionadoP3 = 2;
+           
+        
+        }
+         if(this.seleccionInt3==13)
+        {
+           
+             this.personajeSeleccionadoP3= 3;
+           
+        
+        }
+         if(this.seleccionInt3==14)
+        {
+           
+             this.personajeSeleccionadoP3 = 4;
+           
+        
+        }
+         if(this.seleccionInt3==15)
+        {
+           
+             this.personajeSeleccionadoP3 = 5;
+           
+        
+        }
+         if(this.seleccionInt3==16)
+        {
+           
+             this.personajeSeleccionadoP3 = 6;
+           
+        
+        }
+
+          if(this.seleccionInt3==17)
+        {
+           
+             this.personajeSeleccionadoP3 = 7;
+           
+        
+        }
+          if(this.seleccionInt3==18)
+        {
+           
+             this.personajeSeleccionadoP3 = 8;
+           
+        
+        }
+          if(this.seleccionInt3==19)
+        {
+           
+             this.personajeSeleccionadoP3 = 9;
+           
+        
+        }
+      }
+        break;
+     case "DOWN3":
+
+ if(this.pantalla ==2)
+    {
+
+           if(this.seleccionInt3 ==13)
+            this.seleccionInt3 = 16;
+            else if(this.seleccionInt3 ==16)
+            this.seleccionInt3 = 19;
+
+
+          else if(this.seleccionInt3 ==12)
+            this.seleccionInt3 = 15;
+            else if(this.seleccionInt3 ==15)
+            this.seleccionInt3 = 18;
+
+
+          else if(this.seleccionInt3 ==11)
+            this.seleccionInt3 = 14;
+            else if(this.seleccionInt3 ==14)
+            this.seleccionInt3 = 17;
+
+
+        }
+    break;
+    case "UP3":
+
+   if(this.pantalla ==2)
+    {
+
+        if(this.seleccionInt3 ==19)
+            this.seleccionInt3 = 16;
+            else if(this.seleccionInt3 ==16)
+            this.seleccionInt3 = 13;
+
+
+          else if(this.seleccionInt3 ==18)
+            this.seleccionInt3 = 15;
+            else if(this.seleccionInt3 ==15)
+            this.seleccionInt3 = 12;
+
+
+          else if(this.seleccionInt3 ==17)
+            this.seleccionInt3 = 14;
+            else if(this.seleccionInt3 ==14)
+            this.seleccionInt3 = 11;
+
+}
+        break;
+    case "RIGHT3":
+
+   if(this.pantalla ==2)
+    {
+
+           if(this.seleccionInt3 ==12)
+            this.seleccionInt3 = 13;
+           else if(this.seleccionInt3 ==11)
+            this.seleccionInt3 = 12;
+
+
+           else if(this.seleccionInt3 ==14)
+            this.seleccionInt3 = 15;
+           else if(this.seleccionInt3 ==15)
+            this.seleccionInt3 = 16;
+  
+
+           else if(this.seleccionInt3 ==17)
+            this.seleccionInt3 = 18;
+           else if(this.seleccionInt3 ==18)
+            this.seleccionInt3 = 19;
+   
+}
+        break;
+    case "LEFT3":
+
+   if(this.pantalla ==2)
+    {
+
+           if(this.seleccionInt3 ==13)
+            this.seleccionInt3 = 12;
+           else if(this.seleccionInt3 ==12)
+            this.seleccionInt3 = 11;
+
+           else if(this.seleccionInt3 ==14)
+            this.seleccionInt3 = 13;
+           else if(this.seleccionInt3 ==15)
+            this.seleccionInt3 = 14;
+           else if(this.seleccionInt3 ==16)
+            this.seleccionInt3 = 15;
+
+
+           else if(this.seleccionInt3 ==17)
+            this.seleccionInt3 = 16;
+           else if(this.seleccionInt3 ==18)
+            this.seleccionInt3 = 17;
+           else if(this.seleccionInt3 ==19)
+            this.seleccionInt3 = 18;
+}
+        break;
+   case "X2":
+   if(this.pantalla ==2)
+    {
+
+     this.sound.play('select');
+
+     if(this.seleccionInt2==11)
+        {
+           
+             this.personajeSeleccionadoP2 = 1;
+           
+        
+        }
+         if(this.seleccionInt2==12)
+        {
+           
+             this.personajeSeleccionadoP2 = 2;
+           
+        
+        }
+         if(this.seleccionInt2==13)
+        {
+           
+             this.personajeSeleccionadoP2= 3;
+           
+        
+        }
+         if(this.seleccionInt2==14)
+        {
+           
+             this.personajeSeleccionadoP2 = 4;
+           
+        
+        }
+         if(this.seleccionInt2==15)
+        {
+           
+             this.personajeSeleccionadoP2 = 5;
+           
+        
+        }
+         if(this.seleccionInt2==16)
+        {
+           
+             this.personajeSeleccionadoP2 = 6;
+           
+        
+        }
+
+          if(this.seleccionInt2==17)
+        {
+           
+             this.personajeSeleccionadoP2 = 7;
+           
+        
+        }
+          if(this.seleccionInt2==18)
+        {
+           
+             this.personajeSeleccionadoP2 = 8;
+           
+        
+        }
+          if(this.seleccionInt2==19)
+        {
+           
+             this.personajeSeleccionadoP2 = 9;
+           
+        
+        }
+      }
+   break;
+        case "DOWN2":
+ if(this.pantalla ==2)
+    {
+
+           if(this.seleccionInt2 ==13)
+            this.seleccionInt2 = 16;
+            else if(this.seleccionInt2 ==16)
+            this.seleccionInt2 = 19;
+
+
+          else if(this.seleccionInt2 ==12)
+            this.seleccionInt2 = 15;
+            else if(this.seleccionInt2 ==15)
+            this.seleccionInt2 = 18;
+
+
+          else if(this.seleccionInt2 ==11)
+            this.seleccionInt2 = 14;
+            else if(this.seleccionInt2 ==14)
+            this.seleccionInt2 = 17;
+
+
+        }
+        break;
+        case "UP2":
+        if(this.pantalla ==2)
+    {
+
+        if(this.seleccionInt2 ==19)
+            this.seleccionInt2 = 16;
+            else if(this.seleccionInt2 ==16)
+            this.seleccionInt2 = 13;
+
+
+          else if(this.seleccionInt2 ==18)
+            this.seleccionInt2 = 15;
+            else if(this.seleccionInt2 ==15)
+            this.seleccionInt2 = 12;
+
+
+          else if(this.seleccionInt2 ==17)
+            this.seleccionInt2 = 14;
+            else if(this.seleccionInt2 ==14)
+            this.seleccionInt2 = 11;
+
+}
+
+        break;
+         case "RIGHT2":
+
+   if(this.pantalla ==2)
+    {
+
+           if(this.seleccionInt2 ==12)
+            this.seleccionInt2 = 13;
+           else if(this.seleccionInt2 ==11)
+            this.seleccionInt2 = 12;
+
+
+           else if(this.seleccionInt2 ==14)
+            this.seleccionInt2 = 15;
+           else if(this.seleccionInt2 ==15)
+            this.seleccionInt2 = 16;
+  
+
+           else if(this.seleccionInt2 ==17)
+            this.seleccionInt2 = 18;
+           else if(this.seleccionInt2 ==18)
+            this.seleccionInt2 = 19;
+   }
+         break;
+        case "LEFT2":
+         if(this.pantalla ==2)
+    {
+
+           if(this.seleccionInt2 ==13)
+            this.seleccionInt2 = 12;
+           else if(this.seleccionInt2 ==12)
+            this.seleccionInt2 = 11;
+
+           else if(this.seleccionInt2 ==14)
+            this.seleccionInt2 = 13;
+           else if(this.seleccionInt2 ==15)
+            this.seleccionInt2 = 14;
+           else if(this.seleccionInt2 ==16)
+            this.seleccionInt2 = 15;
+
+
+           else if(this.seleccionInt2 ==17)
+            this.seleccionInt2 = 16;
+           else if(this.seleccionInt2 ==18)
+            this.seleccionInt2 = 17;
+           else if(this.seleccionInt2 ==19)
+            this.seleccionInt2 = 18;
+}
+
+        break;
       case "LEFT":
 
 
@@ -10089,8 +11277,16 @@ if(this.seleccionInt ==24)
                element.style.display = 'block'
             this.menufondopersonajes.visible = true;
              this.seleccionadoSprite2.visible = true;
+this.seleccionadoSprite2P2.visible = true;
+            this.seleccionadoSprite2P3.visible = true;
+            this.seleccionadoSprite2P4.visible = true;
 
              this.personajeSelectSpriteP1.visible = true;
+
+             this.personajeSelectSpriteP2.visible = true;
+             this.personajeSelectSpriteP3.visible = true;
+
+             this.personajeSelectSpriteP4.visible = true;
 
 this.readySprite1.visible = true;
 this.readySprite2.visible = true;
@@ -10120,7 +11316,15 @@ this.nombreJ4text.visible = false;
 
             this.menufondopersonajes.visible = false;
              this.seleccionadoSprite2.visible = false;
+             this.seleccionadoSprite2P2.visible = false;
+            this.seleccionadoSprite2P3.visible = false;
+            this.seleccionadoSprite2P4.visible = false;
+
               this.personajeSelectSpriteP1.visible = false;
+  this.personajeSelectSpriteP2.visible = false;
+  this.personajeSelectSpriteP3.visible = false;
+  this.personajeSelectSpriteP4.visible = false;
+
 
               this.readySprite1.visible = false;
 this.readySprite2.visible = false;
@@ -10420,6 +11624,344 @@ if(this.personajeSeleccionadoP1 == 9)
   this.personajeSelectSpriteP1.x = 362*2 +480 +413/4;
   this.personajeSelectSpriteP1.y = 62*2 +92 + 750;
 }
+
+
+//PERSONAJE 2
+if(this.personajeSeleccionadoP2 == 1)
+{
+  this.personajeSelectSpriteP2.x = 435 +413/4;
+  this.personajeSelectSpriteP2.y = 750;
+}
+if(this.personajeSeleccionadoP2 == 2)
+{
+  this.personajeSelectSpriteP2.x = 362*1 + 450 +413/4;
+  this.personajeSelectSpriteP2.y = 750;
+}
+if(this.personajeSeleccionadoP2 == 3)
+{
+  this.personajeSelectSpriteP2.x = 362*2 + 480 +413/4;
+  this.personajeSelectSpriteP2.y = 750;
+}
+if(this.personajeSeleccionadoP2 == 4)
+{
+  this.personajeSelectSpriteP2.x = 435 +413/4;
+  this.personajeSelectSpriteP2.y = 62*1 +46 + 750;
+}
+if(this.personajeSeleccionadoP2 == 5)
+{
+  this.personajeSelectSpriteP2.x = 362*1 + 450 +413/4;
+  this.personajeSelectSpriteP2.y = 62*1 +46 +750;
+}
+if(this.personajeSeleccionadoP2 == 6)
+{
+  this.personajeSelectSpriteP2.x = 362*2 +480 +413/4;
+  this.personajeSelectSpriteP2.y = 62*1 +46 +750;
+}
+if(this.personajeSeleccionadoP2 == 7)
+{
+  this.personajeSelectSpriteP2.x = 435 +413/4;
+  this.personajeSelectSpriteP2.y = 62*2 +92 +750;
+}
+if(this.personajeSeleccionadoP2 == 8)
+{
+  this.personajeSelectSpriteP2.x = 362*1 + 450 +413/4;
+  this.personajeSelectSpriteP2.y = 62*2 +92 + 750;
+}
+if(this.personajeSeleccionadoP2 == 9)
+{
+  this.personajeSelectSpriteP2.x = 362*2 +480 +413/4;
+  this.personajeSelectSpriteP2.y = 62*2 +92 + 750;
+}
+
+
+if(this.seleccionInt2 ==11)
+{
+
+this.seleccionadoSprite2P2.x = 450 +413/4;
+this.seleccionadoSprite2P2.y = 750;
+
+}
+if(this.seleccionInt2 ==12)
+{
+
+  this.seleccionadoSprite2P2.x = 362*1 + 450 +413/4;
+  this.seleccionadoSprite2P2.y = 750;
+
+}
+if(this.seleccionInt2 ==13)
+{
+
+  this.seleccionadoSprite2P2.x = 362*2 + 450 +413/4;
+  this.seleccionadoSprite2P2.y = 750;
+
+}
+if(this.seleccionInt2 ==14)
+{
+
+  this.seleccionadoSprite2P2.x = 450 +413/4;
+  this.seleccionadoSprite2P2.y = 62*1 +46 + 750;
+
+}
+if(this.seleccionInt2 ==15)
+{
+
+  this.seleccionadoSprite2P2.x = 362*1 + 450 +413/4;
+  this.seleccionadoSprite2P2.y = 62*1 +46 +750;
+
+}
+if(this.seleccionInt2 ==16)
+{
+  this.seleccionadoSprite2P2.x = 362*2 +450 +413/4;
+  this.seleccionadoSprite2P2.y = 62*1 +46 +750;
+
+}
+if(this.seleccionInt2 ==17)
+{
+  this.seleccionadoSprite2P2.x = 450 +413/4;
+  this.seleccionadoSprite2P2.y = 62*2 +92 +750;
+
+}
+if(this.seleccionInt2 ==18)
+{
+  this.seleccionadoSprite2P2.x = 362*1 + 450 +413/4;
+  this.seleccionadoSprite2P2.y = 62*2 +92 + 750;
+
+}
+if(this.seleccionInt2 ==19)
+{
+  this.seleccionadoSprite2P2.x = 362*2 +450 +413/4;
+  this.seleccionadoSprite2P2.y = 62*2 +92 + 750;
+
+}
+
+
+//PERSONAJE 3
+if(this.personajeSeleccionadoP3 == 1)
+{
+  this.personajeSelectSpriteP3.x = 435 +413/4;
+  this.personajeSelectSpriteP3.y = 750;
+}
+if(this.personajeSeleccionadoP3 == 2)
+{
+  this.personajeSelectSpriteP3.x = 362*1 + 450 +413/4;
+  this.personajeSelectSpriteP3.y = 750;
+}
+if(this.personajeSeleccionadoP3 == 3)
+{
+  this.personajeSelectSpriteP3.x = 362*2 + 480 +413/4;
+  this.personajeSelectSpriteP3.y = 750;
+}
+if(this.personajeSeleccionadoP3 == 4)
+{
+  this.personajeSelectSpriteP3.x = 435 +413/4;
+  this.personajeSelectSpriteP3.y = 62*1 +46 + 750;
+}
+if(this.personajeSeleccionadoP3 == 5)
+{
+  this.personajeSelectSpriteP3.x = 362*1 + 450 +413/4;
+  this.personajeSelectSpriteP3.y = 62*1 +46 +750;
+}
+if(this.personajeSeleccionadoP3 == 6)
+{
+  this.personajeSelectSpriteP3.x = 362*2 +480 +413/4;
+  this.personajeSelectSpriteP3.y = 62*1 +46 +750;
+}
+if(this.personajeSeleccionadoP3 == 7)
+{
+  this.personajeSelectSpriteP3.x = 435 +413/4;
+  this.personajeSelectSpriteP3.y = 62*2 +92 +750;
+}
+if(this.personajeSeleccionadoP3 == 8)
+{
+  this.personajeSelectSpriteP3.x = 362*1 + 450 +413/4;
+  this.personajeSelectSpriteP3.y = 62*2 +92 + 750;
+}
+if(this.personajeSeleccionadoP3 == 9)
+{
+  this.personajeSelectSpriteP3.x = 362*2 +480 +413/4;
+  this.personajeSelectSpriteP3.y = 62*2 +92 + 750;
+}
+
+
+if(this.seleccionInt3 ==11)
+{
+
+this.seleccionadoSprite2P3.x = 450 +413/4;
+this.seleccionadoSprite2P3.y = 750;
+
+}
+if(this.seleccionInt3 ==12)
+{
+
+  this.seleccionadoSprite2P3.x = 362*1 + 450 +413/4;
+  this.seleccionadoSprite2P3.y = 750;
+
+}
+if(this.seleccionInt3 ==13)
+{
+
+  this.seleccionadoSprite2P3.x = 362*2 + 450 +413/4;
+  this.seleccionadoSprite2P3.y = 750;
+
+}
+if(this.seleccionInt3 ==14)
+{
+
+  this.seleccionadoSprite2P3.x = 450 +413/4;
+  this.seleccionadoSprite2P3.y = 62*1 +46 + 750;
+
+}
+if(this.seleccionInt3 ==15)
+{
+
+  this.seleccionadoSprite2P3.x = 362*1 + 450 +413/4;
+  this.seleccionadoSprite2P3.y = 62*1 +46 +750;
+
+}
+if(this.seleccionInt3 ==16)
+{
+  this.seleccionadoSprite2P3.x = 362*2 +450 +413/4;
+  this.seleccionadoSprite2P3.y = 62*1 +46 +750;
+
+}
+if(this.seleccionInt3 ==17)
+{
+  this.seleccionadoSprite2P3.x = 450 +413/4;
+  this.seleccionadoSprite2P3.y = 62*2 +92 +750;
+
+}
+if(this.seleccionInt3 ==18)
+{
+  this.seleccionadoSprite2P3.x = 362*1 + 450 +413/4;
+  this.seleccionadoSprite2P3.y = 62*2 +92 + 750;
+
+}
+if(this.seleccionInt3 ==19)
+{
+  this.seleccionadoSprite2P3.x = 362*2 +450 +413/4;
+  this.seleccionadoSprite2P3.y = 62*2 +92 + 750;
+
+}
+
+
+
+
+
+//PERSONAJE 4
+if(this.personajeSeleccionadoP4 == 1)
+{
+  this.personajeSelectSpriteP4.x = 435 +413/4;
+  this.personajeSelectSpriteP4.y = 750;
+}
+if(this.personajeSeleccionadoP4 == 2)
+{
+  this.personajeSelectSpriteP4.x = 362*1 + 450 +413/4;
+  this.personajeSelectSpriteP4.y = 750;
+}
+if(this.personajeSeleccionadoP4 == 3)
+{
+  this.personajeSelectSpriteP4.x = 362*2 + 480 +413/4;
+  this.personajeSelectSpriteP4.y = 750;
+}
+if(this.personajeSeleccionadoP4 == 4)
+{
+  this.personajeSelectSpriteP4.x = 435 +413/4;
+  this.personajeSelectSpriteP4.y = 62*1 +46 + 750;
+}
+if(this.personajeSeleccionadoP4 == 5)
+{
+  this.personajeSelectSpriteP4.x = 362*1 + 450 +413/4;
+  this.personajeSelectSpriteP4.y = 62*1 +46 +750;
+}
+if(this.personajeSeleccionadoP4 == 6)
+{
+  this.personajeSelectSpriteP4.x = 362*2 +480 +413/4;
+  this.personajeSelectSpriteP4.y = 62*1 +46 +750;
+}
+if(this.personajeSeleccionadoP4 == 7)
+{
+  this.personajeSelectSpriteP4.x = 435 +413/4;
+  this.personajeSelectSpriteP4.y = 62*2 +92 +750;
+}
+if(this.personajeSeleccionadoP4 == 8)
+{
+  this.personajeSelectSpriteP4.x = 362*1 + 450 +413/4;
+  this.personajeSelectSpriteP4.y = 62*2 +92 + 750;
+}
+if(this.personajeSeleccionadoP4 == 9)
+{
+  this.personajeSelectSpriteP4.x = 362*2 +480 +413/4;
+  this.personajeSelectSpriteP4.y = 62*2 +92 + 750;
+}
+
+
+if(this.seleccionInt4 ==11)
+{
+
+this.seleccionadoSprite2P4.x = 450 +413/4;
+this.seleccionadoSprite2P4.y = 750;
+
+}
+if(this.seleccionInt4 ==12)
+{
+
+  this.seleccionadoSprite2P4.x = 362*1 + 450 +413/4;
+  this.seleccionadoSprite2P4.y = 750;
+
+}
+if(this.seleccionInt4 ==13)
+{
+
+  this.seleccionadoSprite2P4.x = 362*2 + 450 +413/4;
+  this.seleccionadoSprite2P4.y = 750;
+
+}
+if(this.seleccionInt4 ==14)
+{
+
+  this.seleccionadoSprite2P4.x = 450 +413/4;
+  this.seleccionadoSprite2P4.y = 62*1 +46 + 750;
+
+}
+if(this.seleccionInt4 ==15)
+{
+
+  this.seleccionadoSprite2P4.x = 362*1 + 450 +413/4;
+  this.seleccionadoSprite2P4.y = 62*1 +46 +750;
+
+}
+if(this.seleccionInt4 ==16)
+{
+  this.seleccionadoSprite2P4.x = 362*2 +450 +413/4;
+  this.seleccionadoSprite2P4.y = 62*1 +46 +750;
+
+}
+if(this.seleccionInt4 ==17)
+{
+  this.seleccionadoSprite2P4.x = 450 +413/4;
+  this.seleccionadoSprite2P4.y = 62*2 +92 +750;
+
+}
+if(this.seleccionInt4 ==18)
+{
+  this.seleccionadoSprite2P4.x = 362*1 + 450 +413/4;
+  this.seleccionadoSprite2P4.y = 62*2 +92 + 750;
+
+}
+if(this.seleccionInt4 ==19)
+{
+  this.seleccionadoSprite2P4.x = 362*2 +450 +413/4;
+  this.seleccionadoSprite2P4.y = 62*2 +92 + 750;
+
+}
+
+
+
+
+
+
+
+//------------------------------------------
 if(this.seleccionInt ==11)
 {
 
