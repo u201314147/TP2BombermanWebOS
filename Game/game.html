@@ -8587,10 +8587,10 @@ this.load.image('selectorRect2', 'https://i.ibb.co/98x1jx5/selector-Rect2.png');
 this.load.image('selectorRect3', 'https://i.ibb.co/WfGJs8t/selector-Rect3.png');
 this.load.image('selectorRect4', 'https://i.ibb.co/QjDxyxN/selector-Rect4.png');
 
-                 this.load.image('fondo', 'https://i.ibb.co/5FW9jBX/menu-Opciones.png');
-                 this.load.image('fondo2', 'https://i.ibb.co/mrpgNSH/menu-Opciones-Normal.png')
-                 this.load.image('fondo2mapa2', 'https://i.ibb.co/cNm3JKN/menu-Opciones-Normal2.png')
-                 this.load.image('fondo2mapa3', 'https://i.ibb.co/wQY7mW4/menu-Opciones-Normal3.png')
+                 this.load.image('fondo', 'https://i.ibb.co/FVxvVCz/Menu-Opciones.jpg');
+                 this.load.image('fondo2', 'https://i.ibb.co/2h3cWVJ/Menu-Opciones-Normal.jpg')
+                 this.load.image('fondo2mapa2', 'https://i.ibb.co/ZG5WqLZ/Menu-Opciones-Normal2.jpg')
+                 this.load.image('fondo2mapa3', 'https://i.ibb.co/g3TKdrQ/Menu-Opciones-Normal3.jpg')
                   this.load.image('seleccion', 'https://i.ibb.co/RvhgWwR/seleccioncuad.png');
                   this.load.image('seleccion1P', 'https://i.ibb.co/tQYRBw6/seleccioncuad1.png');
                   this.load.image('seleccion2P', 'https://i.ibb.co/9nvQfzZ/seleccioncuad2.png');
@@ -8681,6 +8681,7 @@ this.ready4 = 0;
  this.tipojuegoSprite = this.physics.add.sprite(413 +413/4, 336, 'seleccion2');
 this.cantidadParticipantesSprite = this.physics.add.sprite(413 +413/4, 336, 'seleccion2');
 this.musicapartidaSprite = this.physics.add.sprite(413 +413/4, 336, 'seleccion2');
+this.musicapartidaSprite.visible = false;
 this.mapanormalSprite =  this.physics.add.sprite(413 +413/4, 336, 'seleccion2');
 this.mapatipoSprite = this.physics.add.sprite(413 +413/4, 336, 'seleccion2');
 this.designerSprite = this.physics.add.sprite(413 +413/4, 336, 'seleccion2');
@@ -8745,7 +8746,7 @@ this.readySprite4.visible = false;
 
 
 
-this.mapaNumeroEditadoString = this.add.text(594, 945, this.mapaNumeroEditado, { fontFamily: '"Arial Black"', fontSize: 24, fill: 'black',});
+this.mapaNumeroEditadoString = this.add.text(594, 925, this.mapaNumeroEditado, { fontFamily: '"Arial Black"', fontSize: 24, fill: 'black',});
 
  this.mapaNumeroEditadoString.visible = false;
 
@@ -11413,56 +11414,56 @@ cursor = "XD";
 if(this.gamemode == 0)
 {
 this.tipojuegoSprite.x = 293 +413/4;
-this.tipojuegoSprite.y = 516;
+this.tipojuegoSprite.y = 436;
 }
 
 if(this.gamemode == 1)
 {
 this.tipojuegoSprite.x = 293 +513;
-this.tipojuegoSprite.y = 516;
+this.tipojuegoSprite.y = 436;
 }
 
 if(this.gamemode == 2)
 {
-this.tipojuegoSprite.x = 353 +913;
-this.tipojuegoSprite.y = 516;
+this.tipojuegoSprite.x = 333 +913;
+this.tipojuegoSprite.y = 436;
 }
 
 if(this.tematica ==1)
 {
 this.tematicaSprite.x =  420 +413/4;
-this.tematicaSprite.y = 132 + 520;
+this.tematicaSprite.y = 132 + 470;
 }
 if(this.tematica ==2)
 {
   this.tematicaSprite.x = 860 +413/4;
-this.tematicaSprite.y = 132 + 520;
+this.tematicaSprite.y = 132 + 470;
 }
 if(this.tematica ==3)
 {
   this.tematicaSprite.x = 1290 +413/4; 
-this.tematicaSprite.y = 132 + 520; 
+this.tematicaSprite.y = 132 + 470; 
 }
 
 if(this.jugadores == 1)
 {
-this.cantidadParticipantesSprite.x = 413;
-this.cantidadParticipantesSprite.y = 236;
+this.cantidadParticipantesSprite.x = 963;
+this.cantidadParticipantesSprite.y = 176;
 }
 if(this.jugadores == 2)
 {
-this.cantidadParticipantesSprite.x = 533;
-this.cantidadParticipantesSprite.y = 236;
+this.cantidadParticipantesSprite.x = 1083;
+this.cantidadParticipantesSprite.y = 176;
 }
 if(this.jugadores == 3)
 {
-this.cantidadParticipantesSprite.x = 653;
-this.cantidadParticipantesSprite.y = 236;
+this.cantidadParticipantesSprite.x = 1213;
+this.cantidadParticipantesSprite.y = 176;
 }
 if(this.jugadores == 4)
 {
-this.cantidadParticipantesSprite.x = 773;
-this.cantidadParticipantesSprite.y = 236;
+this.cantidadParticipantesSprite.x = 1333;
+this.cantidadParticipantesSprite.y = 176;
 }
 if(this.music == 1)
 {
@@ -11480,22 +11481,22 @@ this.musicapartidaSprite.y = 256;
 if(this.seleccionInt ==3)
 {
 
-this.seleccionadoSprite.x = 413;
-this.seleccionadoSprite.y = 236;;
+this.seleccionadoSprite.x = 963;
+this.seleccionadoSprite.y = 176;;
 
 }
 if(this.seleccionInt ==4)
 {
 
-this.seleccionadoSprite.x = 533;;
-this.seleccionadoSprite.y = 236;;
+this.seleccionadoSprite.x = 1083;;
+this.seleccionadoSprite.y = 176;;
 
 }    
 if(this.seleccionInt ==5)
 {
 
-this.seleccionadoSprite.x = 653;
-this.seleccionadoSprite.y = 236;
+this.seleccionadoSprite.x = 1213;
+this.seleccionadoSprite.y = 176;
 
 }    
 
@@ -11503,8 +11504,8 @@ this.seleccionadoSprite.y = 236;
 if(this.seleccionInt ==16)
 {
 
-this.seleccionadoSprite.x = 773;
-this.seleccionadoSprite.y = 236;
+this.seleccionadoSprite.x = 1333;
+this.seleccionadoSprite.y = 176;
 
 }
 
@@ -11512,7 +11513,7 @@ if(this.seleccionInt ==0)
 {
 
 this.seleccionadoSprite.x = 293 +413/4;
-this.seleccionadoSprite.y = 516;
+this.seleccionadoSprite.y = 436;
 
 }    
 
@@ -11521,14 +11522,14 @@ if(this.seleccionInt ==1)
 {
 
 this.seleccionadoSprite.x = 293 +513;
-this.seleccionadoSprite.y = 516;
+this.seleccionadoSprite.y = 436;
 
 }  
 if(this.seleccionInt ==2)
 {
 
-this.seleccionadoSprite.x = 323 +913;
-this.seleccionadoSprite.y = 516;
+this.seleccionadoSprite.x = 333 +913;
+this.seleccionadoSprite.y = 436;
 
 }     
 
@@ -11549,18 +11550,11 @@ this.seleccionadoSprite.y = 256;
 }
 
 
-if(this.seleccionInt ==8)
-{
-
-this.seleccionadoSprite.x = 913 +413/4;
-this.seleccionadoSprite.y = 1020;
-
-}
 
 if(this.seleccionInt ==8)
 {
 
-this.seleccionadoSprite.x = 913 +413/4;
+this.seleccionadoSprite.x = 1113 +413/4;
 this.seleccionadoSprite.y = 1020;
 
 }
@@ -12027,19 +12021,19 @@ if(this.seleccionInt ==19)
 if(this.seleccionInt ==20)
 {
   this.seleccionadoSprite.x = 420 +413/4;
-  this.seleccionadoSprite.y = 132 + 520;
+  this.seleccionadoSprite.y = 132 + 470;
 
 }
 if(this.seleccionInt ==21)
 {
   this.seleccionadoSprite.x = 860 +413/4;
-  this.seleccionadoSprite.y = 132 + 520;
+  this.seleccionadoSprite.y = 132 + 470;
 }
 
 if(this.seleccionInt ==22)
 {
   this.seleccionadoSprite.x = 1290 +413/4;
-  this.seleccionadoSprite.y = 132 + 520;
+  this.seleccionadoSprite.y = 132 + 470;
 }
 //SELECCIONAR MODO DIBUJO
 
@@ -12139,45 +12133,45 @@ if(this.mapaNormalNumero ==3)
 if(this.mapaTipo ==1)
 {
   this.mapatipoSprite.x = 290 +413/4;
-  this.mapatipoSprite.y = 352 + 550;
+  this.mapatipoSprite.y = 332 + 550;
 }
 if(this.seleccionInt ==23)
 {
   this.seleccionadoSprite.x = 290 +413/4;
-  this.seleccionadoSprite.y = 352 + 550;
+  this.seleccionadoSprite.y = 332 + 550;
 
 }
 if(this.mapaTipo ==2)
 {
   this.mapatipoSprite.x = 290 +413/4;
-  this.mapatipoSprite.y = 406 + 550;
+  this.mapatipoSprite.y = 386 + 550;
 }
 if(this.seleccionInt ==24)
 {
   this.seleccionadoSprite.x = 950 +413/4;
-  this.seleccionadoSprite.y = 352 + 550;
+  this.seleccionadoSprite.y = 332 + 550;
 
 }
 if(this.designerMode==0)
 {
    this.designerSprite.x = 950 +413/4;
-  this.designerSprite.y = 352 + 550;
+  this.designerSprite.y = 332 + 550;
 }
 if(this.seleccionInt ==25)
 {
   this.seleccionadoSprite.x = 290 +413/4;
-  this.seleccionadoSprite.y = 406 + 550;
+  this.seleccionadoSprite.y = 386 + 550;
 
 }
 if(this.designerMode==1)
 {
   this.designerSprite.x = 950 +413/4;
-  this.designerSprite.y = 406 + 550;
+  this.designerSprite.y = 386 + 550;
 }
 if(this.seleccionInt ==26)
 {
   this.seleccionadoSprite.x = 950 +413/4;
-  this.seleccionadoSprite.y = 406 + 550;
+  this.seleccionadoSprite.y = 386 + 550;
 
 }
 
