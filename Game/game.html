@@ -84,6 +84,7 @@
   <!--<textarea id="area51">SOME TEXT HERE</textarea>-->
   <script>
 
+var desconectado = 0;
 
     class Scene1 extends Phaser.Scene {
 
@@ -177,8 +178,7 @@
         this.brick = null;
         this.playerBulletLive = false;
         this.playerDirection = 'up';
-
-
+     
         //INTERNET
 
 
@@ -416,7 +416,6 @@
         this.countExplosion2 = 0;
         this.countExplosion3 = 0;
         this.countExplosion4 = 0;
-
 
         // this.x_add = -230;
         // this.y_add = 36;
@@ -850,6 +849,67 @@
         if (this.personajeP1 == 9)
           this.sprite_select = 'jugadorMorado';
 
+          this.sprite_select2 = '';
+        if (this.personajeP2 == 1)
+          this.sprite_select2 = 'jugadorAzul';
+        if (this.personajeP2 == 2)
+          this.sprite_select2 = 'jugadorCeleste';
+        if (this.personajeP2 == 3)
+          this.sprite_select2 = 'jugadorNaranja';
+        if (this.personajeP2 == 4)
+          this.sprite_select2 = 'jugadorAmarillo';
+        if (this.personajeP2 == 5)
+          this.sprite_select2 = 'jugadorRojo';
+        if (this.personajeP2 == 6)
+          this.sprite_select2 = 'jugadorGris';
+        if (this.personajeP2 == 7)
+          this.sprite_select2 = 'jugadorVerde';
+        if (this.personajeP2 == 8)
+          this.sprite_select2 = 'jugadorNegro';
+        if (this.personajeP2 == 9)
+          this.sprite_select2 = 'jugadorMorado';
+
+
+          this.sprite_select3 = '';
+        if (this.personajeP3 == 1)
+          this.sprite_select3 = 'jugadorAzul';
+        if (this.personajeP3 == 2)
+          this.sprite_select3 = 'jugadorCeleste';
+        if (this.personajeP3 == 3)
+          this.sprite_select3 = 'jugadorNaranja';
+        if (this.personajeP3 == 4)
+          this.sprite_select3 = 'jugadorAmarillo';
+        if (this.personajeP3 == 5)
+          this.sprite_select3 = 'jugadorRojo';
+        if (this.personajeP3 == 6)
+          this.sprite_select3 = 'jugadorGris';
+        if (this.personajeP3 == 7)
+          this.sprite_select3 = 'jugadorVerde';
+        if (this.personajeP3 == 8)
+          this.sprite_select3 = 'jugadorNegro';
+        if (this.personajeP3 == 9)
+          this.sprite_select3 = 'jugadorMorado';
+
+    this.sprite_select4 = '';
+        if (this.personajeP4 == 1)
+          this.sprite_select4 = 'jugadorAzul';
+        if (this.personajeP4 == 2)
+          this.sprite_select4 = 'jugadorCeleste';
+        if (this.personajeP4 == 3)
+          this.sprite_select4 = 'jugadorNaranja';
+        if (this.personajeP4 == 4)
+          this.sprite_select4 = 'jugadorAmarillo';
+        if (this.personajeP4 == 5)
+          this.sprite_select4 = 'jugadorRojo';
+        if (this.personajeP4 == 6)
+          this.sprite_select4 = 'jugadorGris';
+        if (this.personajeP4 == 7)
+          this.sprite_select4 = 'jugadorVerde';
+        if (this.personajeP4 == 8)
+          this.sprite_select4 = 'jugadorNegro';
+        if (this.personajeP4 == 9)
+          this.sprite_select4 = 'jugadorMorado';
+
         this.myShip = this.physics.add.sprite(420 + this.x_add, 130+ this.y_add, this.sprite_select);
         this.myShip2 = this.physics.add.sprite(5000, 130, 'ship2');
         this.myShip3 = this.physics.add.sprite(5000, 130, 'ship3');
@@ -858,14 +918,14 @@
 
 
         if (this.jugadoresTotal >= 2) {
-          this.myShip2 = this.physics.add.sprite(1820 + this.x_add, 130 + this.y_add, 'ship2');
+          this.myShip2 = this.physics.add.sprite(1820 + this.x_add, 130 + this.y_add, this.sprite_select2);
         }
 
         if (this.jugadoresTotal >= 3) {
-          this.myShip3 = this.physics.add.sprite(420+ this.x_add, 885+ this.y_add, 'ship3');
+          this.myShip3 = this.physics.add.sprite(420+ this.x_add, 885+ this.y_add, this.sprite_select3);
         }
         if (this.jugadoresTotal >= 4) {
-          this.myShip4 = this.physics.add.sprite(1820+ this.x_add, 885+ this.y_add, 'ship4');
+          this.myShip4 = this.physics.add.sprite(1820+ this.x_add, 885+ this.y_add, this.sprite_select4);
         }
 
         //sprites de puntuacion
@@ -4644,6 +4704,427 @@
       update() {
 
 
+
+//console.log(desconectado);
+  if(cursor.includes("NAME1"))
+  {
+      console.log(cursor);
+    var nombre = cursor.split(".");
+    this.nombreJ1 = nombre[1];
+      
+      localStorage.setItem("nombreJ1", this.nombreJ1);
+
+  }
+
+  if((cursor.includes("NAME2") || cursor.includes("END2")) && this.jugadoresTotal >= 2 && this.jugadoresTotal != 1)
+  {
+
+      if(this.nombreJ2 != " "  && cursor.includes("NAME2"))
+       this.nombreJ2Ant =  localStorage.getItem("nombreJ2");
+
+      console.log(cursor);
+     var nombre = cursor.split(".");
+    this.nombreJ2 = nombre[1];
+
+      localStorage.setItem("nombreJ2", this.nombreJ2);
+
+
+      if(this.nombreJ2 == " " || cursor.includes("END2"))
+      {
+   desconectado = 1;
+
+         this.pause = 1;
+
+ if(cursor.includes("NAME2"))
+              {
+           //            this.ganadorText.setText("Esperando J2");
+             // this.ganadorText2.setText("Esperando J2");
+}else
+{
+  //   this.ganadorText.setText("Esperando J2");
+         //     this.ganadorText2.setText("Esperando J2");
+}
+            
+
+
+          
+            this.menuseleccion = 2;
+            this.aceptarP2 = 1;
+            this.menupspritereiniciarP2.visible = true;
+
+            this.pause = 1;
+            this.activarEsperaInt = 1;
+            this.menureiniciar = 1;
+            this.menupspritereiniciar.visible = true;
+
+             this.enemigos.children.iterate(child => {
+
+                 this.myShip.setVelocityX(0);
+            this.myShip.setVelocityY(0);
+
+
+            this.myShip2.setVelocityX(0);
+            this.myShip2.setVelocityY(0);
+
+
+            this.myShip3.setVelocityX(0);
+            this.myShip3.setVelocityY(0);
+
+
+            this.myShip4.setVelocityX(0);
+            this.myShip4.setVelocityY(0);
+
+            this.explosionUp.setVelocityX(0);
+            this.explosionDown.setVelocityX(0);
+            this.explosionLeft.setVelocityY(0);
+            this.explosionRight.setVelocityY(0);
+
+            this.explosionUp2.setVelocityX(0);
+            this.explosionDown2.setVelocityX(0);
+            this.explosionLeft2.setVelocityY(0);
+            this.explosionRight2.setVelocityY(0);
+
+
+            this.explosionUp3.setVelocityX(0);
+            this.explosionDown3.setVelocityX(0);
+            this.explosionLeft3.setVelocityY(0);
+            this.explosionRight3.setVelocityY(0);
+
+
+            this.explosionUp4.setVelocityX(0);
+            this.explosionDown4.setVelocityX(0);
+            this.explosionLeft4.setVelocityY(0);
+            this.explosionRight4.setVelocityY(0);
+
+
+            this.explosionUp5.setVelocityX(0);
+            this.explosionDown5.setVelocityX(0);
+            this.explosionLeft5.setVelocityY(0);
+            this.explosionRight5.setVelocityY(0);
+
+
+            this.enemigos.children.iterate(child => {
+
+
+
+              child.setVelocityX(0);
+              child.setVelocityY(0);
+
+
+            })
+
+            })
+
+      } 
+       else
+      {
+         desconectado = 0;
+
+        cursor = "";
+          this.pause = 0;
+   this.mensajeganar = 0;
+            this.ganadorText.setText("");
+              this.ganadorText2.setText("");
+
+
+
+  this.seleccionoVotacion.setText("");
+              this.objetocolocarsprite.visible = false;
+              this.seleccionadoSprite.visible = false;
+
+              this.menureiniciar = 0;
+              this.menupausesprite.visible = false;
+              this.menupausesprite2.visible = false;
+              this.menupausesprite3.visible = false;
+
+              this.menupspritereiniciar.visible = false;
+
+              this.menupspritereiniciarP1.visible = false;
+              this.menupspritereiniciarP2.visible = false;
+              this.menupspritereiniciarP3.visible = false;
+              this.menupspritereiniciarP4.visible = false;
+
+
+              this.icon1.visible = false;
+              this.icon2.visible = false;
+              this.icon3.visible = false;
+              this.icon4.visible = false;
+              
+              this.aceptarP1 = 0;
+              this.aceptarP2 = 0;
+              this.aceptarP3 = 0;
+              this.aceptarP4 = 0;
+      }
+  }
+
+  if((cursor.includes("NAME3") || cursor.includes("END3"))  && this.jugadoresTotal>= 3 && this.jugadoresTotal != 1)
+  {
+
+      if(this.nombreJ3 != " "  && cursor.includes("NAME3"))
+   this.nombreJ3Ant =  localStorage.getItem("nombreJ3");
+
+      console.log(cursor);
+     var nombre = cursor.split(".");
+    this.nombreJ3 = nombre[1];
+
+    if(this.nombreJ3 != " ")
+     this.nombreJ3Ant =  localStorage.getItem("nombreJ3");
+
+      localStorage.setItem("nombreJ3", this.nombreJ3);
+
+      if(this.nombreJ3 == " " || cursor.includes("END3"))
+      {
+    
+ desconectado = 1;
+
+       this.pause = 1;
+      
+              if(cursor.includes("NAME3"))
+              {
+             //      this.ganadorText.setText("Esperando J3");
+         //     this.ganadorText2.setText("Esperando J3");
+              }else
+{
+    // this.ganadorText.setText("Esperando J3");
+      //        this.ganadorText2.setText("Esperando J3");
+}
+
+    this.menuseleccion = 2;
+            this.aceptarP3 = 1;
+            this.menupspritereiniciarP3.visible = true;
+
+            this.pause = 1;
+            this.activarEsperaInt = 1;
+            this.menureiniciar = 1;
+            this.menupspritereiniciar.visible = true;
+
+          this.myShip.setVelocityX(0);
+            this.myShip.setVelocityY(0);
+
+
+            this.myShip2.setVelocityX(0);
+            this.myShip2.setVelocityY(0);
+
+
+            this.myShip3.setVelocityX(0);
+            this.myShip3.setVelocityY(0);
+
+
+            this.myShip4.setVelocityX(0);
+            this.myShip4.setVelocityY(0);
+
+            this.explosionUp.setVelocityX(0);
+            this.explosionDown.setVelocityX(0);
+            this.explosionLeft.setVelocityY(0);
+            this.explosionRight.setVelocityY(0);
+
+            this.explosionUp2.setVelocityX(0);
+            this.explosionDown2.setVelocityX(0);
+            this.explosionLeft2.setVelocityY(0);
+            this.explosionRight2.setVelocityY(0);
+
+
+            this.explosionUp3.setVelocityX(0);
+            this.explosionDown3.setVelocityX(0);
+            this.explosionLeft3.setVelocityY(0);
+            this.explosionRight3.setVelocityY(0);
+
+
+            this.explosionUp4.setVelocityX(0);
+            this.explosionDown4.setVelocityX(0);
+            this.explosionLeft4.setVelocityY(0);
+            this.explosionRight4.setVelocityY(0);
+
+
+            this.explosionUp5.setVelocityX(0);
+            this.explosionDown5.setVelocityX(0);
+            this.explosionLeft5.setVelocityY(0);
+            this.explosionRight5.setVelocityY(0);
+
+
+              this.enemigos.children.iterate(child => {
+
+
+
+              child.setVelocityX(0);
+              child.setVelocityY(0);
+
+
+            })
+      }
+      else
+      {
+       desconectado = 0;
+
+         cursor = "";
+  this.pause = 0;
+            this.mensajeganar =0;
+                     this.ganadorText.setText("");
+              this.ganadorText2.setText("");
+
+
+                this.seleccionoVotacion.setText("");
+              this.objetocolocarsprite.visible = false;
+              this.seleccionadoSprite.visible = false;
+
+              this.menureiniciar = 0;
+              this.menupausesprite.visible = false;
+              this.menupausesprite2.visible = false;
+              this.menupausesprite3.visible = false;
+
+              this.menupspritereiniciar.visible = false;
+
+              this.menupspritereiniciarP1.visible = false;
+              this.menupspritereiniciarP2.visible = false;
+              this.menupspritereiniciarP3.visible = false;
+              this.menupspritereiniciarP4.visible = false;
+
+
+              this.icon1.visible = false;
+              this.icon2.visible = false;
+              this.icon3.visible = false;
+              this.icon4.visible = false;
+              
+              this.aceptarP1 = 0;
+              this.aceptarP2 = 0;
+              this.aceptarP3 = 0;
+              this.aceptarP4 = 0;
+      }
+  }
+
+  if((cursor.includes("NAME4") || cursor.includes("END4"))  && this.jugadoresTotal >= 4 && this.jugadoresTotal != 1)
+{
+
+      console.log(cursor);
+     var nombre = cursor.split(".");
+    this.nombreJ4 = nombre[1];
+
+
+      if(this.nombreJ4 != " " && cursor.includes("NAME4"))
+   this.nombreJ4Ant =  localStorage.getItem("nombreJ4");
+ 
+      localStorage.setItem("nombreJ4", this.nombreJ4);
+
+      if(this.nombreJ4 == " " || cursor.includes("END4"))
+      { 
+ desconectado = 1;
+
+        this.pause = 1;
+
+ if(cursor.includes("NAME4"))
+              {
+                 //  this.ganadorText.setText("Esperando J4 ");
+             // this.ganadorText2.setText("Esperando J4 ");
+}
+else
+{
+    // this.ganadorText.setText("Esperando J4");
+   //           this.ganadorText2.setText("Esperando J4");
+}
+
+
+            this.aceptarP4 = 1;
+            this.menuseleccion = 2;
+            this.menupspritereiniciarP4.visible = true;
+
+            this.pause = 1;
+            this.activarEsperaInt = 1;
+            this.menureiniciar = 1;
+            this.menupspritereiniciar.visible = true;
+
+
+           this.myShip.setVelocityX(0);
+            this.myShip.setVelocityY(0);
+
+
+            this.myShip2.setVelocityX(0);
+            this.myShip2.setVelocityY(0);
+
+
+            this.myShip3.setVelocityX(0);
+            this.myShip3.setVelocityY(0);
+
+
+            this.myShip4.setVelocityX(0);
+            this.myShip4.setVelocityY(0);
+
+            this.explosionUp.setVelocityX(0);
+            this.explosionDown.setVelocityX(0);
+            this.explosionLeft.setVelocityY(0);
+            this.explosionRight.setVelocityY(0);
+
+            this.explosionUp2.setVelocityX(0);
+            this.explosionDown2.setVelocityX(0);
+            this.explosionLeft2.setVelocityY(0);
+            this.explosionRight2.setVelocityY(0);
+
+
+            this.explosionUp3.setVelocityX(0);
+            this.explosionDown3.setVelocityX(0);
+            this.explosionLeft3.setVelocityY(0);
+            this.explosionRight3.setVelocityY(0);
+
+
+            this.explosionUp4.setVelocityX(0);
+            this.explosionDown4.setVelocityX(0);
+            this.explosionLeft4.setVelocityY(0);
+            this.explosionRight4.setVelocityY(0);
+
+
+            this.explosionUp5.setVelocityX(0);
+            this.explosionDown5.setVelocityX(0);
+            this.explosionLeft5.setVelocityY(0);
+            this.explosionRight5.setVelocityY(0);
+
+ this.enemigos.children.iterate(child => {
+
+
+
+              child.setVelocityX(0);
+              child.setVelocityY(0);
+
+
+            })
+      } 
+       else
+      {
+        desconectado = 0;
+
+         cursor = "";
+            this.pause = 0;
+            this.mensajeganar =0;
+            this.ganadorText.setText("");
+              this.ganadorText2.setText("");
+
+                this.seleccionoVotacion.setText("");
+              this.objetocolocarsprite.visible = false;
+              this.seleccionadoSprite.visible = false;
+
+              this.menureiniciar = 0;
+              this.menupausesprite.visible = false;
+              this.menupausesprite2.visible = false;
+              this.menupausesprite3.visible = false;
+
+              this.menupspritereiniciar.visible = false;
+
+              this.menupspritereiniciarP1.visible = false;
+              this.menupspritereiniciarP2.visible = false;
+              this.menupspritereiniciarP3.visible = false;
+              this.menupspritereiniciarP4.visible = false;
+
+
+              this.icon1.visible = false;
+              this.icon2.visible = false;
+              this.icon3.visible = false;
+              this.icon4.visible = false;
+              
+              this.aceptarP1 = 0;
+              this.aceptarP2 = 0;
+              this.aceptarP3 = 0;
+              this.aceptarP4 = 0;
+      }
+
+  }
         if (this.mapaNumero == -12) {
           this.vidasInt = 100;
           this.relojInt = 1000;
@@ -4935,22 +5416,146 @@
 
             if (this.jugadoresTotal == 2) {
               if (this.aceptarP1 == 1 && this.aceptarP2 == 1) {
-                this.game.sound.stopAll();
+                
+                if(desconectado ==0)
+                {
+                  this.game.sound.stopAll();
                 this.scene.restart();
+              }
+                else
+                {
+                    cursor = "";
+          this.pause = 0;
+   this.mensajeganar = 0;
+            this.ganadorText.setText("");
+              this.ganadorText2.setText("");
+
+
+
+  this.seleccionoVotacion.setText("");
+              this.objetocolocarsprite.visible = false;
+              this.seleccionadoSprite.visible = false;
+
+              this.menureiniciar = 0;
+              this.menupausesprite.visible = false;
+              this.menupausesprite2.visible = false;
+              this.menupausesprite3.visible = false;
+
+              this.menupspritereiniciar.visible = false;
+
+              this.menupspritereiniciarP1.visible = false;
+              this.menupspritereiniciarP2.visible = false;
+              this.menupspritereiniciarP3.visible = false;
+              this.menupspritereiniciarP4.visible = false;
+
+
+              this.icon1.visible = false;
+              this.icon2.visible = false;
+              this.icon3.visible = false;
+              this.icon4.visible = false;
+              
+              this.aceptarP1 = 0;
+              this.aceptarP2 = 0;
+              this.aceptarP3 = 0;
+              this.aceptarP4 = 0;
+                }
+
               }
             }
 
             if (this.jugadoresTotal == 3) {
               if (this.aceptarP1 == 1 && this.aceptarP2 == 1 && this.aceptarP3 == 1) {
-                this.game.sound.stopAll();
-                this.scene.restart();
+             
+                if(desconectado ==0)
+                {     
+                   this.game.sound.stopAll();   
+                  this.scene.restart();
+                }
+              else
+              {
+                   cursor = "";
+          this.pause = 0;
+   this.mensajeganar = 0;
+            this.ganadorText.setText("");
+              this.ganadorText2.setText("");
+
+
+
+  this.seleccionoVotacion.setText("");
+              this.objetocolocarsprite.visible = false;
+              this.seleccionadoSprite.visible = false;
+
+              this.menureiniciar = 0;
+              this.menupausesprite.visible = false;
+              this.menupausesprite2.visible = false;
+              this.menupausesprite3.visible = false;
+
+              this.menupspritereiniciar.visible = false;
+
+              this.menupspritereiniciarP1.visible = false;
+              this.menupspritereiniciarP2.visible = false;
+              this.menupspritereiniciarP3.visible = false;
+              this.menupspritereiniciarP4.visible = false;
+
+
+              this.icon1.visible = false;
+              this.icon2.visible = false;
+              this.icon3.visible = false;
+              this.icon4.visible = false;
+              
+              this.aceptarP1 = 0;
+              this.aceptarP2 = 0;
+              this.aceptarP3 = 0;
+              this.aceptarP4 = 0;
+              }
               }
             }
 
             if (this.jugadoresTotal == 4) {
               if (this.aceptarP1 == 1 && this.aceptarP2 == 1 && this.aceptarP3 == 1 && this.aceptarP4 == 1) {
-                this.game.sound.stopAll();
+                
+                 if(desconectado ==0)
+                 {
+this.game.sound.stopAll();
                 this.scene.restart();
+              }
+              else
+              {
+                   cursor = "";
+          this.pause = 0;
+   this.mensajeganar = 0;
+            this.ganadorText.setText("");
+              this.ganadorText2.setText("");
+
+
+
+  this.seleccionoVotacion.setText("");
+              this.objetocolocarsprite.visible = false;
+              this.seleccionadoSprite.visible = false;
+
+              this.menureiniciar = 0;
+              this.menupausesprite.visible = false;
+              this.menupausesprite2.visible = false;
+              this.menupausesprite3.visible = false;
+
+              this.menupspritereiniciar.visible = false;
+
+              this.menupspritereiniciarP1.visible = false;
+              this.menupspritereiniciarP2.visible = false;
+              this.menupspritereiniciarP3.visible = false;
+              this.menupspritereiniciarP4.visible = false;
+
+
+              this.icon1.visible = false;
+              this.icon2.visible = false;
+              this.icon3.visible = false;
+              this.icon4.visible = false;
+              
+              this.aceptarP1 = 0;
+              this.aceptarP2 = 0;
+              this.aceptarP3 = 0;
+              this.aceptarP4 = 0;
+              }
               }
             }
           }
@@ -7710,7 +8315,7 @@ this.load.image('selectorRect4', 'https://i.ibb.co/QjDxyxN/selector-Rect4.png');
 
                      this.load.image('popup', 'https://i.ibb.co/58dMc40/popup.png');
                       this.load.image('dificultad',  'https://i.ibb.co/gzHYX8F/dificultad.png');
-
+this.load.image('wall4', 'https://i.ibb.co/qpqvwcN/wall5.png');
 
 /*
             this.load.image('selectorRect1', 'img/selectorRect1.png');
@@ -7798,9 +8403,9 @@ this.modoopcionesSprite = this.physics.add.sprite(413 +413/4, 336, 'seleccion2')
 
 
 this.personajeSelectSpriteP1 = this.physics.add.sprite(450 +413/4, 750, 'selectorRect1');
-this.personajeSelectSpriteP2 = this.physics.add.sprite(450 +413/4, 750, 'selectorRect2');
-this.personajeSelectSpriteP3 = this.physics.add.sprite(450 +413/4, 750, 'selectorRect3');
-this.personajeSelectSpriteP4 = this.physics.add.sprite(450 +413/4, 750, 'selectorRect4');
+this.personajeSelectSpriteP2 = this.physics.add.sprite(450 +413/4, 750, 'wall4');
+this.personajeSelectSpriteP3 = this.physics.add.sprite(450 +413/4, 750, 'wall4');
+this.personajeSelectSpriteP4 = this.physics.add.sprite(450 +413/4, 750, 'wall4');
 
 
 
@@ -7822,9 +8427,13 @@ this.seleccionadoSprite = this.physics.add.sprite(413 +413/4, 336, 'seleccion');
  this.seleccionadoSprite2 = this.physics.add.sprite(413 +413/4, 336, 'seleccion1P');
   this.seleccionadoSprite2.visible = false;
 
- this.seleccionadoSprite2P2 = this.physics.add.sprite(413 +413/4, 336, 'seleccion2P');
-this.seleccionadoSprite2P3 = this.physics.add.sprite(413 +413/4, 336, 'seleccion3P');
- this.seleccionadoSprite2P4 = this.physics.add.sprite(413 +413/4, 336, 'seleccion4P'); 
+this.seleccionadoSprite2P2 = this.physics.add.sprite(413 +413/4, 336, 'selectorRect2');
+this.seleccionadoSprite2P3 = this.physics.add.sprite(413 +413/4, 336, 'selectorRect3');
+ this.seleccionadoSprite2P4 = this.physics.add.sprite(413 +413/4, 336, 'selectorRect4'); 
+  
+ //this.seleccionadoSprite2P2 = this.physics.add.sprite(413 +413/4, 336, 'seleccion2P');
+//this.seleccionadoSprite2P3 = this.physics.add.sprite(413 +413/4, 336, 'seleccion3P');
+ //this.seleccionadoSprite2P4 = this.physics.add.sprite(413 +413/4, 336, 'seleccion4P'); 
   this.seleccionadoSprite2P2.visible = false;
 this.seleccionadoSprite2P3.visible = false;
 this.seleccionadoSprite2P4.visible = false;
@@ -7873,19 +8482,31 @@ this.input.keyboard.on('keydown_W', moverMenuAbajo2, this);
   this.input.keyboard.on('keydown_S', moverMenuArriba2, this);
     this.input.keyboard.on('keydown_A', moverMenuIzq2, this);
    this.input.keyboard.on('keydown_D', moverMenuDer2, this);
-    this.input.keyboard.on('keydown_E', seleccionarOpcion2, this);
+    this.input.keyboard.on('keydown_W', seleccionarOpcion2, this);
+     this.input.keyboard.on('keydown_S', seleccionarOpcion2, this);
+      this.input.keyboard.on('keydown_A', seleccionarOpcion2, this);
+       this.input.keyboard.on('keydown_D', seleccionarOpcion2, this);
+   // this.input.keyboard.on('keydown_E', seleccionarOpcion2, this);
 //JUG3
 this.input.keyboard.on('keydown_T', moverMenuAbajo3, this);
   this.input.keyboard.on('keydown_G', moverMenuArriba3, this);
     this.input.keyboard.on('keydown_F', moverMenuIzq3, this);
    this.input.keyboard.on('keydown_H', moverMenuDer3, this);
-    this.input.keyboard.on('keydown_Y', seleccionarOpcion3, this);
+    this.input.keyboard.on('keydown_T', seleccionarOpcion3, this);
+     this.input.keyboard.on('keydown_G', seleccionarOpcion3, this);
+      this.input.keyboard.on('keydown_F', seleccionarOpcion3, this);
+       this.input.keyboard.on('keydown_H', seleccionarOpcion3, this);
+  //  this.input.keyboard.on('keydown_Y', seleccionarOpcion3, this);
 //JUG4
 this.input.keyboard.on('keydown_I', moverMenuAbajo4, this);
   this.input.keyboard.on('keydown_K', moverMenuArriba4, this);
     this.input.keyboard.on('keydown_J', moverMenuIzq4, this);
    this.input.keyboard.on('keydown_L', moverMenuDer4, this);
-    this.input.keyboard.on('keydown_O', seleccionarOpcion4, this);
+    //this.input.keyboard.on('keydown_O', seleccionarOpcion4, this);
+ this.input.keyboard.on('keydown_I', seleccionarOpcion4, this);
+ this.input.keyboard.on('keydown_K', seleccionarOpcion4, this);
+ this.input.keyboard.on('keydown_J', seleccionarOpcion4, this);
+ this.input.keyboard.on('keydown_L', seleccionarOpcion4, this);
 
 
 
@@ -9228,11 +9849,64 @@ this.input.keyboard.on('keydown_ENTER', estadoListo1, this);
 this.input.keyboard.on('keydown_Q', estadoListo2, this);
 this.input.keyboard.on('keydown_R', estadoListo3, this);
 this.input.keyboard.on('keydown_U', estadoListo4, this);
+
+
+
+
+ if(localStorage.getItem("nombreJ1") == "")
+      {
+       this.ready1 = 0;
+      this.readySprite1.setTexture('noready');
+      }
+      else
+      {
+      this.ready1 = 1;
+      this.readySprite1.setTexture('ready');
+      }
+
+
+
+       if(this.nombreJ2 == " ")
+      {
+       this.ready2 = 0;
+      this.readySprite2.setTexture('noready');
+      }
+      else
+      {
+      this.ready2 = 1;
+      this.readySprite2.setTexture('ready');
+      }
+
+
+
+        if(this.nombreJ3 == " ")
+      {
+       this.ready3 = 0;
+      this.readySprite3.setTexture('noready');
+      }
+      else
+      {
+      this.ready3 = 1;
+      this.readySprite3.setTexture('ready');
+      }
+
+
+        if(this.nombreJ4 == " ")
+      {
+       this.ready4 = 0;
+      this.readySprite4.setTexture('noready');
+      }
+      else
+      {
+      this.ready4 = 1;
+      this.readySprite4.setTexture('ready');
+      }
     }
 
 
 update()
 {
+
 
 
   if(cursor.includes("NAME1"))
@@ -9242,6 +9916,17 @@ update()
     this.nombreJ1 = nombre[1];
       this.nombreJ1text.setText(this.nombreJ1);
       localStorage.setItem("nombreJ1", this.nombreJ1);
+
+      if(localStorage.getItem("nombreJ1") == "")
+      {
+       this.ready1 = 0;
+      this.readySprite1.setTexture('noready');
+      }
+      else
+      {
+      this.ready1 = 1;
+      this.readySprite1.setTexture('ready');
+      }
 
   }
 
@@ -9254,6 +9939,17 @@ update()
     this.nombreJ2text.setText(this.nombreJ2);
 
       localStorage.setItem("nombreJ2", this.nombreJ2);
+
+  if(this.nombreJ2 == " ")
+      {
+       this.ready2 = 0;
+      this.readySprite2.setTexture('noready');
+      }
+      else
+      {
+      this.ready2 = 1;
+      this.readySprite2.setTexture('ready');
+      }
   }
 
   if(cursor.includes("NAME3"))
@@ -9264,6 +9960,17 @@ update()
      this.nombreJ3text.setText(this.nombreJ3);
 
       localStorage.setItem("nombreJ3", this.nombreJ3);
+
+        if(this.nombreJ3 == " ")
+      {
+       this.ready3 = 0;
+      this.readySprite3.setTexture('noready');
+      }
+      else
+      {
+      this.ready3 = 1;
+      this.readySprite3.setTexture('ready');
+      }
   }
 
   if(cursor.includes("NAME4"))
@@ -9274,6 +9981,18 @@ update()
     this.nombreJ4text.setText(this.nombreJ4);
 
       localStorage.setItem("nombreJ4", this.nombreJ4);
+
+      if(this.nombreJ4 == " ")
+      {
+       this.ready4 = 0;
+      this.readySprite4.setTexture('noready');
+      }
+      else
+      {
+      this.ready4 = 1;
+      this.readySprite4.setTexture('ready');
+      }
+
   }
 
 if(this.seleccionarDif == 1)

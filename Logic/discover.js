@@ -5,7 +5,7 @@ function entablishConnection(e) {
 }
 
 function availableServersToDiv(e, name) {
-    if (e && e.includes(":") && e.includes(".") && name.includes("+")) {
+    if (e && e.includes(":") && e.includes(".") && name.includes("+"))  {
         var nombre = name.split('+')[1];
         listAvailableServers.push(e);
         var t = e.split(":")[1].split("."),
@@ -45,7 +45,8 @@ function findServers() {
 if(findIpB==0)
     enableLoading(); 
 
- Synapse.findServers(255, 5000, availableServersToDiv, onFinishSearch, onFinishSearch,0,255, findIpB)
+Synapse.findServers(255, 5000, availableServersToDiv, onFinishSearch, onFinishSearch,0,255, findIpB)
+ //Synapse.findServers(16, 5000, availableServersToDiv, onFinishSearch, onFinishSearch,0,255, -1)
 
 }
 

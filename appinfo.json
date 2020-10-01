@@ -1,6 +1,6 @@
 {
-    "id": "com.upc.aoe",
-    "version": "1.0.40",
+    "id": "com.upc.bomb",
+    "version": "1.0.45",
     "vendor": "Universidad Peruana de Ciencias Aplicadas",
     "type": "web",
     "main": "index.html",
