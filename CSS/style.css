@@ -55,6 +55,13 @@ video {
   border: none;
 }
 
+.buttonVolver {
+  background: transparent url("../Assets/menu/volver.png");
+  background-size: 405px;
+  width: 405px;
+  height: 107px;
+  border: none;
+}
 .buttonSalir {
   background: transparent url("../Assets/menu/SALIR.png");
   background-size: 405px;
@@ -84,6 +91,12 @@ video {
   z-index: 3;
 }
 
+.divButtonVolver {
+  position: absolute;
+  left: 1450px;
+  top: 935px;
+  z-index: 3;
+}
 .divButtonSalir {
   position: absolute;
   left: 750px;
