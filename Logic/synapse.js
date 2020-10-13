@@ -69,11 +69,12 @@
                 this.port = port;
                 this.setUserIp();
             }
-            Synapse.prototype.findServers = function (maxInParallel, timeout, addServersInProgress, addServersInFinish, addServersInFail, ipMin, ipMax, typeB) {
+            Synapse.prototype.findServers = function (maxInParallel, timeout, addServersInProgress, addServersInFinish, addServersInFail, ipMin, ipMax, typeB, ip) {
                 
+                var ipActual = ip;
                 var ipCurrent = ipMin, numInParallel = 0, servers = [];
                 var ipHigh = ipMax;
-                var baseIp = "192.168.0.1"//"10.242.32.1"//this.getUserIp(); // "192.168.0.1"
+                var baseIp = ipActual;//"10.242.32.1"//this.getUserIp(); // "192.168.0.1"
                 var port = this.port.toString();
                 var toSplit = baseIp;
                 var ipBase = toSplit.split(".", 3);

@@ -28,6 +28,62 @@ function onFinishSearch() {
     }
 }
 
+var ip = "";
+function obtenerIpNavegador()
+{
+     var RTCPeerConnection = /*window.RTCPeerConnection ||*/ window.webkitRTCPeerConnection || window.mozRTCPeerConnection;  
+if (RTCPeerConnection)(function() {  
+    var rtc = new RTCPeerConnection({  
+        iceServers: []  
+    });  
+    if (1 || window.mozRTCPeerConnection) {  
+        rtc.createDataChannel('', {  
+            reliable: false  
+        });  
+    };  
+    rtc.onicecandidate = function(evt) {  
+        if (evt.candidate) grepSDP("a=" + evt.candidate.candidate);  
+    };  
+    rtc.createOffer(function(offerDesc) {  
+        grepSDP(offerDesc.sdp);  
+        rtc.setLocalDescription(offerDesc);  
+    }, function(e) {  
+        console.warn("offer failed", e);  
+    });  
+    var addrs = Object.create(null);  
+    addrs["0.0.0.0"] = false;  
+  
+    function updateDisplay(newAddr) {  
+        if (newAddr in addrs) return;  
+        else addrs[newAddr] = true;  
+        var displayAddrs = Object.keys(addrs).filter(function(k) {  
+            return addrs[k];  
+        });  
+     ip = displayAddrs[0] || "n/a";  
+     console.log(ip);
+    }  
+  
+    function grepSDP(sdp) {  
+        var hosts = [];  
+        sdp.split('\r\n').forEach(function(line) {  
+            if (~line.indexOf("a=candidate")) {  
+                var parts = line.split(' '),  
+                    addr = parts[4],  
+                    type = parts[7];  
+                if (type === 'host') updateDisplay(addr);  
+            } else if (~line.indexOf("c=")) {  
+                var parts = line.split(' '),  
+                    addr = parts[2];  
+                updateDisplay(addr);  
+            }  
+        });  
+    }  
+})();  
+else {  
+    //ip = "<code>ifconfig| grep inet | grep -v inet6 | cut -d\" \" -f2 | tail -n1</code>";  
+
+}
+}
 function enableLoading() {
     var e = document.getElementById("btn-reload");
     e.className += e.className.replace("disabled", ""), e.disabled = !1;
@@ -45,8 +101,8 @@ function findServers() {
 if(findIpB==0)
     enableLoading(); 
 
-Synapse.findServers(255, 5000, availableServersToDiv, onFinishSearch, onFinishSearch,0,255, findIpB)
- //Synapse.findServers(16, 5000, availableServersToDiv, onFinishSearch, onFinishSearch,0,255, -1)
+Synapse.findServers(255, 5000, availableServersToDiv, onFinishSearch, onFinishSearch,0,255, findIpB, ip)
+ //Synapse.findServers(16, 5000, availableServersToDiv, onFinishSearch, onFinishSearch,0,255, -1, ip)
 
 }
 
@@ -60,6 +116,7 @@ function renderStars() {
     document.getElementById("body").innerHTML += e
 }
 $(document).ready(function() {
+    obtenerIpNavegador();
     hideLoading();
     var e = document.getElementById("btn-refresh");
     e.className += " disabled", e.disabled = !0;
