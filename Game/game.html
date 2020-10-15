@@ -182,8 +182,11 @@ var desconectado = 0;
         //INTERNET
 
 
-        this.load.image('enemigo', 'https://i.ibb.co/tsc83Qn/enemigo.png');
-        this.load.image('enemigoquemado', 'https://i.ibb.co/wcjcPBY/enemigoquemado.png');
+      //  this.load.image('enemigo', 'https://i.ibb.co/qWPVtnj/enemigo.png');
+         this.load.spritesheet('enemigo', 'https://i.ibb.co/qWPVtnj/enemigo.png', { frameWidth: 46, frameHeight: 60, endFrame: 16 });
+
+          this.load.spritesheet('enemigoquemado', 'https://i.ibb.co/TwH1WFb/enemigoquemado.png', { frameWidth: 46, frameHeight: 60, endFrame: 16 });
+      
         this.load.image('ship', 'https://i.ibb.co/tz3L9Bn/jugador.png');
         this.load.image('ship2', 'https://i.ibb.co/HVtxqyJ/jugador2.png');
         this.load.image('ship3', 'https://i.ibb.co/C7yH7ft/jugador3.png');
@@ -268,16 +271,24 @@ var desconectado = 0;
         this.load.image('seleccion3', 'https://i.ibb.co/RvhgWwR/seleccioncuad.png');
 
 
-        this.load.image('jugadorAzul', 'https://i.ibb.co/tz3L9Bn/jugador.png');
-        this.load.image('jugadorNaranja', 'https://i.ibb.co/HVtxqyJ/jugador2.png');
-        this.load.image('jugadorVerde', 'https://i.ibb.co/C7yH7ft/jugador3.png');
-        this.load.image('jugadorMorado', 'https://i.ibb.co/DCnJw89/jugador4.png');
-        this.load.image('jugadorCeleste', 'https://i.ibb.co/HzsjTX8/jugador-Celeste.png');
-        this.load.image('jugadorRojo', 'https://i.ibb.co/br9mb3n/jugador-Rojo.png');
-        this.load.image('jugadorGris', 'https://i.ibb.co/tM88Rfr/jugador-Gris.png');
-        this.load.image('jugadorAmarillo', 'https://i.ibb.co/YjwWzqW/jugador-Amarillo.png');
-        this.load.image('jugadorNegro', 'https://i.ibb.co/m07RktY/jugador-Negro.png');
-
+        //this.load.image('jugadorAzul', 'https://i.ibb.co/tz3L9Bn/jugador.png');
+        this.load.spritesheet('jugadorAzul', 'https://i.ibb.co/fHnPxX9/jugador.png', { frameWidth: 46, frameHeight: 68, endFrame: 16 });
+       // this.load.image('jugadorNaranja', 'https://i.ibb.co/HVtxqyJ/jugador2.png');
+        this.load.spritesheet('jugadorNaranja', 'https://i.ibb.co/0fVW6Zc/jugador2.png', { frameWidth: 46, frameHeight: 68, endFrame: 16 });
+       // this.load.image('jugadorVerde', 'https://i.ibb.co/C7yH7ft/jugador3.png');
+          this.load.spritesheet('jugadorVerde', 'https://i.ibb.co/LPFvhf7/jugador3.png', { frameWidth: 46, frameHeight: 68, endFrame: 16 });
+       // this.load.image('jugadorMorado', 'https://i.ibb.co/DCnJw89/jugador4.png');
+           this.load.spritesheet('jugadorMorado', 'https://i.ibb.co/9Gp2xNj/jugador4.png', { frameWidth: 46, frameHeight: 68, endFrame: 16 });
+        //this.load.image('jugadorCeleste', 'https://i.ibb.co/HzsjTX8/jugador-Celeste.png');
+             this.load.spritesheet('jugadorCeleste', 'https://i.ibb.co/gdq0Rt9/jugador-Celeste.png', { frameWidth: 46, frameHeight: 68, endFrame: 16 });
+        //this.load.image('jugadorRojo', 'https://i.ibb.co/br9mb3n/jugador-Rojo.png');
+        this.load.spritesheet('jugadorRojo', 'https://i.ibb.co/1z45Mn5/jugador-Rojo.png', { frameWidth: 46, frameHeight: 68, endFrame: 16 });
+       // this.load.image('jugadorGris', 'https://i.ibb.co/tM88Rfr/jugador-Gris.png');
+         this.load.spritesheet('jugadorGris', 'https://i.ibb.co/R2ZK4wH/jugador-Gris.png', { frameWidth: 46, frameHeight: 68, endFrame: 16 });
+       // this.load.image('jugadorAmarillo', 'https://i.ibb.co/YjwWzqW/jugador-Amarillo.png');
+          this.load.spritesheet('jugadorAmarillo', 'https://i.ibb.co/nwMSwn0/jugador-Amarillo.png', { frameWidth: 46, frameHeight: 68, endFrame: 16 });
+     //   this.load.image('jugadorNegro', 'https://i.ibb.co/m07RktY/jugador-Negro.png');
+ this.load.spritesheet('jugadorNegro', 'https://i.ibb.co/Hr4fT49/jugador-Negro.png', { frameWidth: 46, frameHeight: 68, endFrame: 16 });
 
         this.load.audio('moon', 'https://sndup.net/3h3r/moon.mp3');
 
@@ -296,6 +307,7 @@ var desconectado = 0;
       }
     
       create() {
+
 
         this.mensajeganar = 0;
 
@@ -336,6 +348,11 @@ var desconectado = 0;
         this.mensajeganartick = 300;
 
 
+this.FullDirection1 = "";
+this.FullDirection2 = "";
+this.FullDirection3 = "";
+this.FullDirection4 = "";
+
         if (this.musicData == 1) {
           this.explosionsound = this.sound.add('explosion', { volume: 0.5 });
           this.moonsong = this.sound.add('moon', { volume: 0.5 });
@@ -366,7 +383,7 @@ var desconectado = 0;
           this.moonsong.play();
         }
 
-        this.bombasFullDirection = "NA";
+        this.bombasFullDirection1 = "NA";
         this.bombasFullDirection2 = "NA";
         this.bombasFullDirection3 = "NA";
         this.bombasFullDirection4 = "NA";
@@ -423,6 +440,36 @@ var desconectado = 0;
         this.y_add = 70;
       
 
+//enemigo animacion
+
+ this.anims.create({
+        key: 'EnemigoAbajo',
+        frames: this.anims.generateFrameNumbers( "enemigo", { start: 0, end: 2, first: 0 }),
+        frameRate: 20,
+        repeat: -1
+    });
+
+      this.anims.create({
+        key: 'EnemigoArriba',
+        frames: this.anims.generateFrameNumbers(localStorage.getItem("enemigo"), { start: 3, end: 5, first: 3 }),
+        frameRate: 20,
+        repeat: -1
+    });
+       this.anims.create({
+        key: 'EnemigoIzquierda',
+        frames: this.anims.generateFrameNumbers(localStorage.getItem("enemigo"), { start: 6, end: 8, first: 6 }),
+        frameRate: 20,
+        repeat: -1
+    });
+     this.anims.create({
+        key: 'EnemigoDerecha',
+        frames: this.anims.generateFrameNumbers(localStorage.getItem("enemigo"), { start: 9, end: 11, first: 9 }),
+        frameRate: 20,
+        repeat: -1
+    });
+
+
+
         //jugadores
         if (this.jugadoresTotal >= 1) {
           this.jugador1 = this.add.text(32 + 32, 216 + 96, this.nombreJ1, { fontFamily: '"Arial Black"' });
@@ -472,6 +519,62 @@ var desconectado = 0;
         if (this.personajeP1 == 9)
           this.vida.setTexture('jugadorMorado');
 
+
+
+        //COLOR PERSONAJE 1 Animacion
+        if (this.personajeP1 == 1)
+          localStorage.setItem("colorJugador", "jugadorAzul");
+        if (this.personajeP1 == 2)
+          localStorage.setItem("colorJugador", "jugadorCeleste");
+        if (this.personajeP1 == 3)
+            localStorage.setItem("colorJugador", "jugadorNaranja");
+        if (this.personajeP1 == 4)
+          localStorage.setItem("colorJugador", "jugadorAmarillo");
+        if (this.personajeP1 == 5)
+            localStorage.setItem("colorJugador", "jugadorRojo");
+        if (this.personajeP1 == 6)
+            localStorage.setItem("colorJugador", "jugadorGris");
+        if (this.personajeP1 == 7)
+            localStorage.setItem("colorJugador", "jugadorVerde");
+        if (this.personajeP1 == 8)
+             localStorage.setItem("colorJugador", "jugadorNegro");
+        if (this.personajeP1 == 9)
+            localStorage.setItem("colorJugador", "jugadorMorado");
+
+
+this.anims.remove('jugador1Abajo');
+this.anims.remove('jugador1Arriba');
+this.anims.remove('jugador1Izquierda');
+this.anims.remove('jugador1Derecha');
+
+     this.anims.create({
+        key: 'jugador1Abajo',
+        frames: this.anims.generateFrameNumbers( localStorage.getItem("colorJugador"), { start: 0, end: 2, first: 0 }),
+        frameRate: 20,
+        repeat: -1
+    });
+
+      this.anims.create({
+        key: 'jugador1Arriba',
+        frames: this.anims.generateFrameNumbers(localStorage.getItem("colorJugador"), { start: 3, end: 5, first: 3 }),
+        frameRate: 20,
+        repeat: -1
+    });
+       this.anims.create({
+        key: 'jugador1Izquierda',
+        frames: this.anims.generateFrameNumbers(localStorage.getItem("colorJugador"), { start: 6, end: 8, first: 6 }),
+        frameRate: 20,
+        repeat: -1
+    });
+     this.anims.create({
+        key: 'jugador1Derecha',
+        frames: this.anims.generateFrameNumbers(localStorage.getItem("colorJugador"), { start: 9, end: 11, first: 9 }),
+        frameRate: 20,
+        repeat: -1
+    });
+
+
+
         if (this.gamemode != 0)
           this.kill = this.physics.add.sprite(92, 336 + 96, 'kills');
 
@@ -501,6 +604,65 @@ var desconectado = 0;
           if (this.personajeP2 == 9)
             this.vida2.setTexture('jugadorMorado');
 
+
+        //COLOR PERSONAJE 2 Animacion
+        if (this.personajeP2 == 1)
+          localStorage.setItem("colorJugador2", "jugadorAzul");
+        if (this.personajeP2 == 2)
+          localStorage.setItem("colorJugador2", "jugadorCeleste");
+        if (this.personajeP2 == 3)
+            localStorage.setItem("colorJugador2", "jugadorNaranja");
+        if (this.personajeP2 == 4)
+          localStorage.setItem("colorJugador2", "jugadorAmarillo");
+        if (this.personajeP2 == 5)
+            localStorage.setItem("colorJugador2", "jugadorRojo");
+        if (this.personajeP2 == 6)
+            localStorage.setItem("colorJugador2", "jugadorGris");
+        if (this.personajeP2 == 7)
+            localStorage.setItem("colorJugador2", "jugadorVerde");
+        if (this.personajeP2 == 8)
+             localStorage.setItem("colorJugador2", "jugadorNegro");
+        if (this.personajeP2 == 9)
+            localStorage.setItem("colorJugador2", "jugadorMorado");
+
+
+
+this.anims.remove('jugador2Abajo');
+this.anims.remove('jugador2Arriba');
+this.anims.remove('jugador2Izquierda');
+this.anims.remove('jugador2Derecha');
+
+     this.anims.create({
+        key: 'jugador2Abajo',
+        frames: this.anims.generateFrameNumbers( localStorage.getItem("colorJugador2"), { start: 0, end: 2, first: 0 }),
+        frameRate: 20,
+        repeat: -1
+    });
+
+      this.anims.create({
+        key: 'jugador2Arriba',
+        frames: this.anims.generateFrameNumbers(localStorage.getItem("colorJugador2"), { start: 3, end: 5, first: 3 }),
+        frameRate: 20,
+        repeat: -1
+    });
+       this.anims.create({
+        key: 'jugador2Izquierda',
+        frames: this.anims.generateFrameNumbers(localStorage.getItem("colorJugador2"), { start: 6, end: 8, first: 6 }),
+        frameRate: 20,
+        repeat: -1
+    });
+     this.anims.create({
+        key: 'jugador2Derecha',
+        frames: this.anims.generateFrameNumbers(localStorage.getItem("colorJugador2"), { start: 9, end: 11, first: 9 }),
+        frameRate: 20,
+        repeat: -1
+    });
+
+
+
+
+
+
         }
 
         if (this.jugadoresTotal >= 3) {
@@ -528,6 +690,64 @@ var desconectado = 0;
             this.vida3.setTexture('jugadorNegro');
           if (this.personajeP3 == 9)
             this.vida3.setTexture('jugadorMorado');
+
+
+
+        //COLOR PERSONAJE 3 Animacion
+        if (this.personajeP3 == 1)
+          localStorage.setItem("colorJugador3", "jugadorAzul");
+        if (this.personajeP3 == 2)
+          localStorage.setItem("colorJugador3", "jugadorCeleste");
+        if (this.personajeP3 == 3)
+            localStorage.setItem("colorJugador3", "jugadorNaranja");
+        if (this.personajeP3 == 4)
+          localStorage.setItem("colorJugador3", "jugadorAmarillo");
+        if (this.personajeP3 == 5)
+            localStorage.setItem("colorJugador3", "jugadorRojo");
+        if (this.personajeP3 == 6)
+            localStorage.setItem("colorJugador3", "jugadorGris");
+        if (this.personajeP3 == 7)
+            localStorage.setItem("colorJugador3", "jugadorVerde");
+        if (this.personajeP3 == 8)
+             localStorage.setItem("colorJugador3", "jugadorNegro");
+        if (this.personajeP3 == 9)
+            localStorage.setItem("colorJugador3", "jugadorMorado");
+
+
+
+this.anims.remove('jugador3Abajo');
+this.anims.remove('jugador3Arriba');
+this.anims.remove('jugador3Izquierda');
+this.anims.remove('jugador3Derecha');
+
+     this.anims.create({
+        key: 'jugador3Abajo',
+        frames: this.anims.generateFrameNumbers( localStorage.getItem("colorJugador3"), { start: 0, end: 2, first: 0 }),
+        frameRate: 20,
+        repeat: -1
+    });
+
+      this.anims.create({
+        key: 'jugador3Arriba',
+        frames: this.anims.generateFrameNumbers(localStorage.getItem("colorJugador3"), { start: 3, end: 5, first: 3 }),
+        frameRate: 20,
+        repeat: -1
+    });
+       this.anims.create({
+        key: 'jugador3Izquierda',
+        frames: this.anims.generateFrameNumbers(localStorage.getItem("colorJugador3"), { start: 6, end: 8, first: 6 }),
+        frameRate: 20,
+        repeat: -1
+    });
+     this.anims.create({
+        key: 'jugador3Derecha',
+        frames: this.anims.generateFrameNumbers(localStorage.getItem("colorJugador3"), { start: 9, end: 11, first: 9 }),
+        frameRate: 20,
+        repeat: -1
+    });
+
+
+
         }
         //HUD jugador 4
 
@@ -555,6 +775,66 @@ var desconectado = 0;
             this.vida4.setTexture('jugadorNegro');
           if (this.personajeP4 == 9)
             this.vida4.setTexture('jugadorMorado');
+
+
+
+
+
+        //COLOR PERSONAJE 4 Animacion
+        if (this.personajeP4 == 1)
+          localStorage.setItem("colorJugador4", "jugadorAzul");
+        if (this.personajeP4 == 2)
+          localStorage.setItem("colorJugador4", "jugadorCeleste");
+        if (this.personajeP4 == 3)
+            localStorage.setItem("colorJugador4", "jugadorNaranja");
+        if (this.personajeP4 == 4)
+          localStorage.setItem("colorJugador4", "jugadorAmarillo");
+        if (this.personajeP4 == 5)
+            localStorage.setItem("colorJugador4", "jugadorRojo");
+        if (this.personajeP4 == 6)
+            localStorage.setItem("colorJugador4", "jugadorGris");
+        if (this.personajeP4 == 7)
+            localStorage.setItem("colorJugador4", "jugadorVerde");
+        if (this.personajeP4 == 8)
+             localStorage.setItem("colorJugador4", "jugadorNegro");
+        if (this.personajeP4 == 9)
+            localStorage.setItem("colorJugador4", "jugadorMorado");
+
+
+
+this.anims.remove('jugador4Abajo');
+this.anims.remove('jugador4Arriba');
+this.anims.remove('jugador4Izquierda');
+this.anims.remove('jugador4Derecha');
+
+     this.anims.create({
+        key: 'jugador4Abajo',
+        frames: this.anims.generateFrameNumbers( localStorage.getItem("colorJugador4"), { start: 0, end: 2, first: 0 }),
+        frameRate: 20,
+        repeat: -1
+    });
+
+      this.anims.create({
+        key: 'jugador4Arriba',
+        frames: this.anims.generateFrameNumbers(localStorage.getItem("colorJugador4"), { start: 3, end: 5, first: 3 }),
+        frameRate: 20,
+        repeat: -1
+    });
+       this.anims.create({
+        key: 'jugador4Izquierda',
+        frames: this.anims.generateFrameNumbers(localStorage.getItem("colorJugador4"), { start: 6, end: 8, first: 6 }),
+        frameRate: 20,
+        repeat: -1
+    });
+     this.anims.create({
+        key: 'jugador4Derecha',
+        frames: this.anims.generateFrameNumbers(localStorage.getItem("colorJugador4"), { start: 9, end: 11, first: 9 }),
+        frameRate: 20,
+        repeat: -1
+    });
+
+
+
         }
         this.minas = this.physics.add.group();
 
@@ -915,7 +1195,10 @@ var desconectado = 0;
         this.myShip3 = this.physics.add.sprite(5000, 130, 'ship3');
         this.myShip4 = this.physics.add.sprite(5000, 130, 'ship4');
 
-
+        this.myShip.setScale(0.85);
+ this.myShip2.setScale(0.85);
+ this.myShip3.setScale(0.85);
+ this.myShip4.setScale(0.85);
 
         if (this.jugadoresTotal >= 2) {
           this.myShip2 = this.physics.add.sprite(1820 + this.x_add, 130 + this.y_add, this.sprite_select2);
@@ -2833,45 +3116,45 @@ var desconectado = 0;
                     var item = Phaser.Math.Between(0, 40);
 
                     if (item == 1) {
-                      this.powerupsLlamas.create(480 + i * 32 * 2, 64 + j * 32 * 2, 'poderllama');
-                      this.box.create(480 + i * 32 * 2, 64 + j * 32 * 2, 'wall');
+                      this.powerupsLlamas.create( this.x_add + 480 + i * 32 * 2, this.y_add + 64 + j * 32 * 2, 'poderllama');
+                      this.box.create( this.x_add + 480 + i * 32 * 2,  this.y_add +64 + j * 32 * 2, 'wall');
                     }
                     if (item == 2) {
-                      this.powerupsPatin.create(480 + i * 32 * 2, 64 + j * 32 * 2, 'poderpatin');
-                      this.box.create(480 + i * 32 * 2, 64 + j * 32 * 2, 'wall');
+                      this.powerupsPatin.create(this.x_add + 480 + i * 32 * 2, this.y_add + 64 + j * 32 * 2, 'poderpatin');
+                      this.box.create(this.x_add + 480 + i * 32 * 2, this.y_add + 64 + j * 32 * 2, 'wall');
                     }
                     if (item == 3) {
-                      this.powerupsBombas.create(480 + i * 32 * 2, 64 + j * 32 * 2, 'poderbomba');
-                      this.box.create(480 + i * 32 * 2, 64 + j * 32 * 2, 'wall');
+                      this.powerupsBombas.create(this.x_add + 480 + i * 32 * 2, this.y_add + 64 + j * 32 * 2, 'poderbomba');
+                      this.box.create(this.x_add + 480 + i * 32 * 2, this.y_add + 64 + j * 32 * 2, 'wall');
                     }
                     if (item == 36) {
-                      this.powerupsVidas.create(480 + i * 32 * 2, 64 + j * 32 * 2, 'podervida');
-                      this.box.create(480 + i * 32 * 2, 64 + j * 32 * 2, 'wall');
+                      this.powerupsVidas.create(this.x_add + 480 + i * 32 * 2, this.y_add + 64 + j * 32 * 2, 'podervida');
+                      this.box.create(this.x_add + 480 + i * 32 * 2, this.y_add + 64 + j * 32 * 2, 'wall');
                     }
                     if (item == 38) {
-                      this.powerupsGuantes.create(480 + i * 32 * 2, 64 + j * 32 * 2, 'poderguante');
-                      this.box.create(480 + i * 32 * 2, 64 + j * 32 * 2, 'wall');
+                      this.powerupsGuantes.create(this.x_add + 480 + i * 32 * 2, this.y_add + 64 + j * 32 * 2, 'poderguante');
+                      this.box.create(this.x_add + 480 + i * 32 * 2,  this.y_add +64 + j * 32 * 2, 'wall');
                     }
                     if (item == 4)
-                      this.boxFuerte.create(480 + i * 32 * 2, 64 + j * 32 * 2, 'wall2');
+                      this.boxFuerte.create(this.x_add + 480 + i * 32 * 2,  this.y_add +64 + j * 32 * 2, 'wall2');
                     if (item > 5 && item < 6 + this.nivelInt) {
 
                       if (i > 0 && i < 20 && j > 2 && j < 12) {
                         if (this.enemigos.getLength() < 3 + this.nivelInt) {
                           if (this.gamemode == 0) {
-                            this.enemigos.create(480 + i * 32 * 2, 64 + j * 32 * 2, 'enemigo');
+                            this.enemigos.create(this.x_add + 480 + i * 32 * 2,  this.y_add +64 + j * 32 * 2, 'enemigo');
                           }
                         }
                       }
                     }
 
                     if (item > 16 && item < 28)
-                      this.box.create(480 + i * 32 * 2, 64 + j * 32 * 2, 'wall');
+                      this.box.create(this.x_add + 480 + i * 32 * 2,  this.y_add +64 + j * 32 * 2, 'wall');
 
                     if (item > 29 && item < 32)
-                      this.pisor1.create(480 + i * 32 * 2, 64 + j * 32 * 2, 'pisor1');
+                      this.pisor1.create(this.x_add + 480 + i * 32 * 2,  this.y_add +64 + j * 32 * 2, 'pisor1');
                     if (item > 33 && item < 35)
-                      this.pisomov.create(480 + i * 32 * 2, 64 + j * 32 * 2, 'pisomov');
+                      this.pisomov.create(this.x_add + 480 + i * 32 * 2, this.y_add + 64 + j * 32 * 2, 'pisomov');
                   }
 
                 }
@@ -2912,21 +3195,21 @@ var desconectado = 0;
                     var item = Phaser.Math.Between(0, 40);
 
                     if (item == 1) {
-                      this.powerupsLlamas.create(416 + valorx * 64, 128 + valory * 64, 'poderllama');
+                      this.powerupsLlamas.create(this.x_add + 416 + valorx * 64,this.y_add + 128 + valory * 64, 'poderllama');
                     }
                     if (item == 2) {
-                      this.powerupsPatin.create(416 + valorx * 64, 128 + valory * 64, 'poderpatin');
+                      this.powerupsPatin.create(this.x_add +416 + valorx * 64,this.y_add + 128 + valory * 64, 'poderpatin');
                     }
                     if (item == 3) {
-                      this.powerupsBombas.create(416 + valorx * 64, 128 + valory * 64, 'poderbomba');
+                      this.powerupsBombas.create(this.x_add +416 + valorx * 64,this.y_add + 128 + valory * 64, 'poderbomba');
                     }
                     if (item == 36) {
-                      this.powerupsVidas.create(416 + valorx * 64, 128 + valory * 64, 'podervida');
+                      this.powerupsVidas.create(this.x_add +416 + valorx * 64,this.y_add + 128 + valory * 64, 'podervida');
                     }
                     if (item == 38) {
-                      this.powerupsGuantes.create(416 + valorx * 64, 128 + valory * 64, 'poderguante');
+                      this.powerupsGuantes.create(this.x_add +416 + valorx * 64,this.y_add + 128 + valory * 64, 'poderguante');
                     }
-                    this.box.create(416 + valorx * 64, 128 + valory * 64, 'wall');
+                    this.box.create(this.x_add +416 + valorx * 64, this.y_add +128 + valory * 64, 'wall');
 
 
                     //this.objetocolocarspriteNuevo = this.physics.add.sprite(this.seleccionadoSprite.x , this.seleccionadoSprite.y, 'wall');
@@ -2935,41 +3218,41 @@ var desconectado = 0;
                   if (valorobj == 1) {
 
                     if (this.gamemode == 0)
-                      this.enemigos.create(416 + valorx * 64, 128 + valory * 64, 'enemigo');
+                      this.enemigos.create(this.x_add +416 + valorx * 64, this.y_add +128 + valory * 64, 'enemigo');
                     //this.objetocolocarspriteNuevo = this.physics.add.sprite(this.seleccionadoSprite.x , this.seleccionadoSprite.y, 'enemigo');
                   }
 
                   if (valorobj == 2) {
-                    this.pisomov.create(416 + valorx * 64, 128 + valory * 64, 'pisomov');
+                    this.pisomov.create(this.x_add +416 + valorx * 64,this.y_add + 128 + valory * 64, 'pisomov');
                     // this.objetocolocarspriteNuevo = this.physics.add.sprite(this.seleccionadoSprite.x , this.seleccionadoSprite.y, 'pisomov');
                   }
 
                   if (valorobj == 3) {
-                    this.pisor1.create(416 + valorx * 64, 128 + valory * 64, 'pisor1');
+                    this.pisor1.create(this.x_add +416 + valorx * 64, this.y_add +128 + valory * 64, 'pisor1');
                     //        this.objetocolocarspriteNuevo = this.physics.add.sprite(this.seleccionadoSprite.x , this.seleccionadoSprite.y, 'pisor1');
                   }
                   if (valorobj == 4) {
-                    this.minas.create(416 + valorx * 64, 128 + valory * 64, 'mina');
+                    this.minas.create(this.x_add +416 + valorx * 64, this.y_add +128 + valory * 64, 'mina');
                     //      this.objetocolocarspriteNuevo = this.physics.add.sprite(this.seleccionadoSprite.x , this.seleccionadoSprite.y, 'mina');
                   }
                   if (valorobj == 5) {
-                    this.myShip.x = 416 + valorx * 64;
-                    this.myShip.y = 128 + valory * 64;
+                    this.myShip.x = this.x_add +416 + valorx * 64;
+                    this.myShip.y =  this.y_add +128 + valory * 64;
                   }
                   if (valorobj == 6) {
-                    this.boxFuerte.create(416 + valorx * 64, 128 + valory * 64, 'wall2');
+                    this.boxFuerte.create(this.x_add +416 + valorx * 64, this.y_add +128 + valory * 64, 'wall2');
                   }
                   if (valorobj == 7) {
-                    this.myShip2.x = 416 + valorx * 64;
-                    this.myShip2.y = 128 + valory * 64;
+                    this.myShip2.x = this.x_add +416 + valorx * 64;
+                    this.myShip2.y = this.y_add +128 + valory * 64;
                   }
                   if (valorobj == 8) {
-                    this.myShip3.x = 416 + valorx * 64;
-                    this.myShip3.y = 128 + valory * 64;
+                    this.myShip3.x = this.x_add +416 + valorx * 64;
+                    this.myShip3.y = this.y_add +128 + valory * 64;
                   }
                   if (valorobj == 9) {
-                    this.myShip4.x = 416 + valorx * 64;
-                    this.myShip4.y = 128 + valory * 64;
+                    this.myShip4.x =this.x_add + 416 + valorx * 64;
+                    this.myShip4.y = this.y_add +128 + valory * 64;
                   }
 
 
@@ -4064,7 +4347,6 @@ var desconectado = 0;
             if (this.gamemode == 0) {
 
               this.enemigos.children.iterate(child => {
-
 
 
                 child.setVelocityX(0);
@@ -7542,16 +7824,29 @@ this.game.sound.stopAll();
                 }
 
                 if (random == 0)
+                {
                   child.setVelocityX(25 * this.nivelInt + 50);
+                  //this.child.play('EnemigoDerecha');
+               }
 
                 if (random == 1)
+                {
                   child.setVelocityX(-25 * this.nivelInt - 50);
+                 //     this.child.play('EnemigoIzquierda');
+                }
 
                 if (random == 2)
+                {
                   child.setVelocityY(25 * this.nivelInt + 50);
+                 //  this.child.play('EnemigoAbajo');
+                }
 
                 if (random == 3)
+                {
                   child.setVelocityY(-25 * this.nivelInt - 50);
+                  //this.child.play('EnemigoArriba');
+                }
+
 
 
                 //CORRER BOMBAS
@@ -7624,31 +7919,31 @@ this.game.sound.stopAll();
 
                 if ((child.x - 150 < this.myShip.x + 62 + 150) && (child.x + 62 + 50 > this.myShip.x - 150)
                   && (child.y + 62 + 150 > this.myShip.y - 150) && (child.y - 50 < this.myShip.y + 62 + 150)) {
-                  if (random > 0 && random < 5 && child.x < this.myShip.x)
+                  if (random > 0 && random < 2 && child.x < this.myShip.x)
                     child.setVelocityX(25 * this.nivelInt + 50);
 
-                  if (random > 0 && random < 5 && child.x > this.myShip.x)
+                  if (random > 0 && random < 2 && child.x > this.myShip.x)
                     child.setVelocityX(-25 * this.nivelInt - 50);
 
-                  if (random > 0 && random < 5 && child.y < this.myShip.y)
+                  if (random > 0 && random < 2 && child.y < this.myShip.y)
                     child.setVelocityY(25 * this.nivelInt + 50);
 
-                  if (random > 0 && random < 5 && child.y > this.myShip.y)
+                  if (random > 0 && random < 2 && child.y > this.myShip.y)
                     child.setVelocityY(-25 * this.nivelInt - 50);
                 }
 
                 if ((child.x - 150 < this.myShip2.x + 62 + 150) && (child.x + 62 + 50 > this.myShip2.x - 150)
                   && (child.y + 62 + 150 > this.myShip2.y - 150) && (child.y - 50 < this.myShip2.y + 62 + 150)) {
-                  if (random > 0 && random < 5 && child.x < this.myShip2.x)
+                  if (random > 0 && random < 2 && child.x < this.myShip2.x)
                     child.setVelocityX(25 * this.nivelInt + 50);
 
-                  if (random > 0 && random < 5 && child.x > this.myShip2.x)
+                  if (random > 0 && random < 2 && child.x > this.myShip2.x)
                     child.setVelocityX(-25 * this.nivelInt - 50);
 
-                  if (random > 0 && random < 5 && child.y < this.myShip2.y)
+                  if (random > 0 && random < 2 && child.y < this.myShip2.y)
                     child.setVelocityY(25 * this.nivelInt + 50);
 
-                  if (random > 0 && random < 5 && child.y > this.myShip2.y)
+                  if (random > 0 && random < 2 && child.y > this.myShip2.y)
                     child.setVelocityY(-25 * this.nivelInt - 50);
                 }
 
@@ -7656,32 +7951,32 @@ this.game.sound.stopAll();
 
                 if ((child.x - 150 < this.myShip3.x + 62 + 150) && (child.x + 62 + 50 > this.myShip3.x - 150)
                   && (child.y + 62 + 150 > this.myShip3.y - 150) && (child.y - 50 < this.myShip3.y + 62 + 150)) {
-                  if (random > 0 && random < 5 && child.x < this.myShip3.x)
+                  if (random > 0 && random < 2 && child.x < this.myShip3.x)
                     child.setVelocityX(25 * this.nivelInt + 50);
 
-                  if (random > 0 && random < 5 && child.x > this.myShip3.x)
+                  if (random > 0 && random < 2 && child.x > this.myShip3.x)
                     child.setVelocityX(-25 * this.nivelInt - 50);
 
-                  if (random > 0 && random < 5 && child.y < this.myShip3.y)
+                  if (random > 0 && random < 2 && child.y < this.myShip3.y)
                     child.setVelocityY(25 * this.nivelInt + 50);
 
-                  if (random > 0 && random < 5 && child.y > this.myShip3.y)
+                  if (random > 0 && random < 2 && child.y > this.myShip3.y)
                     child.setVelocityY(-25 * this.nivelInt - 50);
                 }
 
 
                 if ((child.x - 150 < this.myShip4.x + 62 + 150) && (child.x + 62 + 50 > this.myShip4.x - 150)
                   && (child.y + 62 + 150 > this.myShip4.y - 150) && (child.y - 50 < this.myShip4.y + 62 + 150)) {
-                  if (random > 0 && random < 5 && child.x < this.myShip4.x)
+                  if (random > 0 && random < 2 && child.x < this.myShip4.x)
                     child.setVelocityX(25 * this.nivelInt + 50);
 
-                  if (random > 0 && random < 5 && child.x > this.myShip4.x)
+                  if (random > 0 && random < 2 && child.x > this.myShip4.x)
                     child.setVelocityX(-25 * this.nivelInt - 50);
 
-                  if (random > 0 && random < 5 && child.y < this.myShip4.y)
+                  if (random > 0 && random < 2 && child.y < this.myShip4.y)
                     child.setVelocityY(25 * this.nivelInt + 50);
 
-                  if (random > 0 && random < 5 && child.y > this.myShip4.y)
+                  if (random > 0 && random < 2 && child.y > this.myShip4.y)
                     child.setVelocityY(-25 * this.nivelInt - 50);
                 }
 
@@ -7843,16 +8138,16 @@ this.game.sound.stopAll();
                   if ((child.x - 100 < child2.x + 62 + 100) && (child.x + 62 + 100 > child2.x - 100)
                     && (child.y + 62 + 100 > child2.y - 100) && (child.y - 100 < child2.y + 62 + 100)) {
 
-                    if (random > 0 && random < 5 && child.x < child2.x)
+                    if (random > 0 && random < 2 && child.x < child2.x)
                       child.setVelocityX(-25 * this.nivelInt - 50);
 
-                    if (random > 0 && random < 5 && child.x > child2.x)
+                    if (random > 0 && random < 2 && child.x > child2.x)
                       child.setVelocityX(25 * this.nivelInt + 50);
 
-                    if (random > 0 && random < 5 && child.y < child2.y)
+                    if (random > 0 && random < 2 && child.y < child2.y)
                       child.setVelocityY(-25 * this.nivelInt - 50);
 
-                    if (random > 0 && random < 5 && child.y > child2.y)
+                    if (random > 0 && random < 2 && child.y > child2.y)
                       child.setVelocityY(25 * this.nivelInt + 50);
 
 
@@ -7866,16 +8161,16 @@ this.game.sound.stopAll();
                   if ((child.x - 100 < child2.x + 62 + 100) && (child.x + 62 + 100 > child2.x - 100)
                     && (child.y + 62 + 100 > child2.y - 100) && (child.y - 100 < child2.y + 62 + 100)) {
 
-                    if (random > 0 && random < 5 && child.x < child2.x)
+                    if (random > 0 && random < 2 && child.x < child2.x)
                       child.setVelocityX(-25 * this.nivelInt - 50);
 
-                    if (random > 0 && random < 5 && child.x > child2.x)
+                    if (random > 0 && random < 2 && child.x > child2.x)
                       child.setVelocityX(25 * this.nivelInt + 50);
 
-                    if (random > 0 && random < 5 && child.y < child2.y)
+                    if (random > 0 && random < 2 && child.y < child2.y)
                       child.setVelocityY(-25 * this.nivelInt - 50);
 
-                    if (random > 0 && random < 5 && child.y > child2.y)
+                    if (random > 0 && random < 2 && child.y > child2.y)
                       child.setVelocityY(25 * this.nivelInt + 50);
 
 
@@ -7890,16 +8185,16 @@ this.game.sound.stopAll();
                   if ((child.x - 100 < child2.x + 62 + 100) && (child.x + 62 + 100 > child2.x - 100)
                     && (child.y + 62 + 100 > child2.y - 100) && (child.y - 100 < child2.y + 62 + 100)) {
 
-                    if (random > 0 && random < 5 && child.x < child2.x)
+                    if (random > 0 && random < 2 && child.x < child2.x)
                       child.setVelocityX(-25 * this.nivelInt - 50);
 
-                    if (random > 0 && random < 5 && child.x > child2.x)
+                    if (random > 0 && random < 2 && child.x > child2.x)
                       child.setVelocityX(25 * this.nivelInt + 50);
 
-                    if (random > 0 && random < 5 && child.y < child2.y)
+                    if (random > 0 && random < 2 && child.y < child2.y)
                       child.setVelocityY(-25 * this.nivelInt - 50);
 
-                    if (random > 0 && random < 5 && child.y > child2.y)
+                    if (random > 0 && random < 2 && child.y > child2.y)
                       child.setVelocityY(25 * this.nivelInt + 50);
 
 
@@ -7914,16 +8209,16 @@ this.game.sound.stopAll();
                   if ((child.x - 100 < child2.x + 62 + 100) && (child.x + 62 + 100 > child2.x - 100)
                     && (child.y + 62 + 100 > child2.y - 100) && (child.y - 100 < child2.y + 62 + 100)) {
 
-                    if (random > 0 && random < 5 && child.x < child2.x)
+                    if (random > 0 && random < 2 && child.x < child2.x)
                       child.setVelocityX(-25 * this.nivelInt - 50);
 
-                    if (random > 0 && random < 5 && child.x > child2.x)
+                    if (random > 0 && random < 2 && child.x > child2.x)
                       child.setVelocityX(25 * this.nivelInt + 50);
 
-                    if (random > 0 && random < 5 && child.y < child2.y)
+                    if (random > 0 && random < 2 && child.y < child2.y)
                       child.setVelocityY(-25 * this.nivelInt - 50);
 
-                    if (random > 0 && random < 5 && child.y > child2.y)
+                    if (random > 0 && random < 2 && child.y > child2.y)
                       child.setVelocityY(25 * this.nivelInt + 50);
 
 
@@ -7975,7 +8270,7 @@ this.game.sound.stopAll();
 
 
             }
-            )
+            ,this)
 
             if (this.CrearObjeto == 1) {
 
@@ -8292,33 +8587,48 @@ this.game.sound.stopAll();
 
             switch (cursor) {
               case "STOPLEFT4":
+               this.myShip4.play('jugador4Izquierda');
                 if (this.resbalar4 == 0)
                   this.myShip4.setVelocityX(0);
                 break;
               case "STOPLEFT3":
+               this.myShip3.play('jugador3Izquierda');
                 if (this.resbalar3 == 0)
                   this.myShip3.setVelocityX(0);
                 break;
               case "STOPLEFT2":
+               this.myShip2.play('jugador2Izquierda');
                 if (this.resbalar2 == 0)
                   this.myShip2.setVelocityX(0);
                 break;
               case "STOPLEFT":
+               this.myShip.play('jugador1Izquierda');
                 if (this.resbalar == 0)
                   this.myShip.setVelocityX(0);
                 break;
               case "LEFT4":
+               if(this.FullDirection4!= "IZQ")
+             this.myShip4.play('jugador4Izquierda');
+           this.FullDirection4 = "IZQ";
                 this.myShip4.setVelocityX(-20 * this.patin4);
                 break;
               case "LEFT3":
+                if(this.FullDirection3!= "IZQ")
+             this.myShip3.play('jugador3Izquierda');
+           this.FullDirection3 = "IZQ";
                 this.myShip3.setVelocityX(-20 * this.patin3);
                 break;
               case "LEFT2":
+               if(this.FullDirection2!= "IZQ")
+             this.myShip2.play('jugador2Izquierda');
+           this.FullDirection2 = "IZQ";
                 this.myShip2.setVelocityX(-20 * this.patin2);
                 break;
 
               case "LEFT":
-
+  if(this.FullDirection1!= "IZQ")
+             this.myShip1.play('jugador1Izquierda');
+           this.FullDirection1 = "IZQ";
           this.myShip.setVelocityX(-20 * this.patin);
 
                this.moverMenuIzq();
@@ -8326,95 +8636,141 @@ this.game.sound.stopAll();
                 this.moverMenuIzqDes();
                 break;
               case "STOPRIGHT4":
+               this.myShip4.play('jugador4Derecha');
                 if (this.resbalar4 == 0)
                   this.myShip4.setVelocityX(0);
                 break;
               case "STOPRIGHT3":
+               this.myShip3.play('jugador3Derecha');
                 if (this.resbalar3 == 0)
                   this.myShip3.setVelocityX(0);
                 break;
               case "STOPRIGHT2":
+               this.myShip2.play('jugador2Derecha');
                 if (this.resbalar2 == 0)
                   this.myShip2.setVelocityX(0);
                 break;
               case "STOPRIGHT":
+               this.myShip.play('jugador1Derecha');
                 if (this.resbalar == 0)
                   this.myShip.setVelocityX(0);
                 break;
               case "RIGHT4":
+                      if(this.FullDirection4 != "DER")
+               this.myShip4.play('jugador4Derecha');
+               this.FullDirection4 = "DER";
                 this.myShip4.setVelocityX(20 * this.patin4);
                 break;
               case "RIGHT3":
+               if(this.FullDirection3 != "DER")
+               this.myShip3.play('jugador3Derecha');
+               this.FullDirection3 = "DER";
                 this.myShip3.setVelocityX(20 * this.patin3);
                 break;
               case "RIGHT2":
+                   if(this.FullDirection2 != "DER")
+               this.myShip2.play('jugador2Derecha');
+               this.FullDirection2 = "DER";
                 this.myShip2.setVelocityX(20 * this.patin2);
                 break;
               case "RIGHT":
-
+     if(this.FullDirection1 != "DER")
+               this.myShip.play('jugador1Derecha');
+               this.FullDirection1 = "DER";
    this.myShip.setVelocityX(20 * this.patin);
                this.moverMenuDer();
                 this.moverMenuDerDes();
 
                 break;
               case "STOPUP4":
+               this.myShip4.play('jugador4Arriba');
                 if (this.resbalar4 == 0)
                   this.myShip4.setVelocityY(0);
                 break;
               case "STOPUP3":
+               this.myShip3.play('jugador3Arriba');
                 if (this.resbalar3 == 0)
                   this.myShip3.setVelocityY(0);
                 break;
               case "STOPUP2":
+               this.myShip2.play('jugador2Arriba');
                 if (this.resbalar2 == 0)
                   this.myShip2.setVelocityY(0);
                 break;
               case "STOPUP":
+               this.myShip.play('jugador1Arriba');
                 if (this.resbalar == 0)
                   this.myShip.setVelocityY(0);
                 break;
               case "UP4":
+               if(this.FullDirection4 != "ARRIBA")
+               this.myShip4.play('jugador4Arriba');
+                  this.FullDirection4 = "ARRIBA";
                 this.myShip4.setVelocityY(-20 * this.patin4);
                 break;
               case "UP3":
+               if(this.FullDirection3 != "ARRIBA")
+               this.myShip3.play('jugador3Arriba');
+                  this.FullDirection3 = "ARRIBA";
                 this.myShip3.setVelocityY(-20 * this.patin3);
                 break;
               case "UP2":
+               if(this.FullDirection2 != "ARRIBA")
+               this.myShip2.play('jugador2Arriba');
+                  this.FullDirection2 = "ARRIBA";
                 this.myShip2.setVelocityY(-20 * this.patin2);
                 break;
               case "UP":
-              
+               if(this.FullDirection1 != "ARRIBA")
+               this.myShip.play('jugador1Arriba');
+                  this.FullDirection1 = "ARRIBA";
                 this.myShip.setVelocityY(-20 * this.patin);
 
               this.moverMenuArribaDes();
 
                 break;
               case "STOPDOWN4":
+              this.myShip4.play('jugador4Abajo');
                 if (this.resbalar4 == 0)
                   this.myShip4.setVelocityY(0);
                 break;
               case "STOPDOWN3":
+              this.myShip3.play('jugador3Abajo');
                 if (this.resbalar3 == 0)
                   this.myShip3.setVelocityY(0);
                 break;
               case "STOPDOWN2":
+              this.myShip2.play('jugador2Abajo');
                 if (this.resbalar2 == 0)
                   this.myShip2.setVelocityY(0);
                 break;
               case "STOPDOWN":
+              this.myShip.play('jugador1Abajo');
                 if (this.resbalar == 0)
                   this.myShip.setVelocityY(0);
                 break;
               case "DOWN4":
+               if(this.FullDirection4 != "ABAJO")
+              this.myShip4.play('jugador4Abajo');
+                this.FullDirection4 = "ABAJO";
                 this.myShip4.setVelocityY(20 * this.patin4);
                 break;
               case "DOWN3":
+                 if(this.FullDirection3 != "ABAJO")
+              this.myShip3.play('jugador3Abajo');
+                this.FullDirection3 = "ABAJO";
                 this.myShip3.setVelocityY(20 * this.patin3);
                 break;
               case "DOWN2":
+                   if(this.FullDirection2 != "ABAJO")
+              this.myShip2.play('jugador2Abajo');
+                this.FullDirection2 = "ABAJO";
                 this.myShip2.setVelocityY(20 * this.patin2);
                 break;
               case "DOWN":
+                if(this.FullDirection1 != "ABAJO")
+              this.myShip.play('jugador1Abajo');
+                this.FullDirection1 = "ABAJO";
                 this.myShip.setVelocityY(20 * this.patin);
                   //this.moverMenuArriba();
                   this.moverMenuAbajoDes();
@@ -8458,6 +8814,9 @@ this.game.sound.stopAll();
 
 
             if (this.cursors.left.isDown) {
+             if(this.FullDirection1 != "IZQ")
+             this.myShip.play('jugador1Izquierda');
+           this.FullDirection1 = "IZQ";
               this.myShip.setVelocityX(-20 * this.patin);
             }
             else {
@@ -8466,6 +8825,9 @@ this.game.sound.stopAll();
 
 
             if (this.cursors.right.isDown) {
+                if(this.FullDirection1 != "DER")
+               this.myShip.play('jugador1Derecha');
+               this.FullDirection1 = "DER";
               this.myShip.setVelocityX(20 * this.patin);
             }
             else {
@@ -8473,6 +8835,9 @@ this.game.sound.stopAll();
             }
 
             if (this.cursors.up.isDown) {
+               if(this.FullDirection1 != "ARRIBA")
+               this.myShip.play('jugador1Arriba');
+                  this.FullDirection1 = "ARRIBA";
               this.myShip.setVelocityY(-20 * this.patin);
             }
             else {
@@ -8480,6 +8845,9 @@ this.game.sound.stopAll();
             }
 
             if (this.cursors.down.isDown) {
+                 if(this.FullDirection1 != "ABAJO")
+              this.myShip.play('jugador1Abajo');
+                this.FullDirection1 = "ABAJO";
               this.myShip.setVelocityY(20 * this.patin);
             }
             else {
@@ -8488,7 +8856,12 @@ this.game.sound.stopAll();
 
             //JUGADOR 2
             if (this.leftjugador2.isDown) {
+               if(this.FullDirection2 != "IZQ")
+             this.myShip2.play('jugador2Izquierda');
+           this.FullDirection2 = "IZQ";
               this.myShip2.setVelocityX(-20 * this.patin2);
+
+
             }
             else {
 
@@ -8496,6 +8869,9 @@ this.game.sound.stopAll();
 
 
             if (this.rightjugador2.isDown) {
+               if(this.FullDirection2 != "DER")
+               this.myShip2.play('jugador2Derecha');
+               this.FullDirection2 = "DER";
               this.myShip2.setVelocityX(20 * this.patin2);
             }
             else {
@@ -8503,6 +8879,9 @@ this.game.sound.stopAll();
             }
 
             if (this.upjugador2.isDown) {
+                if(this.FullDirection2 != "ARRIBA")
+               this.myShip2.play('jugador2Arriba');
+                  this.FullDirection2 = "ARRIBA";
               this.myShip2.setVelocityY(-20 * this.patin2);
             }
             else {
@@ -8510,6 +8889,9 @@ this.game.sound.stopAll();
             }
 
             if (this.downjugador2.isDown) {
+              if(this.FullDirection2 != "ABAJO")
+              this.myShip2.play('jugador2Abajo');
+                this.FullDirection2 = "ABAJO";
               this.myShip2.setVelocityY(20 * this.patin2);
             }
             else {
@@ -8520,6 +8902,10 @@ this.game.sound.stopAll();
             //JUGADOR 3
 
             if (this.leftjugador3.isDown) {
+                 if(this.FullDirection3 != "IZQ")
+             this.myShip3.play('jugador3Izquierda');
+           this.FullDirection3 = "IZQ";
+        
               this.myShip3.setVelocityX(-20 * this.patin3);
             }
             else {
@@ -8527,6 +8913,9 @@ this.game.sound.stopAll();
             }
 
             if (this.rightjugador3.isDown) {
+               if(this.FullDirection3 != "DER")
+               this.myShip3.play('jugador3Derecha');
+               this.FullDirection3 = "DER";
               this.myShip3.setVelocityX(20 * this.patin3);
             }
             else {
@@ -8534,13 +8923,20 @@ this.game.sound.stopAll();
             }
 
             if (this.upjugador3.isDown) {
+                 if(this.FullDirection3 != "ARRIBA")
+               this.myShip3.play('jugador3Arriba');
+                  this.FullDirection3 = "ARRIBA";
               this.myShip3.setVelocityY(-20 * this.patin3);
+         
             }
             else {
 
             }
 
             if (this.downjugador3.isDown) {
+               if(this.FullDirection3 != "ABAJO")
+              this.myShip3.play('jugador3Abajo');
+                this.FullDirection3 = "ABAJO";
               this.myShip3.setVelocityY(20 * this.patin3);
             }
             else {
@@ -8552,6 +8948,9 @@ this.game.sound.stopAll();
 
 
             if (this.leftjugador4.isDown) {
+               if(this.FullDirection4 != "IZQ")
+             this.myShip4.play('jugador4Izquierda');
+           this.FullDirection4 = "IZQ";
               this.myShip4.setVelocityX(-20 * this.patin4);
             }
             else {
@@ -8559,6 +8958,9 @@ this.game.sound.stopAll();
             }
 
             if (this.rightjugador4.isDown) {
+               if(this.FullDirection4 != "DER")
+               this.myShip4.play('jugador4Derecha');
+               this.FullDirection4 = "DER";
               this.myShip4.setVelocityX(20 * this.patin4);
             }
             else {
@@ -8566,6 +8968,9 @@ this.game.sound.stopAll();
             }
 
             if (this.upjugador4.isDown) {
+               if(this.FullDirection4 != "ARRIBA")
+               this.myShip4.play('jugador4Arriba');
+                  this.FullDirection4 = "ARRIBA";
               this.myShip4.setVelocityY(-20 * this.patin4);
             }
             else {
@@ -8573,6 +8978,9 @@ this.game.sound.stopAll();
             }
 
             if (this.downjugador4.isDown) {
+               if(this.FullDirection4 != "ABAJO")
+              this.myShip4.play('jugador4Abajo');
+                this.FullDirection4 = "ABAJO";
               this.myShip4.setVelocityY(20 * this.patin4);
             }
             else {
@@ -8620,7 +9028,7 @@ this.load.image('newselector', 'https://i.ibb.co/9g64fpg/selector-Mapas2.png');
                   this.load.image('seleccion3P', 'https://i.ibb.co/5BZG3R8/seleccioncuad.png');
                   this.load.image('seleccion4P', 'https://i.ibb.co/KWD10Pw/seleccioncuad4.png');
                   
-                    this.load.image('seleccionpersonajes', 'https://i.ibb.co/ZKZXpyR/seleccionpersonajes.png');
+                    this.load.image('seleccionpersonajes', 'https://i.ibb.co/tqY287H/seleccionpersonajes.png');
                this.load.image('seleccion2', 'https://i.ibb.co/jLJtTB6/seleccioncuad1.png');
                  this.load.image('noready', 'https://i.ibb.co/1bcqr5j/sprite-No-Listo.png');
                   this.load.image('ready', 'https://i.ibb.co/fXmYj8R/sprite-Listo.png');
@@ -8655,7 +9063,7 @@ this.load.image('wall4', 'https://i.ibb.co/qpqvwcN/wall5.png');
     }
     create()
     {
-this.mapaNormalNumero = 1;
+    this.mapaNormalNumero = 1;
 this.modoopciones=1;
 this.designerMode = 0; 
 this.mapaTipo = 1;
@@ -8670,9 +9078,9 @@ this.mapaDesplegado = 0;
 
 
 this.nombreJ1 = localStorage.getItem("nombreJ1");
-this.nombreJ2 = localStorage.getItem("nombreJ2");
-this.nombreJ3 = localStorage.getItem("nombreJ3");
-this.nombreJ4 = localStorage.getItem("nombreJ4");
+this.nombreJ2 = "HOLA";
+this.nombreJ3 = "HOLA";
+this.nombreJ4 = "HOLA";
 
 
 
