@@ -118,6 +118,26 @@ var desconectado = 0;
         this.designerMode = data.designerMode;
         this.dificultad = data.dificultad;
 
+        //GUARDAR DATA
+        localStorage.setItem("firstRun", 0);
+localStorage.setItem("designerMode", data.designerMode);
+localStorage.setItem("mapaTipo", data.mapaTipo);
+localStorage.setItem("mapaNumeroEditado", data.mapaNumero);
+
+localStorage.setItem("dificultad", data.dificultad);
+localStorage.setItem("personajeSeleccionadoP1", data.personajeSelectP1);
+localStorage.setItem("personajeSeleccionadoP2", data.personajeSelectP2);
+localStorage.setItem("personajeSeleccionadoP3", data.personajeSelectP3);
+localStorage.setItem("personajeSeleccionadoP4", data.personajeSelectP4);
+
+localStorage.setItem("tematica",data.tematica);
+localStorage.setItem("gamemode", data.gamemode);
+localStorage.setItem("jugadores", data.jugadores);
+localStorage.setItem("music", data.music);
+localStorage.setItem("designer", data.designerMode);
+
+
+
       }
 
       preload() {
@@ -187,10 +207,10 @@ var desconectado = 0;
 
           this.load.spritesheet('enemigoquemado', 'https://i.ibb.co/TwH1WFb/enemigoquemado.png', { frameWidth: 46, frameHeight: 60, endFrame: 16 });
       
-        this.load.image('ship', 'https://i.ibb.co/tz3L9Bn/jugador.png');
-        this.load.image('ship2', 'https://i.ibb.co/HVtxqyJ/jugador2.png');
-        this.load.image('ship3', 'https://i.ibb.co/C7yH7ft/jugador3.png');
-        this.load.image('ship4', 'https://i.ibb.co/DCnJw89/jugador4.png');
+        this.load.image('ship', 'https://i.ibb.co/fHnPxX9/jugador.png');
+        this.load.image('ship2', 'https://i.ibb.co/0fVW6Zc/jugador2.png');
+        this.load.image('ship3', 'https://i.ibb.co/LPFvhf7/jugador3.png');
+        this.load.image('ship4', 'https://i.ibb.co/9Gp2xNj/jugador4.png');
         this.load.image('vida', 'https://i.ibb.co/yNSBcGv/vida.png');
         this.load.image('bomba', 'https://i.ibb.co/z6r3c26/bomba.png');
         this.load.image('explosion', 'https://i.ibb.co/h9RPDzp/explosion.png');
@@ -198,7 +218,7 @@ var desconectado = 0;
         this.load.image('poderbomba', 'https://i.ibb.co/NrRZRG9/poderbomba.png');
         this.load.image('poderpatin', 'https://i.ibb.co/BN3nm9T/poderpatin.png');
         this.load.image('podervida', 'https://i.ibb.co/Y3MH7wd/podervida.png');
-        this.load.image('kills', 'https://i.ibb.co/QMPTk8P/kills.png');
+        this.load.image('kills', 'https://i.ibb.co/pZbHxrY/kills.png');
         this.load.image('mina', 'https://i.ibb.co/MNnYDYx/mina.png');
 
 
@@ -252,9 +272,9 @@ var desconectado = 0;
         // this.load.image('votacionmenu2', 'https://i.ibb.co/swGDZCC/votacionmenu2-P.png');
         // this.load.image('votacionmenu3', 'https://i.ibb.co/BqSYKHW/votacionmenu3-P.png');
         
-        this.load.image('votacionmenu', 'https://i.ibb.co/PMv3wGn/votacion-menu-4players.png');
-        this.load.image('votacionmenu2', 'https://i.ibb.co/HKxdSHM/votacion-menu-2players.png');
-        this.load.image('votacionmenu3', 'https://i.ibb.co/XCP3TdB/votacion-menu-3players.png');
+        this.load.image('votacionmenu', 'https://i.ibb.co/qF49NvS/votacion-menu-4players.png');
+        this.load.image('votacionmenu2', 'https://i.ibb.co/5Lh1qG9/votacion-menu-2players.png');
+        this.load.image('votacionmenu3', 'https://i.ibb.co/tDtKDXg/votacion-menu-3players.png');
 
 
         // this.load.image('votacionmenuP1', 'https://i.ibb.co/GWbjLYv/votacionmenu-P1.png');
@@ -336,9 +356,9 @@ var desconectado = 0;
 
 
 
-        this.credits = this.add.text(294, 945, "Desarrollo de un videojuego Retro en\n Smart TV LG & Android - ExplosionMan\n\nCreditos\n\nCreado por:\n Eduardo Alexis\n Michael Alonso\n\n Taller de Proyectos\n\n Creado en Phaser 3\n\n Gracias por jugar nuestro juego c: \n\n Universidad Peruana de Ciencias Aplicadas\n Todos los derechos reservados -2020- \n\n Este juego aun se encuentra en desarrollo :) \n\n Musicas usadas:\n Moon Over The Caste (8bit theme) \n Jigsaw Falling into Place 8-bit \n EarthBound Zero - Home Theme \n\n Sound Effects: \n Pack de Efectos de sonido 8 bit\n\n Sprites: \n Bomberman & Bombman Art 8-16 bit\n\n Ideas Artisticas: \n Basadas en el videojuego bomberman\n\n Programadores:\n Eduardo Alexis\n Michael Alonso \n Fernando Rafael (Android) \n\n Tester: John Edisson c: \n\n Ediciones de audio y diseño: \n Michael Alonso \n Eduardo Alexis\n\n\n\n\n --FIN C:-- ", { fontFamily: '"Arial Black"', fontSize: 54, fill: 'black', });
+        this.credits = this.add.text(294, 945, "Desarrollo de un videojuego Retro en\n Smart TV LG & Android - ExplosionMan\n\nCreditos\n\nCreado por:\n Eduardo Alexis\n Michael Alonso\n\n Taller de Proyectos\n\n Creado en Phaser 3\n\n Gracias por jugar nuestro juego c: \n\n Universidad Peruana de Ciencias Aplicadas\n Todos los derechos reservados -2020- \n\n Este juego aun se encuentra en desarrollo :) \n\n Musicas usadas:\n Moon Over The Caste (8bit theme) \n Jigsaw Falling into Place 8-bit \n EarthBound Zero - Home Theme \n\n Sound Effects: \n Pack de Efectos de sonido 8 bit\n\n Sprites: \n Bomberman & Bombman Art 8-16 bit\n\n Ideas Artisticas: \n Basadas en el videojuego bomberman\n\n Programadores:\n Eduardo Alexis\n Michael Alonso \n Fernando Rafael (Android) \n\n Tester: John Edisson c: \n\n Ediciones de audio y diseño: \n Michael Alonso \n Eduardo Alexis\n\n\n\n\n --FIN C:-- ", { fontFamily: '"8-bit Arcade In"', fontSize: 54, fill: 'black', });
 
-        this.credits2 = this.add.text(292, 943, "Desarrollo de un videojuego Retro en\n Smart TV LG & Android - ExplosionMan\n\nCreditos\n\nCreado por:\n Eduardo Alexis\n Michael Alonso\n\n Taller de Proyectos\n\n Creado en Phaser 3\n\n Gracias por jugar nuestro juego c: \n\n Universidad Peruana de Ciencias Aplicadas\n Todos los derechos reservados -2020- \n\n Este juego aun se encuentra en desarrollo :) \n\n Musicas usadas:\n Moon Over The Caste (8bit theme) \n Jigsaw Falling into Place 8-bit \n EarthBound Zero - Home Theme \n\n Sound Effects: \n Pack de Efectos de sonido 8 bit\n\n Sprites: \n Bomberman & Bombman Art 8-16 bit\n\n Ideas Artisticas: \n Basadas en el videojuego bomberman\n\n Programadores:\n Eduardo Alexis\n Michael Alonso \n Fernando Rafael (Android) \n\n Tester: John Edisson c: \n\n Ediciones de audio y diseño: \n Michael Alonso \n Eduardo Alexis\n\n\n\n\n --FIN C:-- ", { fontFamily: '"Arial Black"', fontSize: 54, fill: 'white', });
+        this.credits2 = this.add.text(292, 943, "Desarrollo de un videojuego Retro en\n Smart TV LG & Android - ExplosionMan\n\nCreditos\n\nCreado por:\n Eduardo Alexis\n Michael Alonso\n\n Taller de Proyectos\n\n Creado en Phaser 3\n\n Gracias por jugar nuestro juego c: \n\n Universidad Peruana de Ciencias Aplicadas\n Todos los derechos reservados -2020- \n\n Este juego aun se encuentra en desarrollo :) \n\n Musicas usadas:\n Moon Over The Caste (8bit theme) \n Jigsaw Falling into Place 8-bit \n EarthBound Zero - Home Theme \n\n Sound Effects: \n Pack de Efectos de sonido 8 bit\n\n Sprites: \n Bomberman & Bombman Art 8-16 bit\n\n Ideas Artisticas: \n Basadas en el videojuego bomberman\n\n Programadores:\n Eduardo Alexis\n Michael Alonso \n Fernando Rafael (Android) \n\n Tester: John Edisson c: \n\n Ediciones de audio y diseño: \n Michael Alonso \n Eduardo Alexis\n\n\n\n\n --FIN C:-- ", { fontFamily: '"8-bit Arcade In"', fontSize: 54, fill: 'white', });
 
         this.credits.setDepth(300);
         this.credits2.setDepth(300);
@@ -472,25 +492,25 @@ this.FullDirection4 = "";
 
         //jugadores
         if (this.jugadoresTotal >= 1) {
-          this.jugador1 = this.add.text(32 + 32, 216 + 96, this.nombreJ1, { fontFamily: '"Arial Black"' });
+          this.jugador1 = this.add.text(32 + 32, 216 + 96, this.nombreJ1, { fontFamily: '"8-bit Arcade In"' });
 
           this.jugador1.setFontSize(32);
         }
         if (this.jugadoresTotal >= 2) {
-          this.jugador2 = this.add.text(32 + 32, 366 + 96, this.nombreJ2, { fontFamily: '"Arial Black"' });
+          this.jugador2 = this.add.text(32 + 32, 366 + 96, this.nombreJ2, { fontFamily: '"8-bit Arcade In"' });
           this.jugador2.setFontSize(32);
           this.vidasInt2 = 3;
 
         }
 
         if (this.jugadoresTotal >= 3) {
-          this.jugador3 = this.add.text(32 + 32, 516 + 96, this.nombreJ3, { fontFamily: '"Arial Black"' });
+          this.jugador3 = this.add.text(32 + 32, 516 + 96, this.nombreJ3, { fontFamily: '"8-bit Arcade In"' });
           this.jugador3.setFontSize(32);
           this.vidasInt3 = 3;
 
         }
         if (this.jugadoresTotal >= 4) {
-          this.jugador4 = this.add.text(32 + 32, 666 + 96, this.nombreJ4, { fontFamily: '"Arial Black"' });
+          this.jugador4 = this.add.text(32 + 32, 666 + 96, this.nombreJ4, { fontFamily: '"8-bit Arcade In"' });
           this.jugador4.setFontSize(32);
           this.vidasInt4 = 3;
 
@@ -568,7 +588,7 @@ this.anims.remove('jugador1Derecha');
     });
      this.anims.create({
         key: 'jugador1Derecha',
-        frames: this.anims.generateFrameNumbers(localStorage.getItem("colorJugador"), { start: 9, end: 11, first: 9 }),
+        frames: this.anims.generateFrameNumbers(localStorage.getItem("colorJugador"), { start: 9, end: 11, first: 10 }),
         frameRate: 20,
         repeat: -1
     });
@@ -653,7 +673,7 @@ this.anims.remove('jugador2Derecha');
     });
      this.anims.create({
         key: 'jugador2Derecha',
-        frames: this.anims.generateFrameNumbers(localStorage.getItem("colorJugador2"), { start: 9, end: 11, first: 9 }),
+        frames: this.anims.generateFrameNumbers(localStorage.getItem("colorJugador2"), { start: 9, end: 11, first: 10 }),
         frameRate: 20,
         repeat: -1
     });
@@ -741,7 +761,7 @@ this.anims.remove('jugador3Derecha');
     });
      this.anims.create({
         key: 'jugador3Derecha',
-        frames: this.anims.generateFrameNumbers(localStorage.getItem("colorJugador3"), { start: 9, end: 11, first: 9 }),
+        frames: this.anims.generateFrameNumbers(localStorage.getItem("colorJugador3"), { start: 9, end: 11, first: 10 }),
         frameRate: 20,
         repeat: -1
     });
@@ -828,7 +848,7 @@ this.anims.remove('jugador4Derecha');
     });
      this.anims.create({
         key: 'jugador4Derecha',
-        frames: this.anims.generateFrameNumbers(localStorage.getItem("colorJugador4"), { start: 9, end: 11, first: 9 }),
+        frames: this.anims.generateFrameNumbers(localStorage.getItem("colorJugador4"), { start: 9, end: 11, first: 10 }),
         frameRate: 20,
         repeat: -1
     });
@@ -840,30 +860,30 @@ this.anims.remove('jugador4Derecha');
 
 
         if (this.gamemode == 0) {
-          this.nivel = this.add.text(340, 32, 'Nivel:', { fontFamily: '"Arial Black"' });
+          this.nivel = this.add.text(340, 32, 'Nivel:', { fontFamily: '"8-bit Arcade In"' });
           this.nivel.setFontSize(50);
 
 
-          this.nivel = this.add.text(540, 32, this.nivelInt, { fontFamily: '"Arial Black"' });
+          this.nivel = this.add.text(540, 32, this.nivelInt, { fontFamily: '"8-bit Arcade In"' });
           this.nivel.setFontSize(50);
         }
 
 
-        this.vidas = this.add.text(120, 345, this.vidasInt, { fontFamily: '"Arial Black"' });
+        this.vidas = this.add.text(120, 345, this.vidasInt, { fontFamily: '"8-bit Arcade In"' });
         this.vidas.setFontSize(64);
 
         if (this.jugadoresTotal >= 2) {
-          this.vidasJ2 = this.add.text(120, 495, this.vidasInt2, { fontFamily: '"Arial Black"' });
+          this.vidasJ2 = this.add.text(120, 495, this.vidasInt2, { fontFamily: '"8-bit Arcade In"' });
           this.vidasJ2.setFontSize(64);
         }
 
         if (this.jugadoresTotal >= 3) {
-          this.vidasJ3 = this.add.text(120, 645, this.vidasInt3, { fontFamily: '"Arial Black"' });
+          this.vidasJ3 = this.add.text(120, 645, this.vidasInt3, { fontFamily: '"8-bit Arcade In"' });
           this.vidasJ3.setFontSize(64);
         }
 
         if (this.jugadoresTotal >= 4) {
-          this.vidasJ4 = this.add.text(120, 795, this.vidasInt4, { fontFamily: '"Arial Black"' });
+          this.vidasJ4 = this.add.text(120, 795, this.vidasInt4, { fontFamily: '"8-bit Arcade In"' });
           this.vidasJ4.setFontSize(64);
         }
 
@@ -900,26 +920,26 @@ this.anims.remove('jugador4Derecha');
 
 
         if (this.gamemode == 0) {
-          this.txt = this.add.text(600, 32, 'Puntaje:', { fontFamily: '"Arial Black"' });
+          this.txt = this.add.text(600, 32, 'Puntaje:', { fontFamily: '"8-bit Arcade In"' });
           this.txt.setFontSize(50);
 
-          this.score = this.add.text(860, 32, this.scoreInt, { fontFamily: '"Arial Black"' });
+          this.score = this.add.text(860, 32, this.scoreInt, { fontFamily: '"8-bit Arcade In"' });
           this.score.setFontSize(50);
         }
 
         if (this.gamemode == 1 || this.gamemode == 2) {
 
-          this.score = this.add.text(-500, -500, this.scoreInt, { fontFamily: '"Arial Black"' });
+          this.score = this.add.text(-500, -500, this.scoreInt, { fontFamily: '"8-bit Arcade In"' });
           this.score.setFontSize(64);
 
         }
-        // this.tiempo = this.add.text(1400, 32, 'Tiempo', { fontFamily: '"Arial Black"' });
+        // this.tiempo = this.add.text(1400, 32, 'Tiempo', { fontFamily: '"8-bit Arcade In"' });
         // this.tiempo.setFontSize(50);
         this.relojIcon = this.add.sprite(1600, 50, 'reloj');
         this.relojIcon.scaleY = 0.15;
 			  this.relojIcon.scaleX = 0.15;
 
-        this.reloj = this.add.text(1700, 32, this.relojInt, { fontFamily: '"Arial Black"' });
+        this.reloj = this.add.text(1700, 32, this.relojInt, { fontFamily: '"8-bit Arcade In"' });
         this.reloj.setFontSize(50);
 
 
@@ -1191,14 +1211,12 @@ this.anims.remove('jugador4Derecha');
           this.sprite_select4 = 'jugadorMorado';
 
         this.myShip = this.physics.add.sprite(420 + this.x_add, 130+ this.y_add, this.sprite_select);
-        this.myShip2 = this.physics.add.sprite(5000, 130, 'ship2');
-        this.myShip3 = this.physics.add.sprite(5000, 130, 'ship3');
-        this.myShip4 = this.physics.add.sprite(5000, 130, 'ship4');
-
+       this.myShip2 = this.physics.add.sprite(5000 + this.x_add, 130+ this.y_add, this.sprite_select);
+        this.myShip3 = this.physics.add.sprite(5000 + this.x_add, 130+ this.y_add, this.sprite_select);
+       this.myShip4 = this.physics.add.sprite(5000 + this.x_add, 130+ this.y_add, this.sprite_select);
+       
         this.myShip.setScale(0.85);
- this.myShip2.setScale(0.85);
- this.myShip3.setScale(0.85);
- this.myShip4.setScale(0.85);
+ 
 
         if (this.jugadoresTotal >= 2) {
           this.myShip2 = this.physics.add.sprite(1820 + this.x_add, 130 + this.y_add, this.sprite_select2);
@@ -1211,10 +1229,13 @@ this.anims.remove('jugador4Derecha');
           this.myShip4 = this.physics.add.sprite(1820+ this.x_add, 885+ this.y_add, this.sprite_select4);
         }
 
+this.myShip2.setScale(0.85);
+ this.myShip3.setScale(0.85);
+ this.myShip4.setScale(0.85);
         //sprites de puntuacion
-        this.ganadorText = this.add.text(1003 + 32, 311 + 96, "", { fontFamily: '"Arial Black"', fontSize: 25, fill: 'white', });
+        this.ganadorText = this.add.text(1003 + 32, 311 + 96, "", { fontFamily: '"8-bit Arcade In"', fontSize: 25, fill: 'white', });
 
-        this.ganadorText2 = this.add.text(1000 + 32, 316 + 96, "", { fontFamily: '"Arial Black"', fontSize: 25, fill: 'black', });
+        this.ganadorText2 = this.add.text(1000 + 32, 316 + 96, "", { fontFamily: '"8-bit Arcade In"', fontSize: 25, fill: 'black', });
 
         this.ganadorText.setDepth(200);
         this.ganadorText2.setDepth(200);
@@ -1230,29 +1251,29 @@ this.anims.remove('jugador4Derecha');
 
 
         if (this.gamemode == 0) {
-          this.bots = this.add.text(1000, 32, "Bots: ", { fontFamily: '"Arial Black"' });
+          this.bots = this.add.text(1000, 32, "Bots: ", { fontFamily: '"8-bit Arcade In"' });
           this.bots.setFontSize(50);
 
 
-          this.kills = this.add.text(1200, 32, this.killsInt, { fontFamily: '"Arial Black"' });
+          this.kills = this.add.text(1200, 32, this.killsInt, { fontFamily: '"8-bit Arcade In"' });
           this.kills.setFontSize(50);
 
         }
         else {
-          this.kills = this.add.text(92 + 32, 306 + 96, this.killsInt, { fontFamily: '"Arial Black"' });
+          this.kills = this.add.text(92 + 32, 306 + 96, this.killsInt, { fontFamily: '"8-bit Arcade In"' });
           this.kills.setFontSize(64);
 
         }
         if (this.jugadoresTotal >= 2 && (this.gamemode == 1 || this.gamemode == 2)) {
-          this.killsJ2 = this.add.text(92 + 32, 456 + 96, this.killsInt2, { fontFamily: '"Arial Black"' });
+          this.killsJ2 = this.add.text(92 + 32, 456 + 96, this.killsInt2, { fontFamily: '"8-bit Arcade In"' });
           this.killsJ2.setFontSize(64);
         }
         if (this.jugadoresTotal >= 3 && (this.gamemode == 1 || this.gamemode == 2)) {
-          this.killsJ3 = this.add.text(92 + 32, 606 + 96, this.killsInt3, { fontFamily: '"Arial Black"' });
+          this.killsJ3 = this.add.text(92 + 32, 606 + 96, this.killsInt3, { fontFamily: '"8-bit Arcade In"' });
           this.killsJ3.setFontSize(64);
         }
         if (this.jugadoresTotal >= 4 && (this.gamemode == 1 || this.gamemode == 2)) {
-          this.killsJ4 = this.add.text(92 + 32, 756 + 96, this.killsInt4, { fontFamily: '"Arial Black"' });
+          this.killsJ4 = this.add.text(92 + 32, 756 + 96, this.killsInt4, { fontFamily: '"8-bit Arcade In"' });
           this.killsJ4.setFontSize(64);
         }
         this.physics.add.collider(this.myShip, this.box);
@@ -4580,13 +4601,14 @@ this.anims.remove('jugador4Derecha');
         this.menupspritereiniciarP4 = this.physics.add.sprite(1920 / 2 + 200 - 50, 1080 / 2 - 50, 'votacionmenuP4');
         this.menupspritereiniciarP4.visible = false;
 
+//ICONOS VOTACION
         this.icon1 = this.physics.add.sprite(1040,450, this.sprite_select);
         this.icon1.visible = false;
-        this.icon2 = this.physics.add.sprite(1090,450, "ship2");
+        this.icon2 = this.physics.add.sprite(1090,450,  this.sprite_select2);
         this.icon2.visible = false;
-        this.icon3 = this.physics.add.sprite(1140,450, "ship3");
+        this.icon3 = this.physics.add.sprite(1140,450,  this.sprite_select3);
         this.icon3.visible = false;
-        this.icon4 = this.physics.add.sprite(1190,450, "ship4");
+        this.icon4 = this.physics.add.sprite(1190,450,  this.sprite_select4);
         this.icon4.visible = false;
 
         function crearmapa() {
@@ -4598,7 +4620,7 @@ this.anims.remove('jugador4Derecha');
           
         }
 
-        this.seleccionoVotacion = this.add.text(1920 / 2 + 190, 1080 / 2 - 136, 'J1', { fontFamily: '"Arial Black"', color: '#000000' });
+        this.seleccionoVotacion = this.add.text(1920 / 2 + 190, 1080 / 2 - 136, 'J1', { fontFamily: '"8-bit Arcade In"', color: '#000000' });
         this.seleccionoVotacion.setText("");
         //moverazar();
 
@@ -8627,7 +8649,7 @@ this.game.sound.stopAll();
 
               case "LEFT":
   if(this.FullDirection1!= "IZQ")
-             this.myShip1.play('jugador1Izquierda');
+             this.myShip.play('jugador1Izquierda');
            this.FullDirection1 = "IZQ";
           this.myShip.setVelocityX(-20 * this.patin);
 
@@ -9060,39 +9082,111 @@ this.load.image('wall4', 'https://i.ibb.co/qpqvwcN/wall5.png');
               this.load.image('dificultad',  'img/dificultad.png');
 
 */
+
+        //GUARDAR DATA
+        /*
+localStorage.setItem("designerMode", 0);
+localStorage.setItem("mapaTipo", 1);
+localStorage.setItem("mapaNumeroEditado", -1);
+
+localStorage.setItem("dificultad", 1);
+localStorage.setItem("personajeSeleccionadoP1", 0);
+localStorage.setItem("personajeSeleccionadoP2", "Player");
+localStorage.setItem("personajeSeleccionadoP3", " ");
+localStorage.setItem("personajeSeleccionadoP4", " ");
+
+localStorage.setItem("tematica", 1);
+localStorage.setItem("gamemode", 0);
+localStorage.setItem("jugadores", 1);
+localStorage.setItem("music", 1);
+localStorage.setItem("designer", 1);*/
+
     }
     create()
     {
-    this.mapaNormalNumero = 1;
-this.modoopciones=1;
-this.designerMode = 0; 
+
+if(localStorage.getItem("firstRun") != 0)
+{
+
+
 this.mapaTipo = 1;
 this.mapaNumeroEditado = -1;
-this.seleccionarDif = 0;
-this.dificultad = 1;
-this.mapaDesplegado = 0;
- // this.sound.play('theme');
-//var htmlString = '<input id="text" type="text" value="https://hogangnono.com" style="width:80%" /><br />';
-    //  var domElement = this.add.dom(0, 0).createFromHTML(htmlString); 
-        // this.cursors = this.input.keyboard.createCursorKeys();
 
+this.dificultad = 0;
+this.nombreJ1 = "Player"
+this.nombreJ2 = " ";
+this.nombreJ3 = " ";
+this.nombreJ4 = " ";
+this.tematica = 1;
+this.gamemode = 0;
+this.jugadores = 1;
+this.music = 1;
 
+    this.mapaNormalNumero = 1;
+
+}
+else
+{
+
+//this.designerMode = localStorage.getItem("designerMode");
+this.mapaTipo = localStorage.getItem("mapaTipo");
+this.mapaNumeroEditado = localStorage.getItem("mapaNumeroEditado");
+
+this.dificultad = localStorage.getItem("dificultad");
 this.nombreJ1 = localStorage.getItem("nombreJ1");
 this.nombreJ2 = "HOLA";
 this.nombreJ3 = "HOLA";
 this.nombreJ4 = "HOLA";
+//this.personajeSeleccionadoP1 = localStorage.getItem("personajeSeleccionadoP1");
+//this.personajeSeleccionadoP2 = localStorage.getItem("personajeSeleccionadoP2");
+//this.personajeSeleccionadoP3 = localStorage.getItem("personajeSeleccionadoP3");
+//this.personajeSeleccionadoP4 = localStorage.getItem("personajeSeleccionadoP4");
+this.tematica = localStorage.getItem("tematica");
+this.gamemode = localStorage.getItem("gamemode");
+this.jugadores = localStorage.getItem("jugadores");
+this.music = localStorage.getItem("music");
+this.mapaNormalNumero = localStorage.getItem("mapaNormalNumero");
+//this.designer = localStorage.getItem("designer");
 
+}
 
+/*
+this.designerMode = 0;
+this.mapaTipo = 1;
+this.mapaNumeroEditado = -1;
 
+this.dificultad = 0;
+this.nombreJ1 =  localStorage.getItem("nombreJ1");
+this.nombreJ2 = "HOLA";
+this.nombreJ3 = "HOLA";
+this.nombreJ4 = "HOLA";
 this.personajeSeleccionadoP1 = 1;
-this.personajeSeleccionadoP2 = 3;
+this.personajeSeleccionadoP2 = 4;
 this.personajeSeleccionadoP3 = 7;
-this.personajeSeleccionadoP4 = 9;
+this.personajeSeleccionadoP4 = 10;
 this.tematica = 1;
 this.gamemode = 0;
 this.jugadores = 1;
 this.music = 1;
 this.designer = 1;
+
+*/
+this.personajeSeleccionadoP1 = 1;
+this.personajeSeleccionadoP2 = 3;
+this.personajeSeleccionadoP3 = 7;
+this.personajeSeleccionadoP4 = 9;
+
+
+
+this.designerMode = 0;
+this.designer = 1;
+this.modoopciones=1;
+this.mapaDesplegado = 0;
+this.seleccionarDif = 0;
+
+
+
+
         this.menufondo = this.physics.add.sprite(1920/2, 1080/2, 'fondo2');
        
         this.seleccionInt =0; // Multijugador
@@ -9181,19 +9275,20 @@ this.readySprite4.visible = false;
 
 
 
-this.mapaNumeroEditadoString = this.add.text(594, 925, this.mapaNumeroEditado, { fontFamily: '"Arial Black"', fontSize: 24, fill: 'black',});
+this.mapaNumeroEditadoString = this.add.text(594, 925, this.mapaNumeroEditado, { fontFamily: '"8-bit Arcade In"', fontSize: 24, fill: 'black',});
 
  this.mapaNumeroEditadoString.visible = false;
 
-this.nombreJ1text = this.add.text(414, 516, this.nombreJ1, { fontFamily: '"Arial Black"', fontSize: 24, fill: 'black',});
-this.nombreJ2text = this.add.text(1114, 516, this.nombreJ2, { fontFamily: '"Arial Black"', fontSize: 24, fill: 'black',});
-this.nombreJ3text = this.add.text(414, 626, this.nombreJ3, { fontFamily: '"Arial Black"', fontSize: 24, fill: 'black',});
-this.nombreJ4text = this.add.text(1114, 626, this.nombreJ4, { fontFamily: '"Arial Black"', fontSize: 24, fill: 'black',});
+this.nombreJ1text = this.add.text(414, 516, this.nombreJ1, { fontFamily: '"8-bit Arcade In"', fontSize: 32, fill: 'black',});
+this.nombreJ2text = this.add.text(1114, 516, this.nombreJ2, { fontFamily: '"8-bit Arcade In"', fontSize: 32, fill: 'black',});
+this.nombreJ3text = this.add.text(414, 626, this.nombreJ3, { fontFamily: '"8-bit Arcade In"', fontSize: 32, fill: 'black',});
+this.nombreJ4text = this.add.text(1114, 626, this.nombreJ4, { fontFamily: '"8-bit Arcade In"', fontSize: 32, fill: 'black',});
 
 this.nombreJ1text.visible = false;
 this.nombreJ2text.visible = false;
 this.nombreJ3text.visible = false;
 this.nombreJ4text.visible = false;
+
 
 this.input.keyboard.on('keydown_UP', moverMenuAbajo, this);
   this.input.keyboard.on('keydown_DOWN', moverMenuArriba, this);
@@ -10324,7 +10419,7 @@ if(this.seleccionInt ==24)
     if(this.seleccionInt ==0)
     {
       this.seleccionarDif = 1;
-            this.jugadores =1; 
+          //  this.jugadores =1; 
         this.gamemode =0;
 
         //cambiar a seleccionar 
@@ -10334,13 +10429,16 @@ if(this.seleccionInt ==24)
 
     if(this.seleccionInt ==1)
     {
+      if(this.jugadores ==1)
          this.jugadores =2;
         this.gamemode =1;
     }
 
    
     if(this.seleccionInt ==2)
-    { this.jugadores =2;
+    {
+       if(this.jugadores ==1)
+     this.jugadores =2;
         this.gamemode =2;
 }
      if(this.seleccionInt ==3 && this.gamemode== 0)
@@ -10463,6 +10561,10 @@ this.readySprite4.visible = false;
 
                    this.scene.start('Scene1', { tematica:  this.tematica, personajeSelectP1:  this.personajeSeleccionadoP1,  personajeSelectP2:  this.personajeSeleccionadoP2,  personajeSelectP3:  this.personajeSeleccionadoP3,  personajeSelectP4:  this.personajeSeleccionadoP4, gamemode: this.gamemode, jugadores: this.jugadores , designer: this.designer, nombredata: this.nombreJ1, nombredata2: this.nombreJ2, nombredata3: this.nombreJ3, nombredata4: this.nombreJ4, mapaNumero: this.mapaNumeroEditado, mapaTipo: this.mapaTipo, designerMode: this.designerMode, music: this.music, dificultad: this.dificultad});
 
+localStorage.setItem("mapaNormalNumero", this.mapaNormalNumero);
+localStorage.setItem("modoopciones", this.modoopciones);
+localStorage.setItem("mapaDesplegado", this.mapaDesplegado);
+
                    return;
               }
 
@@ -10480,6 +10582,9 @@ this.readySprite4.visible = false;
 
        this.scene.start('Scene1', { tematica:  this.tematica, personajeSelectP1:  this.personajeSeleccionadoP1,  personajeSelectP2:  this.personajeSeleccionadoP2,  personajeSelectP3:  this.personajeSeleccionadoP3,  personajeSelectP4:  this.personajeSeleccionadoP4, gamemode: this.gamemode, jugadores: this.jugadores , designer: this.designer, nombredata: this.nombreJ1, nombredata2: this.nombreJ2, nombredata3: this.nombreJ3, nombredata4: this.nombreJ4, mapaNumero: this.mapaNumeroEditado, mapaTipo: this.mapaTipo, designerMode: this.designerMode, music: this.music, dificultad: this.dificultad});
         
+localStorage.setItem("mapaNormalNumero", this.mapaNormalNumero);
+localStorage.setItem("modoopciones", this.modoopciones);
+localStorage.setItem("mapaDesplegado", this.mapaDesplegado);
 
 
         }
@@ -11694,7 +11799,7 @@ if(this.seleccionInt ==24)
     if(this.seleccionInt ==0)
     {
       this.seleccionarDif = 1;
-            this.jugadores =1; 
+           // this.jugadores =1; 
         this.gamemode =0;
 
         //cambiar a seleccionar 
@@ -11704,13 +11809,16 @@ if(this.seleccionInt ==24)
 
     if(this.seleccionInt ==1)
     {
+      if(this.jugadores ==1)
          this.jugadores =2;
         this.gamemode =1;
     }
 
    
     if(this.seleccionInt ==2)
-    { this.jugadores =2;
+    {
+        if(this.jugadores ==1)
+     this.jugadores =2;
         this.gamemode =2;
 }
      if(this.seleccionInt ==3 && this.gamemode== 0)
@@ -11833,6 +11941,11 @@ this.readySprite4.visible = false;
 
                    this.scene.start('Scene1', { tematica:  this.tematica, personajeSelectP1:  this.personajeSeleccionadoP1,  personajeSelectP2:  this.personajeSeleccionadoP2,  personajeSelectP3:  this.personajeSeleccionadoP3,  personajeSelectP4:  this.personajeSeleccionadoP4, gamemode: this.gamemode, jugadores: this.jugadores , designer: this.designer, nombredata: this.nombreJ1, nombredata2: this.nombreJ2, nombredata3: this.nombreJ3, nombredata4: this.nombreJ4, mapaNumero: this.mapaNumeroEditado, mapaTipo: this.mapaTipo, designerMode: this.designerMode, music: this.music, dificultad: this.dificultad});
 
+localStorage.setItem("mapaNormalNumero", this.mapaNormalNumero);
+localStorage.setItem("modoopciones", this.modoopciones);
+localStorage.setItem("mapaDesplegado", this.mapaDesplegado);
+
+
                    return;
               }
 
@@ -11850,6 +11963,9 @@ this.readySprite4.visible = false;
 
        this.scene.start('Scene1', { tematica:  this.tematica, personajeSelectP1:  this.personajeSeleccionadoP1,  personajeSelectP2:  this.personajeSeleccionadoP2,  personajeSelectP3:  this.personajeSeleccionadoP3,  personajeSelectP4:  this.personajeSeleccionadoP4, gamemode: this.gamemode, jugadores: this.jugadores , designer: this.designer, nombredata: this.nombreJ1, nombredata2: this.nombreJ2, nombredata3: this.nombreJ3, nombredata4: this.nombreJ4, mapaNumero: this.mapaNumeroEditado, mapaTipo: this.mapaTipo, designerMode: this.designerMode, music: this.music, dificultad: this.dificultad});
         
+localStorage.setItem("mapaNormalNumero", this.mapaNormalNumero);
+localStorage.setItem("modoopciones", this.modoopciones);
+localStorage.setItem("mapaDesplegado", this.mapaDesplegado);
 
 
         }
