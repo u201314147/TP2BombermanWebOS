@@ -494,24 +494,24 @@ this.FullDirection4 = "";
         if (this.jugadoresTotal >= 1) {
           this.jugador1 = this.add.text(32 + 32, 216 + 96, this.nombreJ1, { fontFamily: '"8-bit Arcade In"' });
 
-          this.jugador1.setFontSize(32);
+          this.jugador1.setFontSize(45);
         }
         if (this.jugadoresTotal >= 2) {
           this.jugador2 = this.add.text(32 + 32, 366 + 96, this.nombreJ2, { fontFamily: '"8-bit Arcade In"' });
-          this.jugador2.setFontSize(32);
+          this.jugador2.setFontSize(45);
           this.vidasInt2 = 3;
 
         }
 
         if (this.jugadoresTotal >= 3) {
           this.jugador3 = this.add.text(32 + 32, 516 + 96, this.nombreJ3, { fontFamily: '"8-bit Arcade In"' });
-          this.jugador3.setFontSize(32);
+          this.jugador3.setFontSize(45);
           this.vidasInt3 = 3;
 
         }
         if (this.jugadoresTotal >= 4) {
           this.jugador4 = this.add.text(32 + 32, 666 + 96, this.nombreJ4, { fontFamily: '"8-bit Arcade In"' });
-          this.jugador4.setFontSize(32);
+          this.jugador4.setFontSize(45);
           this.vidasInt4 = 3;
 
         }
@@ -861,11 +861,11 @@ this.anims.remove('jugador4Derecha');
 
         if (this.gamemode == 0) {
           this.nivel = this.add.text(340, 32, 'Nivel:', { fontFamily: '"8-bit Arcade In"' });
-          this.nivel.setFontSize(50);
+          this.nivel.setFontSize(70);
 
 
-          this.nivel = this.add.text(540, 32, this.nivelInt, { fontFamily: '"8-bit Arcade In"' });
-          this.nivel.setFontSize(50);
+          this.nivel = this.add.text(550, 32, this.nivelInt, { fontFamily: '"8-bit Arcade In"' });
+          this.nivel.setFontSize(70);
         }
 
 
@@ -920,11 +920,11 @@ this.anims.remove('jugador4Derecha');
 
 
         if (this.gamemode == 0) {
-          this.txt = this.add.text(600, 32, 'Puntaje:', { fontFamily: '"8-bit Arcade In"' });
-          this.txt.setFontSize(50);
+          this.txt = this.add.text(650, 32, 'Puntaje:', { fontFamily: '"8-bit Arcade In"' });
+          this.txt.setFontSize(70);
 
-          this.score = this.add.text(860, 32, this.scoreInt, { fontFamily: '"8-bit Arcade In"' });
-          this.score.setFontSize(50);
+          this.score = this.add.text(950, 32, this.scoreInt, { fontFamily: '"8-bit Arcade In"' });
+          this.score.setFontSize(70);
         }
 
         if (this.gamemode == 1 || this.gamemode == 2) {
@@ -940,7 +940,7 @@ this.anims.remove('jugador4Derecha');
 			  this.relojIcon.scaleX = 0.15;
 
         this.reloj = this.add.text(1700, 32, this.relojInt, { fontFamily: '"8-bit Arcade In"' });
-        this.reloj.setFontSize(50);
+        this.reloj.setFontSize(79);
 
 
         this.bombasFull = this.physics.add.staticGroup();
@@ -1233,9 +1233,9 @@ this.myShip2.setScale(0.85);
  this.myShip3.setScale(0.85);
  this.myShip4.setScale(0.85);
         //sprites de puntuacion
-        this.ganadorText = this.add.text(1003 + 32, 311 + 96, "", { fontFamily: '"8-bit Arcade In"', fontSize: 25, fill: 'white', });
+        this.ganadorText = this.add.text(1003 + 32, 311 + 96, "", { fontFamily: '"8-bit Arcade In"', fontSize: 35, fill: 'white', });
 
-        this.ganadorText2 = this.add.text(1000 + 32, 316 + 96, "", { fontFamily: '"8-bit Arcade In"', fontSize: 25, fill: 'black', });
+        this.ganadorText2 = this.add.text(1000 + 32, 316 + 96, "", { fontFamily: '"8-bit Arcade In"', fontSize: 35, fill: 'black', });
 
         this.ganadorText.setDepth(200);
         this.ganadorText2.setDepth(200);
@@ -1251,12 +1251,12 @@ this.myShip2.setScale(0.85);
 
 
         if (this.gamemode == 0) {
-          this.bots = this.add.text(1000, 32, "Bots: ", { fontFamily: '"8-bit Arcade In"' });
-          this.bots.setFontSize(50);
+          this.bots = this.add.text(1200, 32, "Bots: ", { fontFamily: '"8-bit Arcade In"' });
+          this.bots.setFontSize(70);
 
 
-          this.kills = this.add.text(1200, 32, this.killsInt, { fontFamily: '"8-bit Arcade In"' });
-          this.kills.setFontSize(50);
+          this.kills = this.add.text(1400, 32, this.killsInt, { fontFamily: '"8-bit Arcade In"' });
+          this.kills.setFontSize(70);
 
         }
         else {
@@ -9040,17 +9040,18 @@ this.load.image('selectorRect2', 'https://i.ibb.co/ZBsCbYs/selectorrojo2.png');
 this.load.image('selectorRect3', 'https://i.ibb.co/xsf3jYf/selectorverde3.png');
 this.load.image('selectorRect4', 'https://i.ibb.co/y8mFV0h/selectormorado4.png');
 this.load.image('newselector', 'https://i.ibb.co/9g64fpg/selector-Mapas2.png');
-                 this.load.image('fondo', 'https://i.ibb.co/WDsyt4m/menu-Opciones.jpg');
-                 this.load.image('fondo2', 'https://i.ibb.co/G5LTvFs/Menu-Opciones-Normal.jpg')
-                 this.load.image('fondo2mapa2', 'https://i.ibb.co/ZG5WqLZ/Menu-Opciones-Normal2.jpg')
-                 this.load.image('fondo2mapa3', 'https://i.ibb.co/g3TKdrQ/Menu-Opciones-Normal3.jpg')
+                 this.load.image('fondo', 'https://i.ibb.co/g6p0v5R/menu-Opciones.png');
+                 this.load.image('fondo2', 'https://i.ibb.co/2SpzLkN/Menu-Opciones-Normal.png')
+                 this.load.image('fondo2mapa2', 'https://i.ibb.co/sRmTHN9/Menu-Opciones-Normal2.png')
+                 this.load.image('fondo2mapa3', 'https://i.ibb.co/2yZDKVP/Menu-Opciones-Normal3.png')
+                  this.load.image('bombayexplosion', 'https://i.ibb.co/b6wsKwh/bombayexplosion.png')
                   this.load.image('seleccion', 'https://i.ibb.co/6ybPkb1/manito3.png');
                   this.load.image('seleccion1P', 'https://i.ibb.co/6ybPkb1/manito3.png');
                   this.load.image('seleccion2P', 'https://i.ibb.co/5GwYbCs/seleccioncuad2.png');
                   this.load.image('seleccion3P', 'https://i.ibb.co/5BZG3R8/seleccioncuad.png');
                   this.load.image('seleccion4P', 'https://i.ibb.co/KWD10Pw/seleccioncuad4.png');
                   
-                    this.load.image('seleccionpersonajes', 'https://i.ibb.co/tqY287H/seleccionpersonajes.png');
+                    this.load.image('seleccionpersonajes', 'https://i.ibb.co/6JjpV85/seleccionpersonajes.png');
                this.load.image('seleccion2', 'https://i.ibb.co/jLJtTB6/seleccioncuad1.png');
                  this.load.image('noready', 'https://i.ibb.co/1bcqr5j/sprite-No-Listo.png');
                   this.load.image('ready', 'https://i.ibb.co/fXmYj8R/sprite-Listo.png');
@@ -9134,9 +9135,9 @@ this.mapaNumeroEditado = localStorage.getItem("mapaNumeroEditado");
 
 this.dificultad = localStorage.getItem("dificultad");
 this.nombreJ1 = localStorage.getItem("nombreJ1");
-this.nombreJ2 = "HOLA";
-this.nombreJ3 = "HOLA";
-this.nombreJ4 = "HOLA";
+this.nombreJ2 = "ALEXANDER";
+this.nombreJ3 = "JOHN CENA";
+this.nombreJ4 = "TERMINATOR";
 //this.personajeSeleccionadoP1 = localStorage.getItem("personajeSeleccionadoP1");
 //this.personajeSeleccionadoP2 = localStorage.getItem("personajeSeleccionadoP2");
 //this.personajeSeleccionadoP3 = localStorage.getItem("personajeSeleccionadoP3");
@@ -9187,6 +9188,13 @@ this.seleccionarDif = 0;
 
 
 
+        this.menuexplosion = this.physics.add.sprite(1920/2, 1080/2, 'bombayexplosion');
+             this.menuexplosion4 = this.physics.add.sprite(1920, 1080, 'bombayexplosion');
+      //  this.menuexplosion.setScale(2);
+        //this.menuexplosion4.setScale(2);
+       // this.menuexplosion3.setScale(0.5);
+        this.menuexplosion4.setScale(2);
+      //  this.menuexplosion.setDepth(1000);
         this.menufondo = this.physics.add.sprite(1920/2, 1080/2, 'fondo2');
        
         this.seleccionInt =0; // Multijugador
@@ -9279,10 +9287,10 @@ this.mapaNumeroEditadoString = this.add.text(594, 925, this.mapaNumeroEditado, {
 
  this.mapaNumeroEditadoString.visible = false;
 
-this.nombreJ1text = this.add.text(414, 516, this.nombreJ1, { fontFamily: '"8-bit Arcade In"', fontSize: 32, fill: 'black',});
-this.nombreJ2text = this.add.text(1114, 516, this.nombreJ2, { fontFamily: '"8-bit Arcade In"', fontSize: 32, fill: 'black',});
-this.nombreJ3text = this.add.text(414, 626, this.nombreJ3, { fontFamily: '"8-bit Arcade In"', fontSize: 32, fill: 'black',});
-this.nombreJ4text = this.add.text(1114, 626, this.nombreJ4, { fontFamily: '"8-bit Arcade In"', fontSize: 32, fill: 'black',});
+this.nombreJ1text = this.add.text(425, 500, this.nombreJ1, { fontFamily: '"8-bit Arcade In"', fontSize: 45, fill: 'black',});
+this.nombreJ2text = this.add.text(1114, 500, this.nombreJ2, { fontFamily: '"8-bit Arcade In"', fontSize: 45, fill: 'black',});
+this.nombreJ3text = this.add.text(425, 606, this.nombreJ3, { fontFamily: '"8-bit Arcade In"', fontSize: 45, fill: 'black',});
+this.nombreJ4text = this.add.text(1114, 606, this.nombreJ4, { fontFamily: '"8-bit Arcade In"', fontSize: 45, fill: 'black',});
 
 this.nombreJ1text.visible = false;
 this.nombreJ2text.visible = false;
@@ -12082,6 +12090,23 @@ this.readySprite4.setTexture('ready');
 update()
 {
 
+this.menuexplosion.x = this.menuexplosion.x + 2;
+this.menuexplosion.y = this.menuexplosion.y + 2;
+
+if(this.menuexplosion.x > 1920/2 +1920/3)
+  this.menuexplosion.x = 0;
+
+if(this.menuexplosion.y > 1080/2+ 1080/3)
+  this.menuexplosion.y = 0;
+
+this.menuexplosion4.x = this.menuexplosion4.x + 4;
+this.menuexplosion4.y = this.menuexplosion4.y + 4;
+
+if(this.menuexplosion4.x > 1920/2 + 1920/3)
+  this.menuexplosion4.x = 0;
+
+if(this.menuexplosion4.y > 1080/2 + 1080/3)
+  this.menuexplosion4.y = 0;
 
 
   if(cursor.includes("NAME1"))
@@ -13023,7 +13048,7 @@ cursor = "XD";
 
       width: 1920,
       height: 1080,
-      backgroundColor: '#222288',
+      backgroundColor: '#222299',
       dom: {
         createContainer: true
       },
