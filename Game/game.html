@@ -131,10 +131,10 @@ localStorage.setItem("personajeSeleccionadoP3", data.personajeSelectP3);
 localStorage.setItem("personajeSeleccionadoP4", data.personajeSelectP4);
 
 localStorage.setItem("tematica",data.tematica);
-localStorage.setItem("gamemode", data.gamemode);
 localStorage.setItem("jugadores", data.jugadores);
 localStorage.setItem("music", data.music);
-localStorage.setItem("designer", data.designerMode);
+
+localStorage.setItem("gamemode", data.gamemode);
 
 
 
@@ -9097,23 +9097,23 @@ this.load.image('newselector', 'https://i.ibb.co/9g64fpg/selector-Mapas2.png');
                  this.load.image('fondo2', 'https://i.ibb.co/8xLBN9F/Menu-Opciones-Normal.png')
                  this.load.image('fondo2mapa2', 'https://i.ibb.co/rQHxxBd/Menu-Opciones-Normal2.png')
                  this.load.image('fondo2mapa3', 'https://i.ibb.co/dKxg1WS/Menu-Opciones-Normal3.png')
-                  this.load.image('bombayexplosion', 'https://i.ibb.co/b6wsKwh/bombayexplosion.png')
+                  this.load.image('bombayexplosion', 'https://i.ibb.co/4dx7dCY/fondofull2.png')
                   this.load.image('seleccion', 'https://i.ibb.co/6ybPkb1/manito3.png');
                   this.load.image('seleccion1P', 'https://i.ibb.co/6ybPkb1/manito3.png');
                   this.load.image('seleccion2P', 'https://i.ibb.co/5GwYbCs/seleccioncuad2.png');
                   this.load.image('seleccion3P', 'https://i.ibb.co/5BZG3R8/seleccioncuad.png');
                   this.load.image('seleccion4P', 'https://i.ibb.co/KWD10Pw/seleccioncuad4.png');
                   
-                    this.load.image('seleccionpersonajes', 'https://i.ibb.co/swp66kg/seleccionpersonajes.png');
-               this.load.image('seleccion2', 'https://i.ibb.co/jLJtTB6/seleccioncuad1.png');
-                 this.load.image('noready', 'https://i.ibb.co/1bcqr5j/sprite-No-Listo.png');
-                  this.load.image('ready', 'https://i.ibb.co/fXmYj8R/sprite-Listo.png');
+                    this.load.image('seleccionpersonajes', 'https://i.ibb.co/JxrZV6x/seleccionpersonajes.png');
+               this.load.image('seleccion2', 'https://i.ibb.co/tC6gfDg/red-selector3.png');
+                 this.load.image('noready', 'https://i.ibb.co/d0QHr8d/sprite-No-Listo.png');
+                  this.load.image('ready', 'https://i.ibb.co/2KHFz7T/sprite-Listo.png');
                     this.load.audio('theme', 'https://sndup.net/2p9z/select.mp3'); 
                      this.load.audio('select', 'https://sndup.net/2p9z/select.mp3'); 
                      
 
-                     this.load.image('popup', 'https://i.ibb.co/58dMc40/popup.png');
-                      this.load.image('dificultad',  'https://i.ibb.co/KKvmtzd/dificultad2.png');
+                     this.load.image('popup', 'https://i.ibb.co/pbnKQbF/popup.png');
+                      this.load.image('dificultad',  'https://i.ibb.co/GTLGCsN/dificultad.png');
 this.load.image('wall4', 'https://i.ibb.co/qpqvwcN/wall5.png');
 
 /*
@@ -9163,8 +9163,8 @@ if(localStorage.getItem("firstRun") != 0)
 {
 
 
-this.mapaTipo = 1;
-this.mapaNumeroEditado = -1;
+
+//this.mapaNumeroEditado = -1;
 
 this.dificultad = 0;
 this.nombreJ1 = "Player"
@@ -9176,15 +9176,14 @@ this.gamemode = 0;
 this.jugadores = 1;
 this.music = 1;
 
-    this.mapaNormalNumero = 1;
+   
 
 }
 else
 {
 
 //this.designerMode = localStorage.getItem("designerMode");
-this.mapaTipo = localStorage.getItem("mapaTipo");
-this.mapaNumeroEditado = localStorage.getItem("mapaNumeroEditado");
+//this.mapaNumeroEditado = localStorage.getItem("mapaNumeroEditado");
 
 this.dificultad = localStorage.getItem("dificultad");
 this.nombreJ1 = localStorage.getItem("nombreJ1");
@@ -9199,7 +9198,7 @@ this.tematica = localStorage.getItem("tematica");
 this.gamemode = localStorage.getItem("gamemode");
 this.jugadores = localStorage.getItem("jugadores");
 this.music = localStorage.getItem("music");
-this.mapaNormalNumero = localStorage.getItem("mapaNormalNumero");
+//this.mapaNormalNumero = localStorage.getItem("mapaNormalNumero");
 //this.designer = localStorage.getItem("designer");
 
 }
@@ -9225,6 +9224,9 @@ this.music = 1;
 this.designer = 1;
 
 */
+ this.mapaNormalNumero = 1;
+this.mapaNumeroEditado = -1;
+this.mapaTipo = 1;
 this.personajeSeleccionadoP1 = 1;
 this.personajeSeleccionadoP2 = 3;
 this.personajeSeleccionadoP3 = 7;
@@ -9242,11 +9244,11 @@ this.seleccionarDif = 0;
 
 
         this.menuexplosion = this.physics.add.sprite(1920/2, 1080/2, 'bombayexplosion');
-             this.menuexplosion4 = this.physics.add.sprite(1920, 1080, 'bombayexplosion');
+        //     this.menuexplosion4 = this.physics.add.sprite(1920, 1080, 'bombayexplosion');
       //  this.menuexplosion.setScale(2);
         //this.menuexplosion4.setScale(2);
        // this.menuexplosion3.setScale(0.5);
-        this.menuexplosion4.setScale(2);
+        //this.menuexplosion4.setScale(2);
       //  this.menuexplosion.setDepth(1000);
         this.menufondo = this.physics.add.sprite(1920/2, 1080/2, 'fondo2');
        
@@ -12143,7 +12145,7 @@ this.readySprite4.setTexture('ready');
 update()
 {
 
-this.menuexplosion.x = this.menuexplosion.x + 2;
+/*this.menuexplosion.x = this.menuexplosion.x + 2;
 this.menuexplosion.y = this.menuexplosion.y + 2;
 
 if(this.menuexplosion.x > 1920/2 +1920/3)
@@ -12159,7 +12161,7 @@ if(this.menuexplosion4.x > 1920/2 + 1920/3)
   this.menuexplosion4.x = 0;
 
 if(this.menuexplosion4.y > 1080/2 + 1080/3)
-  this.menuexplosion4.y = 0;
+  this.menuexplosion4.y = 0;*/
 
 
   if(cursor.includes("NAME1"))
@@ -12460,7 +12462,7 @@ this.seleccionadoSprite.y = 256;
 if(this.seleccionInt ==8)
 {
 
-this.seleccionadoSprite.x = 1113 +413/4;
+this.seleccionadoSprite.x = 1500 +413/4;
 this.seleccionadoSprite.y = 1020;
 
 }
