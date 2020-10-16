@@ -6,6 +6,7 @@ body {
     margin: 0;
     overflow: hidden;
     white-space: nowrap;
+
 }
 
 /* STARS */
@@ -31,26 +32,31 @@ body .star {
 .middle-top-content {
     text-align: center;
     width: 100%;
-    height: 55%;
+    height: 54%;
+
 }
 
 .middle-bottom-content {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    width: 100%;
-    height: 45%;
-}
+    width: 92%;
+
+    height: 70%;
+    opacity: 0.92;
+    margin-left: 4.9rem;
+
+ }
 
 .middle-top-content #logo-init {
-    content: url("../Assets/images/logo.png");
+    /*content: url("../Assets/images/logo.png");*/
     margin-top: 5rem;
     min-height: 55%;
     max-height: 55%;
 }
 
 .middle-top-content #logo-title-init {
-    content: url("../Assets/images/title.png");
+    /*content: url("../Assets/images/title.png");*/
     margin-top: 5rem;
     margin-left: 4.5rem;
     text-align: center;
@@ -62,15 +68,18 @@ body .star {
 
 .gdbox {
     display: inline-block;
-    padding: 0.5%;
-    margin-top: 2%;
-    height: 80%;
-    background-color: #8C8C8C;
+    padding: 0%;
+    margin-top: -3%;
+
+    height: 50%;
+    background-color: #ffffff00;
+
 }
 
 .gbox {
     height: 85%;
-    background-color: #D3D3D3;
+
+    background-color: #ffffff00;
 }
 
 .step1-content {
@@ -277,14 +286,18 @@ body .star {
 
 /* BUBBLE TEXT */
 
+
 .speech-bubble {
     top: 2rem;
     left: 3rem;
     position: absolute;
     background: white;
-    border-radius: .4em;
+    border-color: white;
+    border-radius: 0.4em;
     padding: 0 1rem;
 }
+
+
 
 .speech-bubble p {
     font-size: 1.3rem;
@@ -298,6 +311,38 @@ body .star {
     width: 0;
     height: 0;
     border: 25px solid transparent;
+    border-right-color: white;
+    border-left: 0;
+    margin-top: -25px;
+    margin-left: -25px;
+}
+
+
+.speech-bubble2 {
+    top: 2rem;
+    left: 3rem;
+    position: absolute;
+    background: black;
+    border-color: black;
+
+    border-radius: 0.4em;
+    padding: 0 1rem;
+}
+
+
+
+.speech-bubble2 p {
+    font-size: 1.3rem;
+}
+
+.speech-bubble2:after {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 50%;
+    width: 0;
+    height: 0;
+    border: 30px solid transparent;
     border-right-color: white;
     border-left: 0;
     margin-top: -25px;

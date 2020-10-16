@@ -44,7 +44,7 @@ video {
   background-size: 405px;
   width: 405px;
   height: 107px;
-  border: none;
+  border: none; opacity: 0.0;
 }
 
 .buttonOpciones {
@@ -53,6 +53,7 @@ video {
   width: 405px;
   height: 107px;
   border: none;
+  opacity: 0.0;
 }
 
 .buttonVolver {
@@ -68,6 +69,7 @@ video {
   width: 405px;
   height: 107px;
   border: none;
+   opacity: 0.0;
 }
 
 .divMenuPrincipal {
@@ -79,28 +81,29 @@ video {
 
 .divButtonStart {
   position: absolute;
-  left: 750px;
-  top: 520px;
+  left: 280px;
+  top: 865px;
   z-index: 3;
 }
 
 .divButtonOpciones {
   position: absolute;
-  left: 750px;
-  top: 665px;
+  left: 755px;
+  top: 865px;
   z-index: 3;
 }
 
 .divButtonVolver {
   position: absolute;
-  left: 1450px;
-  top: 935px;
+  left: 1350px;
+  top: 905px;
   z-index: 3;
+   opacity: 0.0;
 }
 .divButtonSalir {
   position: absolute;
-  left: 750px;
-  top: 810px;
+  left: 1205px;
+  top: 865px;
   z-index: 3;
 }
 
