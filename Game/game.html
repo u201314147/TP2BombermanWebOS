@@ -219,7 +219,7 @@ localStorage.setItem("designer", data.designerMode);
         this.load.image('poderpatin', 'https://i.ibb.co/BN3nm9T/poderpatin.png');
         this.load.image('podervida', 'https://i.ibb.co/Y3MH7wd/podervida.png');
         this.load.image('kills', 'https://i.ibb.co/pZbHxrY/kills.png');
-        this.load.image('mina', 'https://i.ibb.co/MNnYDYx/mina.png');
+        this.load.image('mina', 'https://i.ibb.co/GtDzYNX/mina.png');
 
 
         this.textures.remove('wall');
@@ -323,7 +323,7 @@ localStorage.setItem("designer", data.designerMode);
 
         this.load.audio('lose', 'https://sndup.net/7j9h/wallFall.mp3')
 
-        this.load.image('reloj', 'https://i.ibb.co/ydBXcRJ/reloj-blanco.png');
+        this.load.image('reloj', 'https://i.ibb.co/NtLD8Wb/reloj-blanco.png');
       }
     
       create() {
@@ -935,11 +935,11 @@ this.anims.remove('jugador4Derecha');
         }
         // this.tiempo = this.add.text(1400, 32, 'Tiempo', { fontFamily: '"8-bit Arcade In"' });
         // this.tiempo.setFontSize(50);
-        this.relojIcon = this.add.sprite(1600, 50, 'reloj');
+        this.relojIcon = this.add.sprite(1620, 60, 'reloj');
         this.relojIcon.scaleY = 0.15;
 			  this.relojIcon.scaleX = 0.15;
 
-        this.reloj = this.add.text(1700, 32, this.relojInt, { fontFamily: '"8-bit Arcade In"' });
+        this.reloj = this.add.text(1650, 32, this.relojInt, { fontFamily: '"8-bit Arcade In"' });
         this.reloj.setFontSize(79);
 
 
@@ -5786,7 +5786,60 @@ this.myShip2.setScale(0.85);
 
       update() {
 
+if(this.pause ==1){
 
+   if(this.FullDirection1 == "DER")  
+this.myShip.play('jugador1Derecha');
+
+ if(this.FullDirection1 == "IZQ")  
+this.myShip.play('jugador1Izquierda');
+
+ if(this.FullDirection1 == "ARRIBA")  
+this.myShip.play('jugador1Arriba');
+
+ if(this.FullDirection1 == "ABAJO")  
+this.myShip.play('jugador1Abajo');
+
+
+ if(this.FullDirection2 == "DER")  
+this.myShip2.play('jugador2Derecha');
+
+ if(this.FullDirection2 == "IZQ")  
+this.myShip2.play('jugador2Izquierda');
+
+ if(this.FullDirection2 == "ARRIBA")  
+this.myShip2.play('jugador2Arriba');
+
+ if(this.FullDirection2 == "ABAJO")  
+this.myShip2.play('jugador2Abajo');
+
+
+ if(this.FullDirection3 == "DER")  
+this.myShip3.play('jugador3Derecha');
+
+ if(this.FullDirection3 == "IZQ")  
+this.myShip3.play('jugador3Izquierda');
+
+ if(this.FullDirection3 == "ARRIBA")  
+this.myShip3.play('jugador3Arriba');
+
+ if(this.FullDirection3 == "ABAJO")  
+this.myShip3.play('jugador3Abajo');
+
+
+
+ if(this.FullDirection4 == "DER")  
+this.myShip4.play('jugador4Derecha');
+
+ if(this.FullDirection4 == "IZQ")  
+this.myShip4.play('jugador4Izquierda');
+
+ if(this.FullDirection4 == "ARRIBA")  
+this.myShip4.play('jugador4Arriba');
+
+ if(this.FullDirection4 == "ABAJO")  
+this.myShip4.play('jugador4Abajo');
+}
 
 //console.log(desconectado);
   if(cursor.includes("NAME1"))
@@ -6402,7 +6455,7 @@ else
                   }
                   if (valorobj == 5) {
                     this.myShip.x = 416 +this.x_add + valorx * 64;
-                    this.myShip.y = 128 +this.y_add + valory * 64;
+                    this.myShip.y = 128 + 64 +this.y_add + valory * 64;
                   }
                   if (valorobj == 6) {
                     this.boxFuerte.create(416 + this.x_add + valorx * 64, 128 + this.y_add + valory * 64, 'wall2');
@@ -9135,9 +9188,9 @@ this.mapaNumeroEditado = localStorage.getItem("mapaNumeroEditado");
 
 this.dificultad = localStorage.getItem("dificultad");
 this.nombreJ1 = localStorage.getItem("nombreJ1");
-this.nombreJ2 = "ALEXANDER";
-this.nombreJ3 = "JOHN CENA";
-this.nombreJ4 = "TERMINATOR";
+this.nombreJ2 = "ALEXIS";
+this.nombreJ3 = "JUAN";
+this.nombreJ4 = "CARLOS";
 //this.personajeSeleccionadoP1 = localStorage.getItem("personajeSeleccionadoP1");
 //this.personajeSeleccionadoP2 = localStorage.getItem("personajeSeleccionadoP2");
 //this.personajeSeleccionadoP3 = localStorage.getItem("personajeSeleccionadoP3");
