@@ -38,12 +38,12 @@
 
     </script>
 
-    <div id="qrcode" style="width:100px; height:100px; margin-top:1px;"></div>
+    <div id="qrcode" style="width:100px; height:100px; margin-top:5px;margin-left:29px;"></div>
 
     <script type="text/javascript">
       var qrcode = new QRCode(document.getElementById("qrcode"), {
-        width: 280,
-        height: 200
+        width: 220,
+        height: 192
       });
 
       function makeCode() {
@@ -860,7 +860,7 @@ this.anims.remove('jugador4Derecha');
 
 
         if (this.gamemode == 0) {
-          this.nivel = this.add.text(340, 32, 'Nivel:', { fontFamily: '"8-bit Arcade In"' });
+          this.nivel = this.add.text(340, 32, 'Nivel', { fontFamily: '"8-bit Arcade In"' });
           this.nivel.setFontSize(70);
 
 
@@ -920,7 +920,7 @@ this.anims.remove('jugador4Derecha');
 
 
         if (this.gamemode == 0) {
-          this.txt = this.add.text(650, 32, 'Puntaje:', { fontFamily: '"8-bit Arcade In"' });
+          this.txt = this.add.text(650, 32, 'Puntaje', { fontFamily: '"8-bit Arcade In"' });
           this.txt.setFontSize(70);
 
           this.score = this.add.text(950, 32, this.scoreInt, { fontFamily: '"8-bit Arcade In"' });
@@ -1251,7 +1251,7 @@ this.myShip2.setScale(0.85);
 
 
         if (this.gamemode == 0) {
-          this.bots = this.add.text(1200, 32, "Bots: ", { fontFamily: '"8-bit Arcade In"' });
+          this.bots = this.add.text(1200, 32, "Bots ", { fontFamily: '"8-bit Arcade In"' });
           this.bots.setFontSize(70);
 
 
@@ -9092,8 +9092,8 @@ this.load.image('selectorRect1', 'https://i.ibb.co/tKmGdqY/selector-Rect1.png');
 this.load.image('selectorRect2', 'https://i.ibb.co/ZBsCbYs/selectorrojo2.png');
 this.load.image('selectorRect3', 'https://i.ibb.co/xsf3jYf/selectorverde3.png');
 this.load.image('selectorRect4', 'https://i.ibb.co/y8mFV0h/selectormorado4.png');
-this.load.image('newselector', 'https://i.ibb.co/9g64fpg/selector-Mapas2.png');
-                 this.load.image('fondo', 'https://i.ibb.co/vHvFMnD/Menu-Opciones.png');
+this.load.image('newselector', 'https://i.ibb.co/pzmP703/selector-Mapas2.png');
+                 this.load.image('fondo', 'https://i.ibb.co/JqKZ2xP/Menu-Opciones.png');
                  this.load.image('fondo2', 'https://i.ibb.co/8xLBN9F/Menu-Opciones-Normal.png')
                  this.load.image('fondo2mapa2', 'https://i.ibb.co/rQHxxBd/Menu-Opciones-Normal2.png')
                  this.load.image('fondo2mapa3', 'https://i.ibb.co/dKxg1WS/Menu-Opciones-Normal3.png')
@@ -9104,7 +9104,7 @@ this.load.image('newselector', 'https://i.ibb.co/9g64fpg/selector-Mapas2.png');
                   this.load.image('seleccion3P', 'https://i.ibb.co/5BZG3R8/seleccioncuad.png');
                   this.load.image('seleccion4P', 'https://i.ibb.co/KWD10Pw/seleccioncuad4.png');
                   
-                    this.load.image('seleccionpersonajes', 'https://i.ibb.co/JxrZV6x/seleccionpersonajes.png');
+                    this.load.image('seleccionpersonajes', 'https://i.ibb.co/yq5P4x2/seleccionpersonajes.png');
                this.load.image('seleccion2', 'https://i.ibb.co/tC6gfDg/red-selector3.png');
                  this.load.image('noready', 'https://i.ibb.co/d0QHr8d/sprite-No-Listo.png');
                   this.load.image('ready', 'https://i.ibb.co/2KHFz7T/sprite-Listo.png');
@@ -9176,6 +9176,10 @@ this.gamemode = 0;
 this.jugadores = 1;
 this.music = 1;
 
+this.nombreJ2 = localStorage.setItem("nombreJ2", " ");
+this.nombreJ3 = localStorage.setItem("nombreJ3", " ");
+this.nombreJ4 = localStorage.setItem("nombreJ4", " ");
+
    
 
 }
@@ -9187,9 +9191,9 @@ else
 
 this.dificultad = localStorage.getItem("dificultad");
 this.nombreJ1 = localStorage.getItem("nombreJ1");
-this.nombreJ2 = "ALEXIS";
-this.nombreJ3 = "JUAN";
-this.nombreJ4 = "CARLOS";
+this.nombreJ2 = localStorage.getItem("nombreJ2");
+this.nombreJ3 = localStorage.getItem("nombreJ3");
+this.nombreJ4 = localStorage.getItem("nombreJ4");
 //this.personajeSeleccionadoP1 = localStorage.getItem("personajeSeleccionadoP1");
 //this.personajeSeleccionadoP2 = localStorage.getItem("personajeSeleccionadoP2");
 //this.personajeSeleccionadoP3 = localStorage.getItem("personajeSeleccionadoP3");
@@ -9404,12 +9408,12 @@ this.input.keyboard.on('keydown_I', moverMenuAbajo4, this);
     }
 
     // initial scale
-    let scale = this.game.scale.displaySize.width / this.game.scale.gameSize.width
+    let scale = this.game.scale.displaySize.width / this.game.scale.gameSize.width 
     scaleBox(scale)
 
     // on resize listener
     this.scale.on('resize', (gameSize, baseSize, displaySize, resolution) => {
-      let scale = displaySize.width / gameSize.width
+      let scale = displaySize.width / gameSize.width 
       scaleBox(scale)
     })
 
@@ -12356,22 +12360,22 @@ this.tematicaSprite.y = 132 + 460;
 if(this.jugadores == 1)
 {
 this.cantidadParticipantesSprite.x = 962;
-this.cantidadParticipantesSprite.y = 176;
+this.cantidadParticipantesSprite.y = 181;
 }
 if(this.jugadores == 2)
 {
 this.cantidadParticipantesSprite.x = 1086;
-this.cantidadParticipantesSprite.y = 176;
+this.cantidadParticipantesSprite.y = 181;
 }
 if(this.jugadores == 3)
 {
 this.cantidadParticipantesSprite.x = 1213;
-this.cantidadParticipantesSprite.y = 176;
+this.cantidadParticipantesSprite.y = 181;
 }
 if(this.jugadores == 4)
 {
 this.cantidadParticipantesSprite.x = 1337;
-this.cantidadParticipantesSprite.y = 176;
+this.cantidadParticipantesSprite.y = 181;
 }
 if(this.music == 1)
 {
@@ -13040,8 +13044,8 @@ if(this.mapaNormalNumero ==3)
 
 if(this.mapaTipo ==1)
 {
-  this.mapatipoSprite.x = 279 +413/4;
-  this.mapatipoSprite.y = 331 + 550;
+  this.mapatipoSprite.x = 289 +413/4;
+  this.mapatipoSprite.y = 333 + 550;
 }
 if(this.seleccionInt ==23)
 {
@@ -13051,8 +13055,8 @@ if(this.seleccionInt ==23)
 }
 if(this.mapaTipo ==2)
 {
-  this.mapatipoSprite.x = 279 +413/4;
-  this.mapatipoSprite.y = 393 + 550;
+  this.mapatipoSprite.x = 289 +413/4;
+  this.mapatipoSprite.y = 397 + 550;
 }
 if(this.seleccionInt ==24)
 {
@@ -13063,7 +13067,7 @@ if(this.seleccionInt ==24)
 if(this.designerMode==0)
 {
    this.designerSprite.x = 948 +413/4;
-  this.designerSprite.y = 330 + 550;
+  this.designerSprite.y = 334 + 550;
 }
 if(this.seleccionInt ==25)
 {
@@ -13073,8 +13077,8 @@ if(this.seleccionInt ==25)
 }
 if(this.designerMode==1)
 {
-  this.designerSprite.x = 947 +413/4;
-  this.designerSprite.y = 393 + 550;
+  this.designerSprite.x = 949 +413/4;
+  this.designerSprite.y = 396 + 550;
 }
 if(this.seleccionInt ==26)
 {

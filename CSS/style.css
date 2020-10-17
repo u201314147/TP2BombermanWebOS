@@ -15,6 +15,16 @@ video {
   position: absolute;
 }
 
+@font-face {
+font-family: "8-bit Arcade In";
+src: url("../Assets/menu/8bit.ttf") format("truetype"),
+url("../Assets/menu/8bit.ttf") format("truetype");
+}
+
+body {
+  font-family: '8-bit Arcade In', Fallback, sans-serif;
+}
+
 .buttonPr {
   text-decoration: none;
   padding: 10px;
