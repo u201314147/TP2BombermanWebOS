@@ -45,6 +45,7 @@ body .star {
     height: 70%;
     opacity: 0.92;
     margin-left: 4.9rem;
+ margin-top: 1.2rem;
 
  }
 
@@ -170,9 +171,9 @@ body .star {
     word-break: break-all;
     font-weight: bold;
     text-transform: uppercase;
-    font-family: 'Courier New', Courier, monospace;
+    font-family: 'Arial', Courier, monospace;
     font-size: 1.2rem;
-    letter-spacing: 1px;
+    letter-spacing: 0.2px;
     width: 100%;
 }
 
@@ -208,8 +209,9 @@ body .star {
     word-break: break-all;
     font-weight: bold;
     text-transform: uppercase;
+      font-family: 'Arial', Courier, monospace;
     font-size: 1.2rem;
-    letter-spacing: 1px;
+    letter-spacing: 0.2px;
     width: 100%;
 }
 
@@ -254,11 +256,13 @@ body .star {
     color: white;
     text-transform: uppercase;
     font-size: 1.4em;
+      font-family: 'Arial', Courier, monospace;
 }
 
 .btn-server {
     background-color: whitesmoke;
     border: none;
+
     color: black;
     font-size: 1.2em;
     margin-bottom: 0.5rem;
@@ -266,6 +270,7 @@ body .star {
 
 .btn-server:hover {
     transform: scale(1.2);
+
     transition: all 0.2s ease-in;
 }
 
@@ -277,7 +282,7 @@ body .star {
     font-weight: bold;
     text-transform: uppercase;
     font-size: 1.2rem;
-    font-family: 'Courier New', Courier, monospace;
+    font-family: 'Arial', Courier, monospace;
     margin: auto;
     width: 100%;
 }

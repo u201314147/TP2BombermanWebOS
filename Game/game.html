@@ -38,12 +38,12 @@
 
     </script>
 
-    <div id="qrcode" style="width:100px; height:100px; margin-top:5px;margin-left:29px;"></div>
+    <div id="qrcode" style="width:100px; height:100px; margin-top:-0.5px;margin-left:2.4px;"></div>
 
     <script type="text/javascript">
       var qrcode = new QRCode(document.getElementById("qrcode"), {
-        width: 220,
-        height: 192
+        width: 266,
+        height: 212
       });
 
       function makeCode() {
@@ -9430,7 +9430,7 @@ this.input.keyboard.on('keydown_I', moverMenuAbajo4, this);
         box.style.transform = `scale(${scale})`
         box.style.transformOrigin = 'top left'
         box.style.top = `${this.game.canvas.offsetTop + this.scale.displaySize.height / 2 - (750 / 2) * scale}px`
-        box.style.left = `${this.game.canvas.offsetLeft + this.scale.displaySize.width / 2 - (200 / 2) * scale}px`
+        box.style.left = `${this.game.canvas.offsetLeft + this.scale.displaySize.width / 2 - (200 / 2) * scale})px`
       }
     }
 
