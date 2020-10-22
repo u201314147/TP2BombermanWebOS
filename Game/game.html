@@ -85,7 +85,7 @@
   <script>
 
 var desconectado = 0;
-
+const rows = [[0, 0, 99]];
     class Scene1 extends Phaser.Scene {
 
 
@@ -3859,7 +3859,7 @@ this.myShip2.setScale(0.85);
 
         }
         this.input.keyboard.on('keydown_Z', cogerBomba, this);
-        const rows = [[0, 0, 99]];
+        
 
         function activarPause() {
           if (this.mensajeganar != 1) {
@@ -4072,7 +4072,8 @@ this.myShip2.setScale(0.85);
 
 
         function realizarAccionesMenu() {
-          if (this.pause == 1) {
+           if (this.pause == 1) {
+
             if (this.novotacionP1 == 0 && this.menureiniciar == 0)
               this.seleccionoVotacion.setText("J1");
 
@@ -4087,6 +4088,32 @@ this.myShip2.setScale(0.85);
                 this.aceptarP3 = 0;
                 this.aceptarP4 = 0;
               }
+
+               if (this.designer == 1) {
+                let superString = "";
+
+                //solo guardar en phaser
+                rows.forEach(function (rowArray) {
+                  let row = rowArray.join(",");
+                  superString += row + ";";
+                });
+                var valoranterior = localStorage.getItem(this.mapaNumero);
+                var valoranterior = valoranterior + superString;
+                localStorage.setItem(this.mapaNumero, valoranterior);
+                localStorage.setItem("mapasCreados", this.mapaNumero + 1);
+
+                //this.mapacargar = localStorage.getItem("N1");
+
+                //DESIGNER0
+                this.designer = 2;
+              }
+              if (this.relojInt > 1)
+                this.moonsong.play();
+              else
+                this.wallfallsong.play();
+
+                this.objetocolocarsprite.visible = false;
+              this.seleccionadoSprite.visible = false;
             }
 
             else if (this.menuseleccion == 2 && this.novotacionP1 == 0) {
@@ -4120,7 +4147,6 @@ this.myShip2.setScale(0.85);
           }
 
 
-
         }
 
 
@@ -4140,6 +4166,10 @@ this.myShip2.setScale(0.85);
               this.aceptarP2 = 0;
               this.aceptarP3 = 0;
               this.aceptarP4 = 0;
+                if (this.relojInt > 1)
+                this.moonsong.play();
+              else
+                this.wallfallsong.play();
             }
 
             else if (this.menuseleccion == 2 && this.novotacionP2 == 0) {
@@ -4184,6 +4214,10 @@ this.myShip2.setScale(0.85);
               this.aceptarP2 = 0;
               this.aceptarP3 = 0;
               this.aceptarP4 = 0;
+                if (this.relojInt > 1)
+                this.moonsong.play();
+              else
+                this.wallfallsong.play();
             }
 
             else if (this.menuseleccion == 2 && this.novotacionP3 == 0) {
@@ -4224,6 +4258,10 @@ this.myShip2.setScale(0.85);
               this.aceptarP2 = 0;
               this.aceptarP3 = 0;
               this.aceptarP4 = 0;
+                if (this.relojInt > 1)
+                this.moonsong.play();
+              else
+                this.wallfallsong.play();
             }
 
             else if (this.menuseleccion == 2 && this.novotacionP4 == 0) {
@@ -5163,7 +5201,7 @@ this.myShip2.setScale(0.85);
 
 
    moverMenuArribaDes() {
-          if (this.designer == 1) {
+          if (this.designer == 1 && this.pause ==0) {
 
             if (this.seleccionadoSprite.y - 64 >= 128)
               this.seleccionadoSprite.y = this.seleccionadoSprite.y - 64;
@@ -5175,7 +5213,7 @@ this.myShip2.setScale(0.85);
         }
 
         moverMenuAbajoDes() {
-          if (this.designer == 1) {
+          if (this.designer == 1 && this.pause ==0) {
 
             if (this.seleccionadoSprite.y + 64 <= 908)
               this.seleccionadoSprite.y = this.seleccionadoSprite.y + 64;
@@ -5186,7 +5224,7 @@ this.myShip2.setScale(0.85);
           }
         }
        moverMenuIzqDes() {
-          if (this.designer == 1) {
+          if (this.designer == 1 && this.pause ==0) {
             if (this.seleccionadoSprite.x - 64 >= 416)
               this.seleccionadoSprite.x = this.seleccionadoSprite.x - 64;
 
@@ -5196,7 +5234,7 @@ this.myShip2.setScale(0.85);
           }
         }
         moverMenuDerDes() {
-          if (this.designer == 1) {
+          if (this.designer == 1 && this.pause ==0) {
             if (this.seleccionadoSprite.x + 64 <= 1840)
               this.seleccionadoSprite.x = this.seleccionadoSprite.x + 64;
 
@@ -5205,7 +5243,7 @@ this.myShip2.setScale(0.85);
           }
         }
         seleccionarOpcionMin() {
-          if (this.designer == 1) {
+          if (this.designer == 1 && this.pause ==0) {
             if (this.objetocolocar > 0)
               this.objetocolocar = this.objetocolocar - 1;
             else
@@ -5218,7 +5256,7 @@ this.myShip2.setScale(0.85);
 
 
         seleccionarOpcionMax() {
-          if (this.designer == 1) {
+          if (this.designer == 1  && this.pause ==0) {
             if (this.objetocolocar <= 8)
               this.objetocolocar = this.objetocolocar + 1;
             else
@@ -5230,7 +5268,7 @@ this.myShip2.setScale(0.85);
         }
 
        seleccionarOpcionSet() {
-          if (this.designer == 1) {
+          if (this.designer == 1 && this.pause ==0) {
             if (this.objetocolocar == 0) {
               this.objetocolocarsprite.setTexture('wall');
             }
@@ -5268,7 +5306,7 @@ this.myShip2.setScale(0.85);
         }
 
         seleccionarOpcionDes() {
-          if (this.designer == 1) {
+          if (this.designer == 1 && this.pause ==0) {
             rows.push([this.designerX, this.designerY, this.objetocolocar])
 
             if (this.objetocolocar == 0) {
@@ -5297,7 +5335,7 @@ this.myShip2.setScale(0.85);
 
             if (this.objetocolocar == 1) {
 
-              this.enemigos.create(this.seleccionadoSprite.x, this.seleccionadoSprite.y, 'enemigo');
+              this.enemigos.create(this.seleccionadoSprite.x +23, this.seleccionadoSprite.y+ 28, 'enemigo');
               //this.objetocolocarspriteNuevo = this.physics.add.sprite(this.seleccionadoSprite.x , this.seleccionadoSprite.y, 'enemigo');
             }
 
@@ -5311,7 +5349,7 @@ this.myShip2.setScale(0.85);
               //        this.objetocolocarspriteNuevo = this.physics.add.sprite(this.seleccionadoSprite.x , this.seleccionadoSprite.y, 'pisor1');
             }
             if (this.objetocolocar == 4) {
-              this.minas.create(this.seleccionadoSprite.x, this.seleccionadoSprite.y, 'mina');
+              this.minas.create(this.seleccionadoSprite.x + 28, this.seleccionadoSprite.y+31, 'mina');
               //      this.objetocolocarspriteNuevo = this.physics.add.sprite(this.seleccionadoSprite.x , this.seleccionadoSprite.y, 'mina');
             }
             if (this.objetocolocar == 5) {
@@ -5548,6 +5586,7 @@ this.myShip2.setScale(0.85);
 
          realizarAccionesMenu() {
           if (this.pause == 1) {
+
             if (this.novotacionP1 == 0 && this.menureiniciar == 0)
               this.seleccionoVotacion.setText("J1");
 
@@ -5562,6 +5601,32 @@ this.myShip2.setScale(0.85);
                 this.aceptarP3 = 0;
                 this.aceptarP4 = 0;
               }
+
+               if (this.designer == 1) {
+                let superString = "";
+
+                //solo guardar en phaser
+                rows.forEach(function (rowArray) {
+                  let row = rowArray.join(",");
+                  superString += row + ";";
+                });
+                var valoranterior = localStorage.getItem(this.mapaNumero);
+                var valoranterior = valoranterior + superString;
+                localStorage.setItem(this.mapaNumero, valoranterior);
+                localStorage.setItem("mapasCreados", this.mapaNumero + 1);
+
+                //this.mapacargar = localStorage.getItem("N1");
+
+                //DESIGNER0
+                this.designer = 2;
+              }
+              if (this.relojInt > 1)
+                this.moonsong.play();
+              else
+                this.wallfallsong.play();
+
+                this.objetocolocarsprite.visible = false;
+              this.seleccionadoSprite.visible = false;
             }
 
             else if (this.menuseleccion == 2 && this.novotacionP1 == 0) {
@@ -5615,6 +5680,11 @@ this.myShip2.setScale(0.85);
               this.aceptarP2 = 0;
               this.aceptarP3 = 0;
               this.aceptarP4 = 0;
+
+                if (this.relojInt > 1)
+                this.moonsong.play();
+              else
+                this.wallfallsong.play();
             }
 
             else if (this.menuseleccion == 2 && this.novotacionP2 == 0) {
@@ -5659,6 +5729,10 @@ this.myShip2.setScale(0.85);
               this.aceptarP2 = 0;
               this.aceptarP3 = 0;
               this.aceptarP4 = 0;
+                if (this.relojInt > 1)
+                this.moonsong.play();
+              else
+                this.wallfallsong.play();
             }
 
             else if (this.menuseleccion == 2 && this.novotacionP3 == 0) {
@@ -5699,6 +5773,10 @@ this.myShip2.setScale(0.85);
               this.aceptarP2 = 0;
               this.aceptarP3 = 0;
               this.aceptarP4 = 0;
+                if (this.relojInt > 1)
+                this.moonsong.play();
+              else
+                this.wallfallsong.play();
             }
 
             else if (this.menuseleccion == 2 && this.novotacionP4 == 0) {
@@ -5801,7 +5879,167 @@ this.myShip2.setScale(0.85);
 
       update() {
 
+//MOVER EN DISEÑADOR
+if(this.designer == 1 && this.pause ==0)
+{
+   switch (cursor) {
+    //JUGADOR1
+              case "LEFT":
+                this.moverMenuIzq();         
+                this.moverMenuIzqDes();
+                break;
+              case "RIGHT":
+               this.moverMenuDer();
+                this.moverMenuDerDes();
+                break;
+              case "UP":
+              this.moverMenuArribaDes();
+                break;
+              case "DOWN":                 
+                  this.moverMenuAbajoDes();
+                break;
+               case "X":
+                //ENPAUSE
+                this.actualizarEstado();
+                this.seleccionarOpcionMax();
+                this.seleccionarOpcionSet();
+                this.aceptarVotacionP1();
+                this.realizarAccionesMenu()
+                break;
+                case "A":
+                this.seleccionarOpcionMin();
+                this.seleccionarOpcionSet();               
+                break;
+                 case "B":
+                this.seleccionarOpcionDes();                
+                break;
+              case "Y":
+                this.activarPause();
+                break;
+              }
+              cursor = "XD";
+}
+//MOVER MENU TV
+if(this.pause==0 && this.designer ==0)
+{
+    switch (cursor) {
+    //JUGADOR1
+              case "Y":
+               this.activarPause();
+                break;
+              }
+              cursor = "XD";
+}
 
+if(this.pause==1 && this.designer ==0)
+{
+    switch (cursor) {
+    //JUGADOR1
+              case "Y":
+               this.activarPause();
+                break;
+              }
+              cursor = "XD";
+}
+if(this.pause ==1)
+{
+   switch (cursor) {
+    //JUGADOR1
+              case "LEFT":
+                this.moverMenuIzq();         
+                this.moverMenuIzqDes();
+                break;
+              case "RIGHT":
+               this.moverMenuDer();
+                this.moverMenuDerDes();
+                break;
+              case "UP":
+              this.moverMenuArribaDes();
+                break;
+              case "DOWN":                 
+                  this.moverMenuAbajoDes();
+                break;
+               case "X":
+                //ENPAUSE
+                this.actualizarEstado();
+                this.seleccionarOpcionMax();
+                this.seleccionarOpcionSet();
+                this.aceptarVotacionP1();
+                this.realizarAccionesMenu()
+                break;
+                case "A":
+                this.seleccionarOpcionMin();
+                this.seleccionarOpcionSet();               
+                break;
+                 case "B":
+                this.seleccionarOpcionDes();                
+                break;
+              case "Y":
+              if(cursor == "XD")
+                this.activarPause();
+                break;
+
+                //JUGADOR 2
+
+                case "LEFT2":
+                this.moverMenuIzq2();    
+                break;
+              case "RIGHT2":
+               this.moverMenuDer2();
+                break;
+             
+               case "X2":
+                //ENPAUSE
+                this.aceptarVotacionP2();
+                this.realizarAccionesMenu2()
+                break;
+              case "Y2":
+              if(cursor!="Y2")
+                this.activarPause();
+                break;
+
+                //JUGADOR3
+
+                case "LEFT3":
+                this.moverMenuIzq3();    
+                break;
+              case "RIGHT3":
+               this.moverMenuDer3();
+                break;
+             
+               case "X3":
+                //ENPAUSE
+                this.aceptarVotacionP3();
+                this.realizarAccionesMenu3()
+                break;
+              case "Y3":
+              if(cursor!="Y3")
+                this.activarPause();
+                break;
+
+                 //JUGADOR4
+
+                case "LEFT4":
+                this.moverMenuIzq4();    
+                break;
+              case "RIGHT4":
+               this.moverMenuDer4();
+                break;
+             
+               case "X4":
+                //ENPAUSE
+                this.aceptarVotacionP4();
+                this.realizarAccionesMenu4()
+                break;
+              case "Y4":
+              if(cursor!="Y4")
+                this.activarPause();
+                break;
+            }
+            cursor = "XD";
+}
+
+//MOVER EN PAUSA
 
 if(this.pause ==1){
 
@@ -8723,7 +8961,7 @@ this.game.sound.stopAll();
                 break;
 
               case "LEFT":
-  if(this.FullDirection1!= "IZQ")
+            if(this.FullDirection1!= "IZQ")
              this.myShip.play('jugador1Izquierda');
            this.FullDirection1 = "IZQ";
           this.myShip.setVelocityX(-20 * this.patin);
@@ -8869,7 +9107,7 @@ this.game.sound.stopAll();
               this.myShip.play('jugador1Abajo');
                 this.FullDirection1 = "ABAJO";
                 this.myShip.setVelocityY(20 * this.patin);
-                  //this.moverMenuArriba();
+                 
                   this.moverMenuAbajoDes();
                 break;
               case "X4":
