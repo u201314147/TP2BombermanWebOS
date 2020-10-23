@@ -128,10 +128,10 @@ localStorage.setItem("mapaTipo", data.mapaTipo);
 localStorage.setItem("mapaNumeroEditado", data.mapaNumero);
 
 localStorage.setItem("dificultad", data.dificultad);
-localStorage.setItem("personajeSeleccionadoP1", data.personajeSelectP1);
-localStorage.setItem("personajeSeleccionadoP2", data.personajeSelectP2);
-localStorage.setItem("personajeSeleccionadoP3", data.personajeSelectP3);
-localStorage.setItem("personajeSeleccionadoP4", data.personajeSelectP4);
+localStorage.setItem("nombreJ1", data.nombredata);
+localStorage.setItem("nombreJ2", data.nombredata2);
+localStorage.setItem("nombreJ3", data.nombredata3);
+localStorage.setItem("nombreJ4", data.nombredata4);
 
 localStorage.setItem("tematica",data.tematica);
 localStorage.setItem("jugadores", data.jugadores);
@@ -424,7 +424,7 @@ this.FullDirection4 = "";
         this.aceptarP3 = 0;
         this.aceptarP4 = 0;
 
-        this.guanteP1 = 0;
+        this.guanteP1 = 1;
         this.guanteP2 = 0;
         this.guanteP3 = 0;
         this.guanteP4 = 0;
@@ -3034,7 +3034,7 @@ this.myShip2.setScale(0.85);
             // this.scoreInt = this.scoreInt + 500;
             // this.scoreInt = this.scoreInt + 500;
             if (this.cooldownP2tick == 100) {
-              if (this.killsInt = 0)
+             
                 this.killsInt = this.killsInt + 1;
             }
             if (this.cooldownP3tick == 100)
@@ -3612,22 +3612,21 @@ this.myShip2.setScale(0.85);
         this.physics.add.overlap(this.myShip, this.bombasFull, null, function (col1, col2) {
 
           if (this.guanteP1 == 2) {
-            if (this.cursors.down.isDown && (col2.y - this.myShip.y) < 256) {
-              this.bombasFullDirection = "ABAJO";
+            if ( this.bombasFullDirection == "ABAJO" && (col2.y - this.myShip.y) < 256) {
+             
               col2.y = col2.y + 20;
             }
 
-            if (this.cursors.left.isDown && (this.myShip.x - col2.x) < 256) {
-              this.bombasFullDirection = "IZQ";
+            if (this.bombasFullDirection == "IZQ" && (this.myShip.x - col2.x) < 256) {
               col2.x = col2.x - 20;
             }
 
-            if (this.cursors.right.isDown && (col2.x - this.myShip.x) < 256) {
-              this.bombasFullDirection = "DER";
+            if (   this.bombasFullDirection == "DER" && (col2.x - this.myShip.x) < 256) {
+           
               col2.x = col2.x + 20;
             }
-            if (this.cursors.up.isDown && (this.myShip.y - col2.y) < 256) {
-              this.bombasFullDirection = "ARRIBA";
+            if (   this.bombasFullDirection == "ARRIBA" && (this.myShip.y - col2.y) < 256) {
+            
               col2.y = col2.y - 20;
             }
           }
@@ -3638,22 +3637,19 @@ this.myShip2.setScale(0.85);
         this.physics.add.overlap(this.myShip2, this.bombasFull2, cogerBomba, function (col1, col2) {
 
           if (this.guanteP2 == 2) {
-            if (this.downjugador2.isDown && (col2.y - this.myShip2.y) < 256) {
-              this.bombasFullDirection2 = "ABAJO";
+            if (this.bombasFullDirection2 == "ABAJO" && (col2.y - this.myShip2.y) < 256) {
+              
               col2.y = col2.y + 20;
             }
 
-            if (this.leftjugador2.isDown && (this.myShip2.x - col2.x) < 256) {
-              this.bombasFullDirection2 = "IZQ";
+            if (this.bombasFullDirection2 == "IZQ" && (this.myShip2.x - col2.x) < 256) {
               col2.x = col2.x - 20;
             }
 
-            if (this.rightjugador2.isDown && (col2.x - this.myShip2.x) < 256) {
-              this.bombasFullDirection2 = "DER";
+            if (this.bombasFullDirection2 == "DER" && (col2.x - this.myShip2.x) < 256) {
               col2.x = col2.x + 20;
             }
-            if (this.upjugador2.isDown && (this.myShip2.y - col2.y) < 256) {
-              this.bombasFullDirection2 = "ARRIBA";
+            if (this.bombasFullDirection2 == "ARRIBA" && (this.myShip2.y - col2.y) < 256) {
               col2.y = col2.y - 20;
             }
           }
@@ -3663,22 +3659,22 @@ this.myShip2.setScale(0.85);
         this.physics.add.overlap(this.myShip3, this.bombasFull3, cogerBomba, function (col1, col2) {
 
           if (this.guanteP3 == 2) {
-            if (this.downjugador3.isDown && (col2.y - this.myShip3.y) < 256) {
-              this.bombasFullDirection3 = "ABAJO";
+            if ( this.bombasFullDirection3 == "ABAJO" &&(col2.y - this.myShip3.y) < 256) {
+             
               col2.y = col2.y + 20;
             }
 
-            if (this.leftjugador3.isDown && (this.myShip3.x - col2.x) < 256) {
-              this.bombasFullDirection3 = "IZQ";
+            if (this.bombasFullDirection3 == "IZQ" && (this.myShip3.x - col2.x) < 256) {
+              
               col2.x = col2.x - 20;
             }
 
-            if (this.rightjugador3.isDown && (col2.x - this.myShip3.x) < 256) {
-              this.bombasFullDirection3 = "DER";
+            if (this.bombasFullDirection3 == "DER" && (col2.x - this.myShip3.x) < 256) {
+              
               col2.x = col2.x + 20;
             }
-            if (this.upjugador3.isDown && (this.myShip3.y - col2.y) < 256) {
-              this.bombasFullDirection3 = "ARRIBA";
+            if ( this.bombasFullDirection3 == "ARRIBA" && (this.myShip3.y - col2.y) < 256) {
+             
               col2.y = col2.y - 20;
             }
           }
@@ -3688,22 +3684,22 @@ this.myShip2.setScale(0.85);
         this.physics.add.overlap(this.myShip4, this.bombasFull4, cogerBomba, function (col1, col2) {
 
           if (this.guanteP4 == 2) {
-            if (this.downjugador4.isDown && (col2.y - this.myShip4.y) < 256) {
-              this.bombasFullDirection4 = "ABAJO";
+            if ( this.bombasFullDirection4 == "ABAJO" && (col2.y - this.myShip4.y) < 256) {
+             
               col2.y = col2.y + 20;
             }
 
-            if (this.leftjugador4.isDown && (this.myShip4.x - col2.x) < 256) {
-              this.bombasFullDirection4 = "IZQ";
+            if (this.bombasFullDirection4 == "IZQ" && (this.myShip4.x - col2.x) < 256) {
+              
               col2.x = col2.x - 20;
             }
 
-            if (this.rightjugador4.isDown && (col2.x - this.myShip4.x) < 256) {
-              this.bombasFullDirection4 = "DER";
+            if (  this.bombasFullDirection4 == "DER" && (col2.x - this.myShip4.x) < 256) {
+            
               col2.x = col2.x + 20;
             }
-            if (this.upjugador4.isDown && (this.myShip4.y - col2.y) < 256) {
-              this.bombasFullDirection4 = "ARRIBA";
+            if (  this.bombasFullDirection4 == "ARRIBA" && (this.myShip4.y - col2.y) < 256) {
+             
               col2.y = col2.y - 20;
             }
           }
@@ -5913,7 +5909,7 @@ if(this.designer == 1 && this.pause ==0)
                  case "B":
                 this.seleccionarOpcionDes();                
                 break;
-              case "Y":
+              case "START":
                 this.activarPause();
                 break;
               }
@@ -5924,7 +5920,7 @@ if(this.pause==0 && this.designer ==0)
 {
     switch (cursor) {
     //JUGADOR1
-              case "Y":
+              case "START":
                this.activarPause();
                 break;
               }
@@ -5935,7 +5931,7 @@ if(this.pause==1 && this.designer ==0)
 {
     switch (cursor) {
     //JUGADOR1
-              case "Y":
+              case "START":
                this.activarPause();
                 break;
               }
@@ -5974,7 +5970,7 @@ if(this.pause ==1)
                  case "B":
                 this.seleccionarOpcionDes();                
                 break;
-              case "Y":
+              case "START":
               if(cursor == "XD")
                 this.activarPause();
                 break;
@@ -5993,8 +5989,8 @@ if(this.pause ==1)
                 this.aceptarVotacionP2();
                 this.realizarAccionesMenu2()
                 break;
-              case "Y2":
-              if(cursor!="Y2")
+              case "START2":
+              if(cursor!="START2")
                 this.activarPause();
                 break;
 
@@ -6012,8 +6008,8 @@ if(this.pause ==1)
                 this.aceptarVotacionP3();
                 this.realizarAccionesMenu3()
                 break;
-              case "Y3":
-              if(cursor!="Y3")
+              case "START3":
+              if(cursor!="START3")
                 this.activarPause();
                 break;
 
@@ -6031,8 +6027,8 @@ if(this.pause ==1)
                 this.aceptarVotacionP4();
                 this.realizarAccionesMenu4()
                 break;
-              case "Y4":
-              if(cursor!="Y4")
+              case "START4":
+              if(cursor!="START4")
                 this.activarPause();
                 break;
             }
@@ -7780,8 +7776,8 @@ this.game.sound.stopAll();
             {
               if (this.vidasInt <= 0 && this.vidasInt2 <= 0 && this.vidasInt3 <= 0 && this.vidasInt4 <= 0) {
 
-                this.ganadorText.setText("¿¿¡EMPATE!??");
-                this.ganadorText2.setText("¿¿¡EMPATE!??");
+                this.ganadorText.setText("EMPATE");
+                this.ganadorText2.setText("EMPATE");
 
 
                 this.mensajeganar = 1;
@@ -8944,18 +8940,21 @@ this.game.sound.stopAll();
               case "LEFT4":
                if(this.FullDirection4!= "IZQ")
              this.myShip4.play('jugador4Izquierda');
+             this.bombasFullDirection4 = "IZQ";
            this.FullDirection4 = "IZQ";
                 this.myShip4.setVelocityX(-20 * this.patin4);
                 break;
               case "LEFT3":
                 if(this.FullDirection3!= "IZQ")
              this.myShip3.play('jugador3Izquierda');
+            this.bombasFullDirection3 = "IZQ";
            this.FullDirection3 = "IZQ";
                 this.myShip3.setVelocityX(-20 * this.patin3);
                 break;
               case "LEFT2":
                if(this.FullDirection2!= "IZQ")
              this.myShip2.play('jugador2Izquierda');
+            this.bombasFullDirection2 = "IZQ";
            this.FullDirection2 = "IZQ";
                 this.myShip2.setVelocityX(-20 * this.patin2);
                 break;
@@ -8964,6 +8963,7 @@ this.game.sound.stopAll();
             if(this.FullDirection1!= "IZQ")
              this.myShip.play('jugador1Izquierda');
            this.FullDirection1 = "IZQ";
+             this.bombasFullDirection = "IZQ";
           this.myShip.setVelocityX(-20 * this.patin);
 
                this.moverMenuIzq();
@@ -8993,24 +8993,28 @@ this.game.sound.stopAll();
               case "RIGHT4":
                       if(this.FullDirection4 != "DER")
                this.myShip4.play('jugador4Derecha');
+              this.bombasFullDirection4 = "DER";
                this.FullDirection4 = "DER";
                 this.myShip4.setVelocityX(20 * this.patin4);
                 break;
               case "RIGHT3":
                if(this.FullDirection3 != "DER")
                this.myShip3.play('jugador3Derecha');
+              this.bombasFullDirection3 = "DER";
                this.FullDirection3 = "DER";
                 this.myShip3.setVelocityX(20 * this.patin3);
                 break;
               case "RIGHT2":
                    if(this.FullDirection2 != "DER")
                this.myShip2.play('jugador2Derecha');
+             this.bombasFullDirection2 = "DER";
                this.FullDirection2 = "DER";
                 this.myShip2.setVelocityX(20 * this.patin2);
                 break;
               case "RIGHT":
      if(this.FullDirection1 != "DER")
                this.myShip.play('jugador1Derecha');
+              this.bombasFullDirection = "DER";
                this.FullDirection1 = "DER";
    this.myShip.setVelocityX(20 * this.patin);
                this.moverMenuDer();
@@ -9041,24 +9045,28 @@ this.game.sound.stopAll();
                if(this.FullDirection4 != "ARRIBA")
                this.myShip4.play('jugador4Arriba');
                   this.FullDirection4 = "ARRIBA";
+                  this.bombasFullDirection4 = "ARRIBA";
                 this.myShip4.setVelocityY(-20 * this.patin4);
                 break;
               case "UP3":
                if(this.FullDirection3 != "ARRIBA")
                this.myShip3.play('jugador3Arriba');
                   this.FullDirection3 = "ARRIBA";
+                  this.bombasFullDirection3 = "ARRIBA";
                 this.myShip3.setVelocityY(-20 * this.patin3);
                 break;
               case "UP2":
                if(this.FullDirection2 != "ARRIBA")
                this.myShip2.play('jugador2Arriba');
                   this.FullDirection2 = "ARRIBA";
+                       this.bombasFullDirection2 = "ARRIBA";
                 this.myShip2.setVelocityY(-20 * this.patin2);
                 break;
               case "UP":
                if(this.FullDirection1 != "ARRIBA")
                this.myShip.play('jugador1Arriba');
                   this.FullDirection1 = "ARRIBA";
+                     this.bombasFullDirection = "ARRIBA";
                 this.myShip.setVelocityY(-20 * this.patin);
 
               this.moverMenuArribaDes();
@@ -9088,24 +9096,28 @@ this.game.sound.stopAll();
                if(this.FullDirection4 != "ABAJO")
               this.myShip4.play('jugador4Abajo');
                 this.FullDirection4 = "ABAJO";
+                 this.bombasFullDirection4 = "ABAJO";
                 this.myShip4.setVelocityY(20 * this.patin4);
                 break;
               case "DOWN3":
                  if(this.FullDirection3 != "ABAJO")
               this.myShip3.play('jugador3Abajo');
                 this.FullDirection3 = "ABAJO";
+                  this.bombasFullDirection3 = "ABAJO";
                 this.myShip3.setVelocityY(20 * this.patin3);
                 break;
               case "DOWN2":
                    if(this.FullDirection2 != "ABAJO")
               this.myShip2.play('jugador2Abajo');
                 this.FullDirection2 = "ABAJO";
+                this.bombasFullDirection2 = "ABAJO";
                 this.myShip2.setVelocityY(20 * this.patin2);
                 break;
               case "DOWN":
                 if(this.FullDirection1 != "ABAJO")
               this.myShip.play('jugador1Abajo');
                 this.FullDirection1 = "ABAJO";
+                  this.bombasFullDirection = "ABAJO";
                 this.myShip.setVelocityY(20 * this.patin);
                  
                   this.moverMenuAbajoDes();
@@ -9141,9 +9153,54 @@ this.game.sound.stopAll();
                 this.seleccionarOpcionDes();
                 
                 break;
-              case "Y":
+              case "START":
                 this.activarPause();
 
+                break;
+                  case "Y":
+                if (this.guanteP1 == 1) {
+                this.guanteP1 = 2;
+              }
+                break;
+                    case "STOPY":
+                if (this.guanteP1 == 2) {
+                this.guanteP1 = 1;
+              }
+                break;
+
+                     case "Y2":
+                if (this.guanteP2 == 1) {
+                this.guanteP2 = 2;
+              }
+                break;
+                    case "STOPY2":
+                if (this.guanteP2 == 2) {
+                this.guanteP2 = 1;
+              }
+                break;
+
+
+                     case "Y3":
+                if (this.guanteP3 == 1) {
+                this.guanteP3 = 2;
+              }
+                break;
+                    case "STOPY3":
+                if (this.guanteP3 == 2) {
+                this.guanteP3 = 1;
+              }
+                break;
+
+
+                     case "Y4":
+                if (this.guanteP4 == 1) {
+                this.guanteP4 = 2;
+              }
+                break;
+                    case "STOPY4":
+                if (this.guanteP4 == 2) {
+                this.guanteP4 = 1;
+              }
                 break;
             }
 
@@ -9151,6 +9208,7 @@ this.game.sound.stopAll();
             if (this.cursors.left.isDown) {
              if(this.FullDirection1 != "IZQ")
              this.myShip.play('jugador1Izquierda');
+           this.bombasFullDirection1 = "IZQ";
            this.FullDirection1 = "IZQ";
               this.myShip.setVelocityX(-20 * this.patin);
             }
@@ -9162,6 +9220,7 @@ this.game.sound.stopAll();
             if (this.cursors.right.isDown) {
                 if(this.FullDirection1 != "DER")
                this.myShip.play('jugador1Derecha');
+             this.bombasFullDirection1 = "DER";
                this.FullDirection1 = "DER";
               this.myShip.setVelocityX(20 * this.patin);
             }
@@ -9172,6 +9231,7 @@ this.game.sound.stopAll();
             if (this.cursors.up.isDown) {
                if(this.FullDirection1 != "ARRIBA")
                this.myShip.play('jugador1Arriba');
+             this.bombasFullDirection1 = "ARRIBA";
                   this.FullDirection1 = "ARRIBA";
               this.myShip.setVelocityY(-20 * this.patin);
             }
@@ -9182,6 +9242,7 @@ this.game.sound.stopAll();
             if (this.cursors.down.isDown) {
                  if(this.FullDirection1 != "ABAJO")
               this.myShip.play('jugador1Abajo');
+            this.bombasFullDirection1 = "ABAJO";
                 this.FullDirection1 = "ABAJO";
               this.myShip.setVelocityY(20 * this.patin);
             }
@@ -9193,6 +9254,7 @@ this.game.sound.stopAll();
             if (this.leftjugador2.isDown) {
                if(this.FullDirection2 != "IZQ")
              this.myShip2.play('jugador2Izquierda');
+           this.bombasFullDirection2 = "IZQ";
            this.FullDirection2 = "IZQ";
               this.myShip2.setVelocityX(-20 * this.patin2);
 
@@ -9206,6 +9268,7 @@ this.game.sound.stopAll();
             if (this.rightjugador2.isDown) {
                if(this.FullDirection2 != "DER")
                this.myShip2.play('jugador2Derecha');
+             this.bombasFullDirection2 = "DER";
                this.FullDirection2 = "DER";
               this.myShip2.setVelocityX(20 * this.patin2);
             }
@@ -9216,6 +9279,7 @@ this.game.sound.stopAll();
             if (this.upjugador2.isDown) {
                 if(this.FullDirection2 != "ARRIBA")
                this.myShip2.play('jugador2Arriba');
+             this.bombasFullDirection2 = "ARRIBA";
                   this.FullDirection2 = "ARRIBA";
               this.myShip2.setVelocityY(-20 * this.patin2);
             }
@@ -9226,6 +9290,7 @@ this.game.sound.stopAll();
             if (this.downjugador2.isDown) {
               if(this.FullDirection2 != "ABAJO")
               this.myShip2.play('jugador2Abajo');
+            this.bombasFullDirection2 = "ABAJO";
                 this.FullDirection2 = "ABAJO";
               this.myShip2.setVelocityY(20 * this.patin2);
             }
@@ -9239,6 +9304,7 @@ this.game.sound.stopAll();
             if (this.leftjugador3.isDown) {
                  if(this.FullDirection3 != "IZQ")
              this.myShip3.play('jugador3Izquierda');
+           this.bombasFullDirection3 = "IZQ";
            this.FullDirection3 = "IZQ";
         
               this.myShip3.setVelocityX(-20 * this.patin3);
@@ -9250,6 +9316,7 @@ this.game.sound.stopAll();
             if (this.rightjugador3.isDown) {
                if(this.FullDirection3 != "DER")
                this.myShip3.play('jugador3Derecha');
+             this.bombasFullDirection3 = "DER";
                this.FullDirection3 = "DER";
               this.myShip3.setVelocityX(20 * this.patin3);
             }
@@ -9260,6 +9327,7 @@ this.game.sound.stopAll();
             if (this.upjugador3.isDown) {
                  if(this.FullDirection3 != "ARRIBA")
                this.myShip3.play('jugador3Arriba');
+             this.bombasFullDirection3 = "ARRIBA";
                   this.FullDirection3 = "ARRIBA";
               this.myShip3.setVelocityY(-20 * this.patin3);
          
@@ -9271,6 +9339,7 @@ this.game.sound.stopAll();
             if (this.downjugador3.isDown) {
                if(this.FullDirection3 != "ABAJO")
               this.myShip3.play('jugador3Abajo');
+            this.bombasFullDirection3 = "ABAJO";
                 this.FullDirection3 = "ABAJO";
               this.myShip3.setVelocityY(20 * this.patin3);
             }
@@ -9285,6 +9354,7 @@ this.game.sound.stopAll();
             if (this.leftjugador4.isDown) {
                if(this.FullDirection4 != "IZQ")
              this.myShip4.play('jugador4Izquierda');
+           this.bombasFullDirection4 = "IZQ";
            this.FullDirection4 = "IZQ";
               this.myShip4.setVelocityX(-20 * this.patin4);
             }
@@ -9295,6 +9365,7 @@ this.game.sound.stopAll();
             if (this.rightjugador4.isDown) {
                if(this.FullDirection4 != "DER")
                this.myShip4.play('jugador4Derecha');
+             this.bombasFullDirection4 = "DER";
                this.FullDirection4 = "DER";
               this.myShip4.setVelocityX(20 * this.patin4);
             }
@@ -9305,6 +9376,7 @@ this.game.sound.stopAll();
             if (this.upjugador4.isDown) {
                if(this.FullDirection4 != "ARRIBA")
                this.myShip4.play('jugador4Arriba');
+             this.bombasFullDirection4 = "ARRIBA";
                   this.FullDirection4 = "ARRIBA";
               this.myShip4.setVelocityY(-20 * this.patin4);
             }
@@ -9315,6 +9387,7 @@ this.game.sound.stopAll();
             if (this.downjugador4.isDown) {
                if(this.FullDirection4 != "ABAJO")
               this.myShip4.play('jugador4Abajo');
+            this.bombasFullDirection4 = "ABAJO";
                 this.FullDirection4 = "ABAJO";
               this.myShip4.setVelocityY(20 * this.patin4);
             }
@@ -9436,6 +9509,8 @@ this.gamemode = 0;
 this.jugadores = 1;
 this.music = 1;
 
+
+this.nombreJ2 = localStorage.setItem("nombreJ1", "Player");
 this.nombreJ2 = localStorage.setItem("nombreJ2", " ");
 this.nombreJ3 = localStorage.setItem("nombreJ3", " ");
 this.nombreJ4 = localStorage.setItem("nombreJ4", " ");
