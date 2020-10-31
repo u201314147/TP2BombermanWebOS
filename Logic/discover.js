@@ -14,7 +14,7 @@ function availableServersToDiv(e, name) {
     }
 }
 var findIpBtimer = 0;
-var findIpB = 0;
+var findIpB = -1;
 function onFinishSearch() {
     document.getElementById("box-loading").style.opacity = "0";
     findIpBtimer = findIpBtimer +1;
@@ -98,11 +98,15 @@ var Synapse = new window.Synapse(8080);
 
 function findServers() {
 
-if(findIpB==0)
+
+if(findIpB==-1)
     enableLoading(); 
 
+if(findIpB==-1)
+Synapse.findServers(255, 5000, availableServersToDiv, onFinishSearch, onFinishSearch,0,255, -1, ip)
+
+if(findIpB>=0)
 Synapse.findServers(255, 5000, availableServersToDiv, onFinishSearch, onFinishSearch,0,255, findIpB, ip)
- //Synapse.findServers(16, 5000, availableServersToDiv, onFinishSearch, onFinishSearch,0,255, -1, ip)
 
 }
 
