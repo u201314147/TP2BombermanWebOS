@@ -96,14 +96,6 @@ function hideLoading() {
 }
 var Synapse = new window.Synapse(8080);
 
-var myWorker = new Worker("Logic/synapseworker.js");
-
-myWorker.onmessage = function (oEvent) {
-  console.log("Mensaje worker : " + oEvent.data);
-};
-
-myWorker.postMessage("ejemplo");
-
 function findServers() {
 
 

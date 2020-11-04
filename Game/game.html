@@ -206,24 +206,24 @@ localStorage.setItem("gamemode", data.gamemode);
 
 
       //  this.load.image('enemigo', 'https://i.ibb.co/qWPVtnj/enemigo.png');
-         this.load.spritesheet('enemigo', 'https://i.ibb.co/qWPVtnj/enemigo.png', { frameWidth: 46, frameHeight: 60, endFrame: 16 });
+         this.load.spritesheet('enemigo', 'img/enemigo.png', { frameWidth: 46, frameHeight: 60, endFrame: 16 });
 
-          this.load.spritesheet('enemigoquemado', 'https://i.ibb.co/TwH1WFb/enemigoquemado.png', { frameWidth: 46, frameHeight: 60, endFrame: 16 });
+          this.load.spritesheet('enemigoquemado', 'img/enemigoquemado.png', { frameWidth: 46, frameHeight: 60, endFrame: 16 });
       
-              this.load.spritesheet('ship', 'https://i.ibb.co/fHnPxX9/jugador.png', { frameWidth: 46, frameHeight: 68, endFrame: 16 });
-         this.load.spritesheet('ship2', 'https://i.ibb.co/0fVW6Zc/jugador2.png', { frameWidth: 46, frameHeight: 68, endFrame: 16 });
-     this.load.spritesheet('ship3', 'https://i.ibb.co/LPFvhf7/jugador3.png', { frameWidth: 46, frameHeight: 68, endFrame: 16 });
-      this.load.spritesheet('ship4', 'https://i.ibb.co/9Gp2xNj/jugador4.png', { frameWidth: 46, frameHeight: 68, endFrame: 16 });
+              this.load.spritesheet('ship', 'img/jugador.png', { frameWidth: 46, frameHeight: 68, endFrame: 16 });
+         this.load.spritesheet('ship2', 'img/jugador2.png', { frameWidth: 46, frameHeight: 68, endFrame: 16 });
+     this.load.spritesheet('ship3', 'img/jugador3.png', { frameWidth: 46, frameHeight: 68, endFrame: 16 });
+      this.load.spritesheet('ship4', 'img/jugador4.png', { frameWidth: 46, frameHeight: 68, endFrame: 16 });
  
-        this.load.image('vida', 'https://i.ibb.co/yNSBcGv/vida.png');
-        this.load.image('bomba', 'https://i.ibb.co/z6r3c26/bomba.png');
-        this.load.image('explosion', 'https://i.ibb.co/h9RPDzp/explosion.png');
-        this.load.image('poderllama', 'https://i.ibb.co/Ydmyns2/poderllama.png');
-        this.load.image('poderbomba', 'https://i.ibb.co/NrRZRG9/poderbomba.png');
-        this.load.image('poderpatin', 'https://i.ibb.co/BN3nm9T/poderpatin.png');
-        this.load.image('podervida', 'https://i.ibb.co/Y3MH7wd/podervida.png');
-        this.load.image('kills', 'https://i.ibb.co/pZbHxrY/kills.png');
-        this.load.image('mina', 'https://i.ibb.co/GtDzYNX/mina.png');
+        this.load.image('vida', 'img/vida.png');
+        this.load.image('bomba', 'img/bomba.png');
+        this.load.image('explosion', 'img/explosion.png');
+        this.load.image('poderllama', 'img/poderllama.png');
+        this.load.image('poderbomba', 'img/poderbomba.png');
+        this.load.image('poderpatin', 'img/poderpatin.png');
+        this.load.image('podervida', 'img/podervida.png');
+        this.load.image('kills', 'img/kills.png');
+        this.load.image('mina', 'img/mina.png');
 
 
         this.textures.remove('wall');
@@ -232,53 +232,53 @@ localStorage.setItem("gamemode", data.gamemode);
         this.textures.remove('wallkill');
 
         if (this.tematicaSeleccionada == 1) {
-          this.load.image('wall', 'https://i.ibb.co/6vg0LPj/wall.png');
-          this.load.image('wall2', 'https://i.ibb.co/YfJQszs/wall2.png');
-          this.load.image('pisonegro', 'https://i.ibb.co/GWWBSCK/pisonegro.png');
-          this.load.image('wallkill', 'https://i.ibb.co/YfJQszs/wall2.png')
+          this.load.image('wall', 'img/skin01/wall.png');
+          this.load.image('wall2', 'img/skin01/wall2.png');
+          this.load.image('pisonegro', 'img/skin01/pisonegro.png');
+          this.load.image('wallkill', 'img/skin01/wall2.png')
         }
 
 
         if (this.tematicaSeleccionada == 2) {
-          this.load.image('wall', 'https://i.ibb.co/MNXRJ39/wall.png');
-          this.load.image('wall2', 'https://i.ibb.co/gVSRNCC/wall2.png');
-          this.load.image('pisonegro', 'https://i.ibb.co/QcCvy2G/pisonegro.png');
-          this.load.image('wallkill', 'https://i.ibb.co/gVSRNCC/wall2.png')
+          this.load.image('wall', 'img/skin02/wall.png');
+          this.load.image('wall2', 'img/skin02/wall2.png');
+          this.load.image('pisonegro', 'img/skin02/pisonegro.png');
+          this.load.image('wallkill', 'img/skin02/wall2.png')
         }
 
         if (this.tematicaSeleccionada == 3) {
-          this.load.image('wall', 'https://i.ibb.co/9pCcj1c/wall.png');
-          this.load.image('wall2', 'https://i.ibb.co/VSvdY4P/wall2.png');
-          this.load.image('pisonegro', 'https://i.ibb.co/ZdCCNp8/pisonegro.png');
-          this.load.image('wallkill', 'https://i.ibb.co/VSvdY4P/wall2.png')
+          this.load.image('wall', 'img/skin03/wall.png');
+          this.load.image('wall2', 'img/skin03/wall2.png');
+          this.load.image('pisonegro', 'img/skin03/pisonegro.png');
+          this.load.image('wallkill', 'img/skin03/wall2.png')
         }
 
 
-        this.load.image('wall3', 'https://i.ibb.co/9y4cTjD/wall3.png');
+        this.load.image('wall3', 'img/wall3.png');
 
-        this.load.image('wall4', 'https://i.ibb.co/qpqvwcN/wall5.png');
+        this.load.image('wall4', 'img/wall5.png');
 
-        this.load.image('pisor1', 'https://i.ibb.co/XbNnWdy/pisor1.png');
-        this.load.image('pisor2', 'https://i.ibb.co/BT4bwd5/pisor2.png');
-        this.load.image('pisomov', 'https://i.ibb.co/fYTm8Cz/pisomov.png');
+        this.load.image('pisor1', 'img/pisor1.png');
+        this.load.image('pisor2', 'img/pisor2.png');
+        this.load.image('pisomov', 'img/pisomov.png');
 
 
-        this.load.image('menupause', 'https://i.ibb.co/YRqsf11/menupause.png');
-        this.load.image('menupause2', 'https://i.ibb.co/bHXM7y9/menupause2.png');
-        this.load.image('menupause3', 'https://i.ibb.co/p0cq1sK/menupause3.png');
+        this.load.image('menupause', 'img/menupause.png');
+        this.load.image('menupause2', 'img/menupause2.png');
+        this.load.image('menupause3', 'img/menupause3.png');
 
-        this.load.image('menupause2end', 'https://i.ibb.co/hWr7ybj/menupause2end.png');
-        this.load.image('menupause3end', 'https://i.ibb.co/PCLGvQh/menupause3end.png');
+        this.load.image('menupause2end', 'img/menupause2end.png');
+        this.load.image('menupause3end', 'img/menupause3end.png');
 
-        this.load.image('mensajeFinPartida', 'https://i.ibb.co/0MBjWjV/mensaje-Fin-Partida.png');
+        this.load.image('mensajeFinPartida', 'img/mensajeFinPartida.png');
         
         // this.load.image('votacionmenu', 'https://i.ibb.co/3Ycf03R/votacionmenu.png');
         // this.load.image('votacionmenu2', 'https://i.ibb.co/swGDZCC/votacionmenu2-P.png');
         // this.load.image('votacionmenu3', 'https://i.ibb.co/BqSYKHW/votacionmenu3-P.png');
         
-        this.load.image('votacionmenu', 'https://i.ibb.co/qF49NvS/votacion-menu-4players.png');
-        this.load.image('votacionmenu2', 'https://i.ibb.co/5Lh1qG9/votacion-menu-2players.png');
-        this.load.image('votacionmenu3', 'https://i.ibb.co/tDtKDXg/votacion-menu-3players.png');
+        this.load.image('votacionmenu', 'img/votacion_menu_4players.png');
+        this.load.image('votacionmenu2', 'img/votacion_menu_2players.png');
+        this.load.image('votacionmenu3', 'img/votacion_menu_3players.png');
 
 
         // this.load.image('votacionmenuP1', 'https://i.ibb.co/GWbjLYv/votacionmenu-P1.png');
@@ -286,48 +286,48 @@ localStorage.setItem("gamemode", data.gamemode);
         // this.load.image('votacionmenuP3', 'https://i.ibb.co/ZBgRKcK/votacionmenu-P3.png');
         // this.load.image('votacionmenuP4', 'https://i.ibb.co/LrrqXDX/votacionmenu-P4.png');
 
-        this.load.image('votacionmenuP1', 'https://i.ibb.co/DKVfhbf/votacion-menu-voto1.png');
-        this.load.image('votacionmenuP2', 'https://i.ibb.co/1fGgW9w/votacion-menu-voto2.png');
-        this.load.image('votacionmenuP3', 'https://i.ibb.co/8BqDPJR/votacion-menu-voto3.png');
-        this.load.image('votacionmenuP4', 'https://i.ibb.co/z5rvhdX/votacion-menu-voto4.png');
+        this.load.image('votacionmenuP1', 'img/votacion_menu_voto1.png');
+        this.load.image('votacionmenuP2', 'img/votacion_menu_voto2.png');
+        this.load.image('votacionmenuP3', 'img/votacion_menu_voto3.png');
+        this.load.image('votacionmenuP4', 'img/votacion_menu_voto4.png');
 
-        this.load.image('poderguante', 'https://i.ibb.co/tHyHrWz/poderguante.png');
-        this.load.image('seleccion3', 'https://i.ibb.co/RvhgWwR/seleccioncuad.png');
+        this.load.image('poderguante', 'img/poderguante.png');
+        this.load.image('seleccion3', 'img/seleccioncuad.png');
 
 
         //this.load.image('jugadorAzul', 'https://i.ibb.co/tz3L9Bn/jugador.png');
-        this.load.spritesheet('jugadorAzul', 'https://i.ibb.co/fHnPxX9/jugador.png', { frameWidth: 46, frameHeight: 68, endFrame: 16 });
+        this.load.spritesheet('jugadorAzul', 'img/jugador.png', { frameWidth: 46, frameHeight: 68, endFrame: 16 });
        // this.load.image('jugadorNaranja', 'https://i.ibb.co/HVtxqyJ/jugador2.png');
-        this.load.spritesheet('jugadorNaranja', 'https://i.ibb.co/0fVW6Zc/jugador2.png', { frameWidth: 46, frameHeight: 68, endFrame: 16 });
+        this.load.spritesheet('jugadorNaranja', 'img/jugador2.png', { frameWidth: 46, frameHeight: 68, endFrame: 16 });
        // this.load.image('jugadorVerde', 'https://i.ibb.co/C7yH7ft/jugador3.png');
-          this.load.spritesheet('jugadorVerde', 'https://i.ibb.co/LPFvhf7/jugador3.png', { frameWidth: 46, frameHeight: 68, endFrame: 16 });
+          this.load.spritesheet('jugadorVerde', 'img/jugador3.png', { frameWidth: 46, frameHeight: 68, endFrame: 16 });
        // this.load.image('jugadorMorado', 'https://i.ibb.co/DCnJw89/jugador4.png');
-           this.load.spritesheet('jugadorMorado', 'https://i.ibb.co/9Gp2xNj/jugador4.png', { frameWidth: 46, frameHeight: 68, endFrame: 16 });
+           this.load.spritesheet('jugadorMorado', 'img/jugador4.png', { frameWidth: 46, frameHeight: 68, endFrame: 16 });
         //this.load.image('jugadorCeleste', 'https://i.ibb.co/HzsjTX8/jugador-Celeste.png');
-             this.load.spritesheet('jugadorCeleste', 'https://i.ibb.co/gdq0Rt9/jugador-Celeste.png', { frameWidth: 46, frameHeight: 68, endFrame: 16 });
+             this.load.spritesheet('jugadorCeleste', 'img/jugadorCeleste.png', { frameWidth: 46, frameHeight: 68, endFrame: 16 });
         //this.load.image('jugadorRojo', 'https://i.ibb.co/br9mb3n/jugador-Rojo.png');
-        this.load.spritesheet('jugadorRojo', 'https://i.ibb.co/1z45Mn5/jugador-Rojo.png', { frameWidth: 46, frameHeight: 68, endFrame: 16 });
+        this.load.spritesheet('jugadorRojo', 'img/jugadorRojo.png', { frameWidth: 46, frameHeight: 68, endFrame: 16 });
        // this.load.image('jugadorGris', 'https://i.ibb.co/tM88Rfr/jugador-Gris.png');
-         this.load.spritesheet('jugadorGris', 'https://i.ibb.co/R2ZK4wH/jugador-Gris.png', { frameWidth: 46, frameHeight: 68, endFrame: 16 });
+         this.load.spritesheet('jugadorGris', 'img/jugadorGris.png', { frameWidth: 46, frameHeight: 68, endFrame: 16 });
        // this.load.image('jugadorAmarillo', 'https://i.ibb.co/YjwWzqW/jugador-Amarillo.png');
-          this.load.spritesheet('jugadorAmarillo', 'https://i.ibb.co/nwMSwn0/jugador-Amarillo.png', { frameWidth: 46, frameHeight: 68, endFrame: 16 });
+          this.load.spritesheet('jugadorAmarillo', 'img/jugadorAmarillo.png', { frameWidth: 46, frameHeight: 68, endFrame: 16 });
      //   this.load.image('jugadorNegro', 'https://i.ibb.co/m07RktY/jugador-Negro.png');
- this.load.spritesheet('jugadorNegro', 'https://i.ibb.co/Hr4fT49/jugador-Negro.png', { frameWidth: 46, frameHeight: 68, endFrame: 16 });
+ this.load.spritesheet('jugadorNegro', 'img/jugadorNegro.png', { frameWidth: 46, frameHeight: 68, endFrame: 16 });
 
-        this.load.audio('moon', 'https://sndup.net/3h3r/moon.mp3');
+        this.load.audio('moon', 'snd/moon.mp3');
 
-        this.load.audio('explosion', 'https://sndup.net/4p97/explosion.mp3');
+        this.load.audio('explosion', 'snd/explosion.mp3');
 
-        this.load.audio('item', 'https://sndup.net/3tp6/item.mp3');
-        this.load.audio('loselive', 'https://sndup.net/54z2/loselive.mp3');
-        this.load.audio('matarbot', 'https://sndup.net/2nwb/matarbot.mp3');
-        this.load.audio('wallFall', 'https://sndup.net/7j9h/wallFall.mp3');
-        this.load.audio('victory', 'https://sndup.net/7j9h/wallFall.mp3');
-        this.load.audio('ending', 'https://sndup.net/8s58/ending.mp3');
+        this.load.audio('item', 'snd/item.mp3');
+        this.load.audio('loselive', 'snd/loselive.mp3');
+        this.load.audio('matarbot', 'snd/matarbot.mp3');
+        this.load.audio('wallFall', 'snd/wallFall.mp3');
+        this.load.audio('victory', 'snd/wallFall.mp3');
+        this.load.audio('ending', 'snd/ending.mp3');
 
-        this.load.audio('lose', 'https://sndup.net/7j9h/wallFall.mp3')
+        this.load.audio('lose', 'snd/wallFall.mp3')
 
-        this.load.image('reloj', 'https://i.ibb.co/NtLD8Wb/reloj-blanco.png');
+        this.load.image('reloj', 'img/reloj_blanco_.png');
       }
     
       create() {
@@ -424,7 +424,7 @@ this.FullDirection4 = "";
         this.aceptarP3 = 0;
         this.aceptarP4 = 0;
 
-        this.guanteP1 = 1;
+        this.guanteP1 = 0;
         this.guanteP2 = 0;
         this.guanteP3 = 0;
         this.guanteP4 = 0;
@@ -9421,33 +9421,33 @@ class SceneB extends Phaser.Scene {
     preload ()
     {
 
-this.load.image('selectorRect1', 'https://i.ibb.co/tKmGdqY/selector-Rect1.png');
-this.load.image('selectorRect2', 'https://i.ibb.co/ZBsCbYs/selectorrojo2.png');
-this.load.image('selectorRect3', 'https://i.ibb.co/xsf3jYf/selectorverde3.png');
-this.load.image('selectorRect4', 'https://i.ibb.co/y8mFV0h/selectormorado4.png');
-this.load.image('newselector', 'https://i.ibb.co/bNRCLWp/selector-Mapas2.png');
-                 this.load.image('fondo', 'https://i.ibb.co/JqKZ2xP/Menu-Opciones.png');
-                 this.load.image('fondo2', 'https://i.ibb.co/8xLBN9F/Menu-Opciones-Normal.png')
-                 this.load.image('fondo2mapa2', 'https://i.ibb.co/rQHxxBd/Menu-Opciones-Normal2.png')
-                 this.load.image('fondo2mapa3', 'https://i.ibb.co/dKxg1WS/Menu-Opciones-Normal3.png')
-                  this.load.image('bombayexplosion', 'https://i.ibb.co/4dx7dCY/fondofull2.png')
-                  this.load.image('seleccion', 'https://i.ibb.co/6ybPkb1/manito3.png');
-                  this.load.image('seleccion1P', 'https://i.ibb.co/6ybPkb1/manito3.png');
-                  this.load.image('seleccion2P', 'https://i.ibb.co/5GwYbCs/seleccioncuad2.png');
-                  this.load.image('seleccion3P', 'https://i.ibb.co/5BZG3R8/seleccioncuad.png');
-                  this.load.image('seleccion4P', 'https://i.ibb.co/KWD10Pw/seleccioncuad4.png');
+this.load.image('selectorRect1', 'img/selectorRect1.png');
+this.load.image('selectorRect2', 'img/selectorrojo2.png');
+this.load.image('selectorRect3', 'img/selectorverde3.png');
+this.load.image('selectorRect4', 'img/selectormorado4.png');
+this.load.image('newselector', 'img/selector-Mapas2.png');
+                 this.load.image('fondo', 'img/MenuOpciones.png');
+                 this.load.image('fondo2', 'img/MenuOpcionesNormal.png')
+                 this.load.image('fondo2mapa2', 'img/MenuOpcionesNormal2.png')
+                 this.load.image('fondo2mapa3', 'img/MenuOpcionesNormal3.png')
+                  this.load.image('bombayexplosion', 'img/fondofull2.png')
+                  this.load.image('seleccion', 'img/manito3.png');
+                  this.load.image('seleccion1P', 'img/manito3.png');
+                  this.load.image('seleccion2P', 'img/seleccioncuad2.png');
+                  this.load.image('seleccion3P', 'img/seleccioncuad.png');
+                  this.load.image('seleccion4P', 'img/seleccioncuad4.png');
                   
-                    this.load.image('seleccionpersonajes', 'https://i.ibb.co/yq5P4x2/seleccionpersonajes.png');
-               this.load.image('seleccion2', 'https://i.ibb.co/tC6gfDg/red-selector3.png');
-                 this.load.image('noready', 'https://i.ibb.co/d0QHr8d/sprite-No-Listo.png');
-                  this.load.image('ready', 'https://i.ibb.co/2KHFz7T/sprite-Listo.png');
-                    this.load.audio('theme', 'https://sndup.net/2p9z/select.mp3'); 
-                     this.load.audio('select', 'https://sndup.net/2p9z/select.mp3'); 
+                    this.load.image('seleccionpersonajes', 'img/seleccionpersonajes.png');
+               this.load.image('seleccion2', 'img/red_selector3.png');
+                 this.load.image('noready', 'img/spriteNoListo.png');
+                  this.load.image('ready', 'img/spriteListo.png');
+                    this.load.audio('theme', 'snd/select.mp3'); 
+                     this.load.audio('select', 'snd/select.mp3'); 
                      
 
-                     this.load.image('popup', 'https://i.ibb.co/pbnKQbF/popup.png');
-                      this.load.image('dificultad',  'https://i.ibb.co/GTLGCsN/dificultad.png');
-this.load.image('wall4', 'https://i.ibb.co/qpqvwcN/wall5.png');
+                     this.load.image('popup', 'img/popup.png');
+                      this.load.image('dificultad',  'img/dificultad.png');
+this.load.image('wall4', 'img/wall5.png');
 
 /*
             this.load.image('selectorRect1', 'img/selectorRect1.png');
@@ -9580,10 +9580,7 @@ this.mapaDesplegado = 0;
 this.seleccionarDif = 0;
 
 
-//DELETE
-this.nombreJ2 = "JOHN";
-this.nombreJ3 ="CENA";
-this.nombreJ4 = "AHH";
+
 
 
 
