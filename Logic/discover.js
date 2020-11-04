@@ -102,7 +102,7 @@ myWorker.onmessage = function (oEvent) {
   console.log("Mensaje worker : " + oEvent.data);
 };
 
-myWorker.postMessage("ejemplo");
+myWorker.postMessage("running");
 
 function findServers() {
 
